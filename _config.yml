@@ -18,6 +18,9 @@ urlimg: https://lanyon-plus.sbamin.com/images/
 #baseurl: "/lanyon-plus"
 #urlimg: https://dyndna.github.io/lanyon-plus/images/
 markdown: kramdown
+kramdown:
+  math_engine: mathjax
+
 paginate: 5
 paginate_path: "/blog/page:num"
 excerpt_separator: <!--more-->
@@ -33,11 +36,9 @@ syntax_highlighter: rouge
 input: GFM
 
 gems:
-  - jekyll-paginate
-  - jemoji
+  - github-pages
   - font-awesome-sass
-  - kramdown
-  - rouge
+  - jekyll-redirect-from
   - jekyll-mentions
 
 jekyll-mentions:
