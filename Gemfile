@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
-gem 'nokogiri', '= 1.6.8.1'
-gem 'addressable', '= 2.3.8'
+gem 'nokogiri', '>= 1.6.8.1'
+gem 'addressable', '>= 2.3.8'
 
 group :jekyll_plugins do
 gem 'github-pages', '>= 93'
