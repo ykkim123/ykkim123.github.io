@@ -36,7 +36,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 *   [CSS and jekyll tips from HMFAYSAL OMEGA by HMFAYSAL](https://github.com/hmfaysal/hmfaysal-omega-theme){:target="_blank"}
 *   Icons by [Font Awesome Icons](http://fortawesome.github.io/Font-Awesome/icons/){:target="_blank"} and [IcoMoon](https://icomoon.io){:target="_blank"}
 *   [Responsive YouTube Playlist Embedding by John](http://avexdesigns.com/responsive-youtube-embed/){:target="_blank"}
-*   [Related posts without plugin by Ross Gardler](http://rgardler.github.io/2015/07/28/adding-related-posts-to-jekyll-blog/){:target="_blank"}
+*   [Related posts by Sharath, WebJeda](https://blog.webjeda.com/jekyll-related-posts/){:target="_blank"}
 *   [Archive page by Reyhan Dhuny and Michael Rowe](http://reyhan.org/2013/03/jekyll-archive-without-plugins.html){:target="_blank"}
 *   [Print css by Pieter Beulque and David Walsh](http://www.webdesignerdepot.com/2010/01/10-tips-for-better-print-style-sheets/){:target="_blank"}
 *   [Embed gists by Blair Vanderhoof](https://github.com/blairvanderhoof/gist-embed){:target="_blank"}
