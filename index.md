@@ -1,7 +1,7 @@
 ---
 layout: default
 permalink: index.html
-title: Personal Homepage of Yeonkang
+title: Personal Homepage of Yeonkang Kim
 description: "Blogging on ...."
 ---
 
