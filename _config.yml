@@ -104,7 +104,7 @@ google_search: ykkim123
 
 # Twitter stream widget:
 # Replace xyz123abc with your twitter widget id from https://twitter.com/settings/widgets
-#twitter_widget_id: xyz123abc
+twitter_widget_id: xyz123abc
 
 # Add disqus username for Disqus comment board:
 disqus_shortname: ykkim123
