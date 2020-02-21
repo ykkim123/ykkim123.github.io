@@ -11,7 +11,8 @@ category: base
 {:.text-center}
 ## <i class="fa fa-paperclip" title="Featured"></i> <a href="{{ site.url }}/featured">Featured Posts</a>
 
-<hr class="style17" style="margin:1.0rem 0;">
+{% capture site_tags %}{% for tag in site.tags %}{{ tag | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
+{% assign tags_list = site_tags | split:',' | sort %}
 
 {% comment %}
   Tag generation is experimental and dynamic size for tag box may need to be adjusted if you have more than 100 posts with one or two frequently occurring tags. Also,all for loop operations will increase site build time.
