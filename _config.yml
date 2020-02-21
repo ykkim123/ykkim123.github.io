@@ -38,7 +38,7 @@ input: GFM
 gems:
   - github-pages
   - font-awesome-sass
-  - jekyll-redirect-from
+  #- jekyll-redirect-from
   #- jekyll-mentions
 
 #jekyll-mentions:
