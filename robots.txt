@@ -10,6 +10,12 @@ Disallow: /CNAME
 Disallow: /*.md$
 Disallow: /files/
 
+User-agent: Twitterbot
+Disallow: /assets/
+Disallow: /CNAME
+Disallow: /*.md$
+Disallow: /files/
+
 User-agent: Bingbot
 Disallow: /assets/
 Disallow: /CNAME
