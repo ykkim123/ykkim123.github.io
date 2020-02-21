@@ -23,7 +23,7 @@ Here is brief introduction:
 - Korean and English
 
 
-Please refer to following pages for more details:
+*Please refer to following pages for more details:*
 
 [Github Pages](https://ykkim123.github.io/)
 
