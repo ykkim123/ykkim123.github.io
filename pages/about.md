@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 show_meta: true
 published: true
-description: "About"
+description: "About ykkim123.github.io"
 category: views
 comments: false
 mathjax: false
@@ -42,9 +42,5 @@ Here is brief introduction:
 
 **LANGUAGES**
 - Korean and English
-
-**Contact**
-- EMAIL: rladusrkd7@gmail.com
-- GITHUB USER NAME: ykkim123 
 
 *[volutpat]: Tooltip for abbreviation.
