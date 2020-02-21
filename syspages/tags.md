@@ -1,8 +1,8 @@
 ---
 layout: page
-title: "Table of Contents"
+title: "Tags"
 permalink: "/tags/"
-description: "Browse website by using table  of contents"
+description: "Browse website by tag based index"
 comments: false
 sitemap: false
 category: base
