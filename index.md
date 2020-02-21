@@ -1,7 +1,7 @@
 ---
 layout: default
 permalink: index.html
-title: Yeonkang's Data Science
+title: Personal Homepage of Yeonkang Kim
 description: "Blogging on ...."
 ---
 
