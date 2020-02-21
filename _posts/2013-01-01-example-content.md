@@ -4,6 +4,7 @@ title: "Example content"
 date: "2013-01-01"
 slug: "example_content"
 description: "Example content from lanyon. If page description is more than 140 words, it will be shown as post summary on home page and blog index else post excerpt will be shown. Same rule is for html meta description: >140 words in description or first 50 words of posts will be shown as summary. Page excerpt supports markdown formatted summary."
+use_math: true
 category: 
   - views
   - featured
@@ -216,6 +217,8 @@ Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna m
 ### MathJax
 
 Let's test some inline math $x$, $y$, $x_1$, $y_1$.
+
+This formula $f(x) = x^2$ is an example.
 
 Now a inline math with special character: $\|\psi\rangle$, $x'$, $x^\*$ and $\|\psi_1\rangle = a\|0\rangle + b\|1\rangle$
 
