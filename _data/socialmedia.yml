@@ -1,22 +1,22 @@
-- name: Twitter
-  url: https://twitter.com/abcd
-  class: fa fa-twitter-square
-  title: "Follow me @foo"
+#- name: Twitter
+  #url: https://twitter.com/abcd
+  #class: fa fa-twitter-square
+  #title: "Follow me @foo"
 
-- name: Google Plus
-  url: https://plus.google.com/+foo
-  class: fa fa-google-plus-square
-  title: "Follow me +foo"
+#- name: Google Plus
+  #url: https://plus.google.com/+foo
+  #class: fa fa-google-plus-square
+  #title: "Follow me +foo"
 
 - name: GitHub
-  url: https://github.com/xyz123abc
+  url: https://github.com/ykkim`12
   class: fa fa-github-square
   title: Code repository
 
-- name: Contact
-  url: "/contact/"
-  class: fa fa-envelope-square
-  title: "Reach Us"
+#- name: Contact
+  #url: "/contact/"
+  #class: fa fa-envelope-square
+  #title: "Reach Us"
 
 - name: RSS
   url: "/feed.xml"
