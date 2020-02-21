@@ -16,7 +16,7 @@ tags:
   - "contact"
 ---
 
-<i class="fa fa-envelope-square">
+<i class="fa fa-envelope">
   
 
 rladusrkd7@gmail.com
@@ -24,7 +24,7 @@ rladusrkd7@gmail.com
 rladusrkd@o365.yonsei.ac.kr
 
 
-<i class="fa fa-github-square"> 
+<i class="fa fa-github"> 
   
-[Git](https://github.com/ykkim123)
+[Github](https://github.com/ykkim123)
 
