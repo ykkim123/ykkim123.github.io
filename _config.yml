@@ -82,7 +82,7 @@ links:
     url: /
   - title: <i class="iconside iconm-user"></i> About
     url: /about/
-  - title: <i class="fa fa-tags"></i> Table of Contents
+  - title: <i class="fa fa-tags"></i> Tags
     url: /tags/
   - title: <i class="iconside iconm-quill"></i> Blog
     url: /blog/
