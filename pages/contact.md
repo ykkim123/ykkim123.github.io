@@ -18,5 +18,4 @@ tags:
 
 | <i class="fa fa-envelope"></i> | rladusrkd7@gmail.com<br>rladusrkd@o365.yonsei.ac.kr |
 | - | :- |
-| <i class="fa fa-paper-plane">  | foo@xyz | 
-| - | :- |
+
