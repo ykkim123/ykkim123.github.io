@@ -16,6 +16,10 @@ tags:
   - "contact"
 ---
 
-| <i class="fa fa-envelope"> | rladusrkd7@gmail.com<br>rladusrkd@o365.yonsei.ac.kr |
-| - | :- |
+<i class="fa fa-envelope">
+
+
+rladusrkd7@gmail.com
+
+rladusrkd@o365.yonsei.ac.kr
 
