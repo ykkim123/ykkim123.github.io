@@ -13,10 +13,10 @@
   class: fa fa-github-square
   title: Code repository
 
-#- name: Contact
-  #url: "/contact/"
-  #class: fa fa-envelope-square
-  #title: "Reach Us"
+- name: Contact
+  url: "/contact/"
+  class: fa fa-envelope-square
+  title: "Reach Me"
 
 - name: RSS
   url: "/feed.xml"
