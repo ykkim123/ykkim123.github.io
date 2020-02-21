@@ -26,12 +26,5 @@ rladusrkd@o365.yonsei.ac.kr
 
 <i class="fa fa-github-square"> 
   
-  
-[Github](https://github.com/ykkim123)
-
-
-| <i class="fa fa-envelope-square"></i> | rladusrkd7@gmail.com<br>rladusrkd@o365.yonsei.ac.kr | 
-| - | :- |
-| <i class="fa fa-github-square"></i>  | [Github](https://github.com/ykkim123) | 
-| - | :- |
+[Git](https://github.com/ykkim123)
 
