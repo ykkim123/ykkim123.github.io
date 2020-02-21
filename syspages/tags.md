@@ -1,11 +1,12 @@
 ---
 layout: page
-title: "Tag Cloud"
+title: "Table of Contents"
 permalink: "/tags/"
-description: "Browse website by tag based index"
+description: "Browse website by using table  of contents"
 comments: false
 sitemap: false
 category: base
 ---
 
-[Example](https://ykkim123.github.io/blog/2015/01/31/whats-jekyll/)
+Sampling
+- Reservoir Sampling
