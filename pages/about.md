@@ -27,7 +27,7 @@ Here is brief introduction:
 - Yonsei University (Seoul, South Korea)
   - BA in Applied Statistics (2015~Present)
 
-**Others**
+**OTHERS**
 - Data Science Lab (2019~Present)
 
 **AWARDS**
