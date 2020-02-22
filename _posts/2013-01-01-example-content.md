@@ -207,7 +207,7 @@ Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna m
 ### Embed picture
 
 {:.text-center img}
-![Toy example]({{ site.urlimg }}/media/apple-icon.png "Toy example")
+![Toy example]({{ https://github.com/ykkim123/ykkim123.github.io/tree/master/images }}/media/apple-icon.png "Toy example")
 
 ### Inline css attributes
 
