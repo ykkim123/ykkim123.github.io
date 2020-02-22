@@ -17,6 +17,7 @@ noindex: false
 nofollow: false
 ---
 
+Bayesian
 $$
   Y_{i}
 $$
