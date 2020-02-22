@@ -17,7 +17,13 @@ noindex: false
 nofollow: false
 ---
 
-Bayesian
+Bayesian statistics is different from frequentist in several aspects.
+<br>To illustrate difference between frequentist and Bayesian view, consider the following situation: 
+<br>Person
+$$
+  A
+$$
+toss a coin, where
 $$
   Y_{i}
 $$
