@@ -18,75 +18,86 @@ nofollow: false
 ---
 
 Bayesian statistics is certainly one of the hottest area in modern statistics. 
-<br>To illustrate difference between frequentist and bayesian view, there is an simple example: 
+<br><br>To illustrate difference between frequentist and bayesian view, consider the following situation:   
 <br>Person A toss a coin, where
 $$
   Y_{i}
 $$
 is a random variable that represents ith result of coin toss among N observations and follows a Bernoulli distribution, i.e.,
 $$
-  Y_{i} ~ Ber(p)
+  Y_{i} \sim Ber(\theta)
 $$
-that takes either 1(head) or 0(tail). Also, assume further that a is the number of heads.  
-<br>in **frequentist view**, parameter 
+that takes a value of either 1(head) or 0(tail). 
+<br><br>In **frequentist** view, parameter 
 $$
-  p
+  \theta
 $$
-can be estimated as mle(maximum likelihood estimator), 
+can be estimated by maximum likelihood estimator(*mle*), 
 $$
   \hat{\theta} = \frac{\sum_{i=1}^{N}Y_{i}}{N},
 $$
 which maximizes likelihood function
 $$
-  P(\theta|Y)
+  P(\theta|Y).
 $$
 <br>
-![1]({{ site.urlimg }}/Bayesian-Statistics-Introduction/1.png "1")
-
-Unlike frequentist view, in **Bayesian**, since parameter
+![Frequentist]({{ site.urlimg }}/Introduction-to-Bayesian-Statistics/Frequentist.png "Frequentist")
+In **Bayesian view** however, since parameter
 $$
-  p
+  \theta
 $$
 is a random variable, the following formula can be derived:
 <br>
 $$
   P(\theta|Y)=\frac{P(Y|\theta)P(\theta)}{P(Y)} \propto P(Y|\theta)P(\theta)
 $$
-since denominator is predetermined(fixed).
 <br>
-  From the above formula, followings are called as:
+  where
 $$
-  - P(Y|\theta) : likelihood
-  - P(\theta) : prior distribution
-  - P(\theta|Y) : posterior distribution
+  P(Y|\theta)
 $$
+is likelihood function, 
+$$
+  P(\theta)
+$$
+is prior distribution, and 
+$$
+  P(\theta|Y)
+$$
+is posterior distribution.
 <br>The posterior distribution can be viewed as weighted average of likelihood function, with prior distribution functioning as weight.
 <br>Plus, if the posterior distribution is in the same probability distribution family as the prior probability distribution, 
 the prior and posterior are called conjugate distributions, and the prior is called a conjugate prior for the likelihood function. 
-<br>After some algebra, posterior distribution is:
+<br><br>After some algebra, posterior distribution is:
 $$
   P(\theta|Y) ~ Beta(a+\alpha,N-a+\beta) 
-(Here, 
+<br>(Here, 
 $$
   Beta(4,2) 
 $$
 was used as an prior distribution, since its support is [0,1].)
-
-Unlike mle, since prior distribution of 
-$$
-  \theta
-$$
-was taken into consideration, posterior distribution of theta take more right skewed form than likelihood function.
-
-<br>Of course, posterior distribution changes when 
+<br>
+![Bayesian]({{ site.urlimg }}/Introduction-to-Bayesian-Statistics/Bayesian.png "Bayesian")
+<br>Since prior distribution was taken into consideration, posterior distribution takes more right skewed form than likelihood function.
+<br><br>Posterior distribution may change because 
 1. Sample size changes
 2. Prior distribution changes
-
-<br>When sample size increases to 1000, for example, distributions take the following forms: 
-
-<br>This makes sense because the relative affect of likelihood function increases as sample size increases. 
-
-<br>Similarly, posterior distribution is more similar to prior distribution when sample size is small.
-
-<br>Then what happens if prior distribution changes? Let's assume that we don't know prior distribution of theta so just take uniform distribution as prior.
-Because prior distribution does not have much information about theta, posterior distribution derived consequently is similar to likelihood function.
+When sample size increases, the distributions take the following forms:
+<br>
+![N=1000]({{ site.urlimg }}/Introduction-to-Bayesian-Statistics/N=1000.png "N=1000")
+This makes sense because the relative affect of likelihood function increases as sample size increases.
+<br><br>Similarly, posterior distribution is more similar to prior distribution when sample size is small.
+<br>
+![N=10]({{ site.urlimg }}/Introduction-to-Bayesian-Statistics/N=10.png "N=10")
+<br><br>Then what happens if prior distribution changes? Let's assume that we don't know prior distribution of theta so just take uniformative distribution, 
+$$
+  Beta(1,1)
+$$
+as prior.
+Because prior distribution does not have much information about 
+$$
+  \theta,
+$$ 
+posterior distribution derived consequently is similar to likelihood function.
+<br>
+![Uninformative_prior]({{ site.urlimg }}/Introduction-to-Bayesian-Statistics/Uninformative_prior.png "Uninformative_prior")
