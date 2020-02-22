@@ -42,7 +42,7 @@ $$
 $$
 <br>
 ![Frequentist]({{ site.urlimg }}/Introduction-to-Bayesian-Statistics/Frequentist.png "Frequentist")
-In **Bayesian view** however, since parameter
+In **Bayesian** view however, since parameter
 $$
   \theta
 $$
@@ -73,7 +73,11 @@ $$
   P(\theta|Y) \sim Beta(a+\alpha,N-a+\beta)
 $$
 <br>
-where a is the number of heads.
+where 
+$$
+  a
+$$
+is the number of heads.
 <br>
 (Here, 
 $$
