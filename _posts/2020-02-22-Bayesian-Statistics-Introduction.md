@@ -41,7 +41,6 @@ $$
   P(\theta|Y)
 $$
 <br>
-{:.text-center img}
 ![1]({{ site.urlimg }}/Bayesian-Statistics-Introduction/1.png "1")
 
 Unlike frequentist view, in **Bayesian**, since parameter
