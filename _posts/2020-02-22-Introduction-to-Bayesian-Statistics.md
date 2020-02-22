@@ -18,8 +18,8 @@ nofollow: false
 ---
 
 Bayesian statistics is certainly one of the hottest area in modern statistics. 
-<br><br>To illustrate difference between frequentist and bayesian view, consider the following situation:   
-<br>Person A toss a coin, where
+<br><br>To illustrate difference between frequentist and Bayesian view, consider the following situation:   
+Person A toss a coin, where
 $$
   Y_{i}
 $$
