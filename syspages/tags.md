@@ -8,5 +8,5 @@ sitemap: false
 category: base
 ---
 
-Sampling
-- Reservoir Sampling
+Bayesian_Statistics
+- [Introduction to Bayesian Statistics[(https://ykkim123.github.io/blog/2020/02/20/Introduction-to-Bayesian-Statistics)
