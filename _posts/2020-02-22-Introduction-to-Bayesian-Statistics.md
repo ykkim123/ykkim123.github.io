@@ -66,11 +66,14 @@ $$
 $$
 is posterior distribution.
 <br><br>The posterior distribution can be viewed as weighted average of likelihood function, with prior distribution functioning as weight.
-<br>Plus, if the posterior distribution is in the same probability distribution family as the prior probability distribution, 
+<br><br>Plus, if the posterior distribution is in the same probability distribution family as the prior probability distribution, 
 the prior and posterior are called conjugate distributions, and the prior is called a conjugate prior for the likelihood function. 
-<br><br>After some algebra, posterior distribution is:
+<br><br>After some algebra, posterior distribution is calculated as:
 $$
-  P(\theta|Y) \sim Beta(a+\alpha,N-a+\beta) 
+  P(\theta|Y) \sim Beta(a+\alpha,N-a+\beta)
+$$
+<br>
+where a is the number of heads.
 <br>
 (Here, 
 $$
@@ -83,18 +86,18 @@ $$
 ,since its support is [0,1])
 <br>
 ![Bayesian]({{ site.urlimg }}/Introduction-to-Bayesian-Statistics/Bayesian.png "Bayesian")
-<br>Since prior distribution is taken into consideration, posterior distribution takes more right skewed form than likelihood function.
+<br>Since prior distribution is taken into consideration, maximum credibility of posterior distribution slightly deviates from 0.4.
 <br><br>Posterior distribution may change because:
 1. Sample size changes
 2. Prior distribution changes
-<br>When sample size increases, the distributions take the following forms:
+<br><br>When sample size increases, the posterior distribution becomes more similar to likelihood function:
 <br>
 ![N=1000]({{ site.urlimg }}/Introduction-to-Bayesian-Statistics/N=1000.png "N=1000")
 This makes sense because the relative affect of likelihood function increases as sample size increases.
-<br><br>Similarly, posterior distribution is more similar to prior distribution when sample size is small.
+<br><br>Similarly, posterior distribution becomes more similar to prior distribution when sample size is small.
 <br>
 ![N=10]({{ site.urlimg }}/Introduction-to-Bayesian-Statistics/N=10.png "N=10")
-<br><br>Then what happens if prior distribution changes? Let's assume that we don't know prior distribution of 
+<br>Then what happens if prior distribution changes? Let's assume that we don't know prior distribution of 
 $$
   theta
 $$
@@ -103,7 +106,7 @@ $$
   Beta(1,1)
 $$
 as prior.
-<br>Because prior distribution does not have much information about 
+<br><br>Because prior distribution does not have much information about 
 $$
   \theta,
 $$ 
