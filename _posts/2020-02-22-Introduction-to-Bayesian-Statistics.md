@@ -18,7 +18,7 @@ nofollow: false
 ---
 
 Bayesian statistics is different from frequentist in several aspects.
-<br>To illustrate difference between frequentist and Bayesian view, consider the following situation: 
+<br><br>To illustrate difference between frequentist and Bayesian view, consider the following situation: 
 <br>Person
 $$
   A
@@ -94,7 +94,7 @@ $$
 ,since its support is [0,1])
 <br>
 ![Bayesian]({{ site.urlimg }}/Introduction-to-Bayesian-Statistics/Bayesian.png "Bayesian")
-<br>Since prior distribution is taken into consideration, maximum credibility of posterior distribution slightly deviates from 0.4.
+<br>Since prior distribution is taken into consideration, maximum credibility of posterior distribution deviates from 0.4.
 <br><br>Posterior distribution may change when:
 1. Sample size changes
 2. Prior distribution changes
