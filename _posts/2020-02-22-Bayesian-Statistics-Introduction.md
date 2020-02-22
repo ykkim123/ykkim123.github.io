@@ -42,7 +42,7 @@ $$
 $$
 <br>
 {:.text-center img}
-![Toy example]({{ site.urlimg }}/Bayesian-Statistics-Introduction/1.png "Toy example")
+![1]({{ site.urlimg }}/Bayesian-Statistics-Introduction/1.png "1")
 
 Unlike frequentist view, in **Bayesian**, since parameter
 $$
