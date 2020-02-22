@@ -91,7 +91,7 @@ $$
 <br>
 ![Bayesian]({{ site.urlimg }}/Introduction-to-Bayesian-Statistics/Bayesian.png "Bayesian")
 <br>Since prior distribution is taken into consideration, maximum credibility of posterior distribution slightly deviates from 0.4.
-<br><br>Posterior distribution may change because:
+<br><br>Posterior distribution may change when:
 1. Sample size changes
 2. Prior distribution changes
 <br><br>When sample size increases, the posterior distribution becomes more similar to likelihood function:
