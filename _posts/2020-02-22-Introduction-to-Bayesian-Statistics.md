@@ -98,12 +98,12 @@ $$
 <br>
 ![N=1000]({{ site.urlimg }}/Introduction-to-Bayesian-Statistics/N=1000.png "N=1000")
 This makes sense because the relative affect of likelihood function increases as sample size increases.
-<br><br>Similarly, posterior distribution becomes more similar to prior distribution when sample size is small.
+<br><br>Similarly, posterior distribution becomes more similar to prior distribution when sample size decreases.
 <br>
 ![N=10]({{ site.urlimg }}/Introduction-to-Bayesian-Statistics/N=10.png "N=10")
 <br>Then what happens if prior distribution changes? Let's assume that we don't know prior distribution of 
 $$
-  theta
+  \theta
 $$
 so just take uniformative distribution, 
 $$
