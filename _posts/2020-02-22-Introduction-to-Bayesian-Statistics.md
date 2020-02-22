@@ -2,7 +2,7 @@
 layout: post
 title: "Introduction to Bayesian Statistics"
 date: "2020-02-22"
-description: "Brief introduction to Bayesian statistics"
+description: "This post is a brief introduction to Bayesian statistics. Specifically, it deals with different between Bayesian and frequentist, and how posterior distribution changes when sample size and prior distribution change."
 category: 
   - featured
 # tags will also be used as html meta keywords.
