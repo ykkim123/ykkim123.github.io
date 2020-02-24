@@ -7,7 +7,7 @@ category:
   - featured
 # tags will also be used as html meta keywords.
 tags:
-  - Bayesian_statistics
+  - Bayesian
 show_meta: true
 comments: true
 mathjax: true
@@ -91,7 +91,7 @@ was used as an prior distribution of
 $$
   \theta
 $$
-,since its support is [0,1])
+, as an example)
 <br>
 ![Bayesian]({{ site.urlimg }}/Introduction-to-Bayesian-Statistics/Bayesian.png "Bayesian")
 <br>Since prior distribution is taken into consideration, maximum credibility of posterior distribution deviates from 0.4.
