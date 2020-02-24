@@ -8,5 +8,5 @@ sitemap: false
 category: base
 ---
 
-Bayesian_Statistics
+Bayesian
 - [Introduction to Bayesian Statistics](https://ykkim123.github.io/blog/2020/02/22/Introduction-to-Bayesian-Statistics)
