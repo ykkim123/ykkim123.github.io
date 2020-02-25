@@ -32,10 +32,10 @@ $$
 $$
 <br>
 $$
-  \hat{\sigma}^{2} = Y^{T}(I-H)Y/rank(I-H) (H=(X^{T}X)^{-1}X^{T} is a projection matrix)
+  \hat{\sigma}^{2} = Y^{T}(I-H)Y/rank(I-H) (H=(X^{T}X)^{-1}X^{T} ; projection matrix)
 $$
 <br>
-respectively. Also, sampling distribution of 
+respectively. Also, the sampling distribution of 
 $$
   \hat{\beta} 
 $$
@@ -55,7 +55,7 @@ $$
 . To calculate posterior distribution, there are several prior distributions commonly used: 
 <br>
 $$
-  - p(\beta_{k})\propto 1
+  1. p(\beta_{k})\propto 1
 $$
 <br>
 $$
