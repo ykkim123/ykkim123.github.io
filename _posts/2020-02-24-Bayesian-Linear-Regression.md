@@ -20,21 +20,21 @@ nofollow: false
 
 Linear regression is one of the most frequently used statistical methods because of its usefulness in interpretation. 
 <br>In **frequentist**'s view, linear regression is formulated as:
-<br>
+<br><br>
 $$
   Y_{i}\sim N(X_{i}^{T}\beta ,\sigma ^{2})
 $$
-<br>
+<br><br>
 and paremeters are estimated as 
-<br>
+<br><br>
 $$
   \hat{\beta} = (X^{T}X)^{-1}X^{T}Y
 $$
-<br>
+<br><br>
 $$
   \hat{\sigma}^{2} = Y^{T}(I-H)Y/rank(I-H)
 $$
-<br>
+<br><br>
 where 
 $$
   H=(X^{T}X)^{-1}X^{T} 
@@ -48,6 +48,8 @@ is:
 $$
   \hat{\beta}\sim N((X^{T}X)^{-1}X^{T}Y,\sigma^{2}(X^{T}X)^{-1}) 
 $$
+
+
 <br><br><br>In **Bayesian** approach, posterior distribution
 $$
   P(\beta|Y,X)
@@ -70,12 +72,14 @@ $$
   \cdot \beta_{k}\propto Laplace(0,\lambda)
 $$
 <br><br><br>
+
+
 For the first prior, posterior distribution is derived as: 
 <br>
 $$
   P(\beta|Y,X) 
 $$
-<br>
+<br><br>
 $$
   = \frac{P(Y|\beta,X)P(X|\beta)P(\beta)}{P(Y,X)}
 $$
@@ -117,23 +121,26 @@ which is the same as the sampling distribution of
 $$
   \hat{\beta}
 $$
-. The result is not surprising, since prior distribution is extremely noninformative. 
+. The result is not surprising, since prior distribution is extremely noninformative.
+
+
 <br><br><br>Now, let's take
 $$
   N(0,\lambda)
 $$
-as prior distribution.
-<br>After the same process, 
+as prior. After the same process,
+<br><br>
 $$
   P(\beta|Y,X) \propto exp(-\frac{(Y-X\beta)^{T}(Y-X\beta)} {2\sigma^{2}})\times exp(-\frac{\beta^{T}\beta}{2\lambda})
 $$
-<br>
-After taking logarithm, it takes the following form:
-<br>
+,<br><br>
+ whose logarithm takes the following form:
+<br><br>
 $$ 
   -\frac{(Y-X\beta)^{T}(Y-X\beta)} {2\sigma^{2}}-\frac{\beta^{T}\beta}{2\lambda}
 $$
-<br>, which is the similar form as the loss function of ridge regression, with 
+<br><br>
+This is the similar to the loss function of ridge regression, with 
 $$
   \lambda
 $$
