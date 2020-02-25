@@ -55,15 +55,15 @@ $$
 . To calculate posterior distribution, there are several prior distributions commonly used: 
 <br>
 $$
-  1. p(\beta_{k})\propto 1
+  P(\beta_{k})\propto 1
 $$
 <br>
 $$
-  - \beta_{k}\propto N(0,\lambda)
+  \beta_{k}\propto N(0,\lambda)
 $$
 <br>
 $$
-  - \beta_{k}\propto Laplace(0,\lambda)
+  \beta_{k}\propto Laplace(0,\lambda)
 $$
 <br><br>
 For the first prior distribution, posterior distribution is derived as: 
