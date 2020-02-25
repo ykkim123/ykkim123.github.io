@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Introduction to Bayesian Statistics"
+title: "Bayesian Linear Regression"
 date: "2020-02-24"
 description: "This post is about linear regression from Bayesian approach; specifically, it's about linear regression from empirical Bayesian approach using different prior distributions."
 category: 
@@ -31,6 +31,7 @@ $$
   \hat{\beta} = (X^{T}X)^{-1}X^{T}Y
 $$
 <br>
+$$
   \hat{\sigma}^{2} = Y^{T}(I-H)Y/rank(I-H) (H=(X^{T}X)^{-1}X^{T} is a projection matrix)
 $$
 <br>
