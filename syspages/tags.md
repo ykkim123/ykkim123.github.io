@@ -8,5 +8,10 @@ sitemap: false
 category: base
 ---
 
-Bayesian
+## Bayesian
 - [Introduction to Bayesian Statistics](https://ykkim123.github.io/blog/2020/02/22/Introduction-to-Bayesian-Statistics)
+- [Bayesian Linear Regression](https://ykkim123.github.io/blog/2020/02/24/Bayesian-Linear-Regression)
+
+
+## Regression
+- [Bayesian Linear Regression](https://ykkim123.github.io/blog/2020/02/24/Bayesian-Linear-Regression)
