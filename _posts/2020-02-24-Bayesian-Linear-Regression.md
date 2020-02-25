@@ -2,7 +2,7 @@
 layout: post
 title: "Introduction to Bayesian Statistics"
 date: "2020-02-24"
-description: "This post is about linear regression from Bayesian approach. Specifically, it deals with standard linear regression logistic regression using posterior distribution"
+description: "This post is about linear regression from Bayesian approach; specifically, it's about linear regression from empirical Bayesian approach using different prior distributions."
 category: 
   - featured
 # tags will also be used as html meta keywords.
@@ -18,22 +18,14 @@ noindex: false
 nofollow: false
 ---
 
-Linear regression is one of the most frequently used statistical methods because of its usefulness to interpret. 
-In frequentist's view, linear regression is formulated as:
+Linear regression is one of the most frequently used statistical methods because of its usefulness in interpretation. 
+<br>In **frequentist**'s view, linear regression is formulated as:
 <br>
 $$
   Y_{i}\sim N(X_{i}^{T}\beta ,\sigma ^{2})
 $$
 <br>
-and paremeter
-$$
-  \beta
-$$
-and
-$$
-  \sigma^{2}
-$$
-are estimated as 
+and paremeters are estimated as 
 <br>
 $$
   \hat{\beta} = (X^{T}X)^{-1}X^{T}Y
@@ -42,11 +34,16 @@ $$
   \hat{\sigma}^{2} = Y^{T}(I-H)Y/rank(I-H) (H=(X^{T}X)^{-1}X^{T} is a projection matrix)
 $$
 <br>
-respectively, and 
+respectively. Also, sampling distribution of 
+$$
+  \hat{\beta} 
+$$
+is:
+<br>
 $$
   \hat{\beta}\sim N((X^{T}X)^{-1}X^{T}Y,\sigma^{2}(X^{T}X)^{-1}) 
 $$
-<br>In Bayesian approach, posterior distribution
+<br><br>In **Bayesian** approach, posterior distribution
 $$
   P(\beta|Y,X)
 $$
@@ -58,34 +55,51 @@ $$
 <br>
 $$
   - p(\beta_{k})\propto 1
+$$
+<br>
+$$
   - \beta_{k}\propto N(0,\lambda)
+$$
+<br>
+$$
   - \beta_{k}\propto Laplace(0,\lambda)
 $$
+<br><br>
 For the first prior distribution, posterior distribution is derived as: 
 $$
   P(\beta|Y,X) = \frac{P(Y,X,\beta)}{P(Y,X)}
-  <br> = \frac{P(Y|\beta,X)P(X|\beta)P(\beta)}{P(Y,X)}
-  <br> \propto P(Y|\beta,X)P(\beta)
-  <br> = L(\beta)\prod_{k=0}^{p}P(\beta_{k}) (assume Cov(\beta_{i},\beta_{j})=0 for all i,j)
-  <br> = L(\beta)
-  <br> \propto exp(-\frac{(Y-X\beta)^{T}(Y-X\beta)} {2\sigma^{2}})
 $$
 <br>
-Thus, proportional of 
 $$
-  \beta|Y,X
+  = \frac{P(Y|\beta,X)P(X|\beta)P(\beta)}{P(Y,X)}
 $$
-  follows 
+<br> 
 $$
-  \beta|Y,X \propto N((X^{T}X)^{-1}X^{T}Y,\sigma^{2}(X^{T}X)^{-1})
+  = \propto P(Y|\beta,X)P(\beta)
+$$  
+<br> 
 $$
-, which is the same as sampling distribution of
+  = L(\beta)\prod_{k=0}^{p}P(\beta_{k}) (assume Cov(\beta_{i},\beta_{j})=0 for all i,j)
+$$  
+<br> 
+$$
+  = L(\beta)
+$$
+<br>
+$$
+  \propto exp(-\frac{(Y-X\beta)^{T}(Y-X\beta)} {2\sigma^{2}})
+$$
+<br> 
+$$
+  \propto N((X^{T}X)^{-1}X^{T}Y,\sigma^{2}(X^{T}X)^{-1})
+$$
+, <br>which is the same as sampling distribution of
 $$
   \hat{\beta}
 $$
 .
 <br>The result is not surprising, since prior distribution is extremely noninformative. 
-<br>Now, let's take
+<br><br>Now, let's take
 $$
   N(0,\lambda)
 $$
@@ -119,17 +133,16 @@ $$
   \hat{\beta}
 $$
 in ridge regression.
-<br>Now, let's take
+<br>As the third prior distribution, let's take
 $$
   \Laplace(0,\lambda)
 $$
-as prior distribution.
-<br>After the same process, 
+as prior distribution. Similarly, 
 $$
   P(\beta|Y,X) \propto exp(-\frac{(Y-X\beta)^{T}(Y-X\beta)} {2\sigma^{2}})\times exp(-\frac{\sum_{k=0}^{p}\left | \beta_{k} \right |}{2\lambda})
 $$
 <br>
-After taking logarithm, it takes the following form:
+After taking logarithm, following is derived:
 <br>
 $$ 
   -\frac{(Y-X\beta)^{T}(Y-X\beta)} {2\sigma^{2}}-\frac{\sum_{k=0}^{p}\left | \beta_{k} \right |}{2\lambda}
@@ -140,47 +153,47 @@ $$
 $$
 controlling the degree of L1 regularization. 
 <br><br>
-Like lasso regression, there is no closed form expression for a posterior distribution.
+In this case, there is no closed form expression for a posterior distribution, just like lasso regression.
 To sample
 $$
   \beta
 $$
-from above conditional distribution, sampling methods(e.g. Metropolis-Hastings algorithm, 
-importance sampling) should be employed.
-<br>Then, how does posterior distribution works when predicting new data 
+from the posterior distribution, sampling methods(e.g. Metropolis-Hastings algorithm, importance sampling) should be employed.
+<br><br>Then, let's check if regularization actually works. In this example, CO2 data from R was used. 
+<br>Models compared are: 
+<br>
+$$  
+  - model with no regularization(constant prior distribution, model1)
+$$
+<br>
+$$
+  - model with regularization parameter \lambda =0.1, 10, 100000 (normal prior distribution, model2,3,4 respectively)
+$$
+<br><br>
+The following table shows its result: 
+<br>
+Compared to model1, there is significant effect of regularization in model2, 
+making parameters significantly differ from ones from model with no regularization. 
+On the other hand, there is little effect of regularization in model4.
+<br><br>Then, how does posterior distribution works when predicting new data 
 $$
   Y_{N+1}
 $$
 ? In this post, Monte Carlo method will be used to handle this problem. In other words, 
+<br>
 $$
   \hat{Y}_{N+1} \approx \frac{1}{n}\sum_{i=1}^{n}\tilde{Y}^{(i)}_{N+1}
 $$
-<br>where
+where
+<br>
 $$
   \tilde{Y}^{(i)}_{N+1} \sim N(Y_{N+1}|\mathbf{X},X_{N+1},\mathbf{\beta}^{(i)})
 $$
-<br><br>In previous example, *mle* of 
-$$
-  \sigma^{2}
-$$
-was used to find posterior distribution of 
-$$
-  \beta
-$$
-(empirical Bayesian approach). But it's conceptually more appropriate to find joint posterior distribution of
-$$
-  \beta, \sigma^{2}
-$$
-. In this case, there are also several prior distributions commonly used: 
-$$
-  - P(\beta,\sigma^{2}) \propto \frac{1}{\sigma^{2}}
-$$
-$$
-  - P(\beta|\sigma^{2})P(\sigma^{2}) = N(\mu,\sigma^{2}\sum) \times\ InvGamma(\nu,\rho)
-$$
-$$
-  - P(\beta|\sigma^{2},\rho)P(\sigma^{2}|\rho)P(\rho) = N(\mu,g\sigma^{2}(X^{T}X)^{-1}) \times InvGamma(\sigma^{2};a,b) \times InvGamma(g;c,d) (Zellner's g-prior)
-$$
+<br><br>
+Using CO2 data continuously, let 83th and 84th data be test data and all other remaining be train data. 
+Followings are prediction result of different models from above example.
+
+
 
 
 
