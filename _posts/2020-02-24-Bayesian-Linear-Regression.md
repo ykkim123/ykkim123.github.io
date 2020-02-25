@@ -39,7 +39,7 @@ where
 $$
   H=(X^{T}X)^{-1}X^{T} 
 $$
-is a projection matrix. Also, the sampling distribution of
+is a projection matrix. Also, sampling distribution of
 $$
   \hat{\beta} 
 $$
@@ -102,18 +102,26 @@ $$
 $$
 for all i,j.
 <br><br>
-Thus, proportionanl of 
+Thus, proportional of 
 $$
   \beta|Y,X
 $$
 follows
 <br><br>
 $$
-  \beta|Y,X \propto N((X^{T}X)^{-1}X^{T}Y,\sigma^{2}(X^{T}X)^{-1})
+  Prop(\beta|Y,X) \propto N((X^{T}X)^{-1}X^{T}Y,\sigma^{2}(X^{T}X)^{-1})
 $$
 , 
 <br><br>
-which is the same as the sampling distribution of
+where 
+$$
+  Prop(\beta|Y,X)
+$$
+refers to the proportional of 
+$$
+  \beta|Y,X
+$$
+. This is the same as the sampling distribution of
 $$
   \hat{\beta}
 $$
@@ -147,19 +155,10 @@ $$
   follows
 <br><br>
 $$
-  P_{prop}(\beta|Y,X) \sim N((X^{T}X+\frac{\sigma^{2}}{\lambda}I)^{-1}X^{T}Y,(\sigma^{-2}(X^{T}X)+\lambda^{-1}I)^{-1})
+  Prop(\beta|Y,X) \sim N((X^{T}X+\frac{\sigma^{2}}{\lambda}I)^{-1}X^{T}Y,(\sigma^{-2}(X^{T}X)+\lambda^{-1}I)^{-1})
 $$
 <br><br>
-where 
-$$
-  P_{prop}(\beta|Y,X)
-$$ 
-refers to proportional of 
-$$
-  P(\beta|Y,X)
-$$
-.
-This is the same form as sampling distribution of
+, which is the same form as sampling distribution of
 $$
   \hat{\beta}
 $$
@@ -230,7 +229,7 @@ $$
 $$
 <br><br>
 Let 83th and 84th data be test data and all the other remainings be train data. 
-Followings are prediction result of model1.
+Followings are prediction result of model1
 ![Prediction]({{ site.urlimg }}/Bayesian-Linear-Regression/Prediction.png "Prediction")
 <br>
 where blue lines indicate true values. It seems that prediction result is not that good in this case.  
