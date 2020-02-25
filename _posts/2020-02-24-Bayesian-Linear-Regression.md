@@ -71,6 +71,7 @@ $$
 $$
 <br><br>
 For the first prior, posterior distribution is derived as: 
+<br>
 $$
   P(\beta|Y,X) 
 $$
@@ -88,16 +89,14 @@ $$
 $$  
 <br>
 $$
-  (assume Cov(\beta_{i},\beta_{j})=0 for all i,j)
-$$
-<br>
-$$
   = L(\beta)
 $$
 <br>
 $$
   \propto exp(-\frac{(Y-X\beta)^{T}(Y-X\beta)} {2\sigma^{2}})
 $$
+<br>
+where second equality holds only if Cov(\beta_{i},\beta_{j})=0 for all i,j.
 <br><br>
 Thus, proportionanl of 
 $$
@@ -108,8 +107,9 @@ follows
 $$
   \beta|Y,X \propto N((X^{T}X)^{-1}X^{T}Y,\sigma^{2}(X^{T}X)^{-1})
 $$
-<br><br>
-which is the same as sampling distribution of
+, 
+<br>
+which is the same as the sampling distribution of
 $$
   \hat{\beta}
 $$
