@@ -131,7 +131,7 @@ $$
  whose logarithm takes the following form:
 <br><br>
 $$ 
-  log(P(\beta|Y,X)) -\frac{(Y-X\beta)^{T}(Y-X\beta)} {2\sigma^{2}}-\frac{\beta^{T}\beta}{2\lambda}
+  log(P(\beta|Y,X)) \propto -\frac{(Y-X\beta)^{T}(Y-X\beta)} {2\sigma^{2}}-\frac{\beta^{T}\beta}{2\lambda}
 $$
 <br><br>
 This is the similar to the loss function of ridge regression, with 
@@ -145,23 +145,35 @@ $$
   \beta|Y,X
 $$
   follows
+<br><br>
 $$
-  (X^{T}X+\frac{\sigma^{2}}{\lambda}I)^{-1}X^{T}Y,(\sigma^{-2}(X^{T}X)+\lambda^{-1}I)^{-1}
+  prop(P(\beta|Y,X) \sim N((X^{T}X+\frac{\sigma^{2}}{\lambda}I)^{-1}X^{T}Y,(\sigma^{-2}(X^{T}X)+\lambda^{-1}I)^{-1})
 $$
-, which is the same as sampling distribution of
+,<br><br>
+where 
+$$
+  prop(P(\beta|Y,X)
+$$ 
+refers to proportional of 
+$$
+  P(\beta|Y,X)
+$$
+.
+This is the same form as sampling distribution of
 $$
   \hat{\beta}
 $$
 in ridge regression.
-<br>As the third prior distribution, let's take
+<br><br><br>As the third prior distribution, let's take
 $$
-  \Laplace(0,\lambda)
+  Laplace(0,\lambda)
 $$
-as prior distribution. Similarly, 
+as prior distribution. Similarly,
+<br><br>
 $$
   P(\beta|Y,X) \propto exp(-\frac{(Y-X\beta)^{T}(Y-X\beta)} {2\sigma^{2}})\times exp(-\frac{\sum_{k=0}^{p}\left | \beta_{k} \right |}{2\lambda})
 $$
-<br>
+<br><br>
 After taking logarithm, following is derived:
 <br>
 $$ 
