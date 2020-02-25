@@ -48,7 +48,7 @@ is:
 $$
   \hat{\beta}\sim N((X^{T}X)^{-1}X^{T}Y,\sigma^{2}(X^{T}X)^{-1}) 
 $$
-<br><br>In **Bayesian** approach, posterior distribution
+<br><br><br>In **Bayesian** approach, posterior distribution
 $$
   P(\beta|Y,X)
 $$
@@ -69,7 +69,7 @@ $$
 $$
   \cdot \beta_{k}\propto Laplace(0,\lambda)
 $$
-<br><br>
+<br><br><br>
 For the first prior, posterior distribution is derived as: 
 <br>
 $$
@@ -96,7 +96,11 @@ $$
   \propto exp(-\frac{(Y-X\beta)^{T}(Y-X\beta)} {2\sigma^{2}})
 $$
 <br>
-where second equality holds only if Cov(\beta_{i},\beta_{j})=0 for all i,j.
+where second equality holds only if 
+$$
+  Cov(\beta_{i},\beta_{j})=0 
+$$
+for all i,j.
 <br><br>
 Thus, proportionanl of 
 $$
@@ -114,7 +118,7 @@ $$
   \hat{\beta}
 $$
 . The result is not surprising, since prior distribution is extremely noninformative. 
-<br><br>Now, let's take
+<br><br><br>Now, let's take
 $$
   N(0,\lambda)
 $$
