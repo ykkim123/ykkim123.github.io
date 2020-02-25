@@ -70,8 +70,6 @@ $$
   \cdot \beta_{k}\propto Laplace(0,\lambda)
 $$
 <br><br><br>
-
-
 For the first prior, posterior distribution is derived as: 
 <br>
 $$
@@ -81,7 +79,7 @@ $$
 $$
   = \frac{P(Y|\beta,X)P(X|\beta)P(\beta)}{P(Y,X)}
 $$
-<br> 
+<br><br>
 $$
   \propto P(Y|\beta,X)P(\beta)
 $$  
@@ -97,7 +95,7 @@ $$
 $$
   \propto exp(-\frac{(Y-X\beta)^{T}(Y-X\beta)} {2\sigma^{2}})
 $$
-<br>
+<br><br>
 where second equality holds only if 
 $$
   Cov(\beta_{i},\beta_{j})=0 
@@ -109,24 +107,22 @@ $$
   \beta|Y,X
 $$
 follows
-<br>
+<br><br>
 $$
   \beta|Y,X \propto N((X^{T}X)^{-1}X^{T}Y,\sigma^{2}(X^{T}X)^{-1})
 $$
 , 
-<br>
+<br><br>
 which is the same as the sampling distribution of
 $$
   \hat{\beta}
 $$
 . The result is not surprising, since prior distribution is extremely noninformative.
-
-
 <br><br><br>Now, let's take
 $$
   N(0,\lambda)
 $$
-as prior. After the same process,
+as prior. After the same process
 <br><br>
 $$
   P(\beta|Y,X) \propto exp(-\frac{(Y-X\beta)^{T}(Y-X\beta)} {2\sigma^{2}})\times exp(-\frac{\beta^{T}\beta}{2\lambda})
@@ -135,7 +131,7 @@ $$
  whose logarithm takes the following form:
 <br><br>
 $$ 
-  -\frac{(Y-X\beta)^{T}(Y-X\beta)} {2\sigma^{2}}-\frac{\beta^{T}\beta}{2\lambda}
+  log(P(\beta|Y,X)) -\frac{(Y-X\beta)^{T}(Y-X\beta)} {2\sigma^{2}}-\frac{\beta^{T}\beta}{2\lambda}
 $$
 <br><br>
 This is the similar to the loss function of ridge regression, with 
