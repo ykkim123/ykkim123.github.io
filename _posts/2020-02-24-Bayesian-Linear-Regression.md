@@ -149,7 +149,7 @@ $$
 $$
   prop(P(\beta|Y,X) \sim N((X^{T}X+\frac{\sigma^{2}}{\lambda}I)^{-1}X^{T}Y,(\sigma^{-2}(X^{T}X)+\lambda^{-1}I)^{-1})
 $$
-,<br><br>
+<br><br>
 where 
 $$
   prop(P(\beta|Y,X)
@@ -164,33 +164,34 @@ $$
   \hat{\beta}
 $$
 in ridge regression.
-<br><br><br>As the third prior distribution, let's take
+<br><br><br>As the third prior, let's take
 $$
   Laplace(0,\lambda)
 $$
-as prior distribution. Similarly,
+. Similarly,
 <br><br>
 $$
   P(\beta|Y,X) \propto exp(-\frac{(Y-X\beta)^{T}(Y-X\beta)} {2\sigma^{2}})\times exp(-\frac{\sum_{k=0}^{p}\left | \beta_{k} \right |}{2\lambda})
 $$
 <br><br>
-After taking logarithm, following is derived:
-<br>
+and after taking logarithm, following is derived:
+<br><br>
 $$ 
   -\frac{(Y-X\beta)^{T}(Y-X\beta)} {2\sigma^{2}}-\frac{\sum_{k=0}^{p}\left | \beta_{k} \right |}{2\lambda}
 $$
-<br>, which is the similar form as the loss function of lasso regression, with 
+,<br><br>
+which is similar to the loss function of lasso regression, with 
 $$
   \lambda
 $$
 controlling the degree of L1 regularization. 
 <br><br>
-In this case, there is no closed form expression for a posterior distribution, just like lasso regression.
-To sample
+In this case, there is no closed form expression for posterior distribution, just like lasso regression.
+Threrfore, to sample
 $$
   \beta
 $$
-from the posterior distribution, sampling methods(e.g. Metropolis-Hastings algorithm, importance sampling) should be employed.
+from the posterior distribution, sampling methods such as importance sampling and rejection sampling should be employed.
 <br><br>Then, let's check if regularization actually works. In this example, CO2 data from R was used. 
 <br>Models compared are: 
 <br>
