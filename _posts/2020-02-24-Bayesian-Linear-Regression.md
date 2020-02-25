@@ -177,7 +177,7 @@ $$
 and after taking logarithm, following is derived:
 <br><br>
 $$ 
-  -\frac{(Y-X\beta)^{T}(Y-X\beta)} {2\sigma^{2}}-\frac{\sum_{k=0}^{p}\left | \beta_{k} \right |}{2\lambda}
+  prop(P(\beta|Y,X) \propto -\frac{(Y-X\beta)^{T}(Y-X\beta)} {2\sigma^{2}}-\frac{\sum_{k=0}^{p}\left | \beta_{k} \right |}{2\lambda}
 $$
 ,<br><br>
 which is similar to the loss function of lasso regression, with 
@@ -234,8 +234,7 @@ Followings are prediction result of model1.
 ![Prediction]({{ site.urlimg }}/Bayesian-Linear-Regression/Prediction.png "Prediction")
 <br>
 where blue lines indicate true values. It seems that prediction result is not that good in this case.  
-
-
-
-
-
+<br><br><br>**Summary**
+<br>In this post, followings were covered: 
+- Bayesian linear regression using different prior distributions
+- Prediction using Bayesian linear regression model
