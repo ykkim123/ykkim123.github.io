@@ -32,12 +32,14 @@ $$
 $$
 <br>
 $$
-  \hat{\sigma}^{2} = Y^{T}(I-H)Y/rank(I-H) (H=(X^{T}X)^{-1}X^{T} ; projection matrix)
+  \hat{\sigma}^{2} = Y^{T}(I-H)Y/rank(I-H)
 $$
 <br>
 where 
 $$
-  H=(X^{T}X)^{-1}X^{T} is a projection matrix. Also, the sampling distribution of 
+  H=(X^{T}X)^{-1}X^{T} 
+$$
+is a projection matrix. Also, the sampling distribution of
 $$
   \hat{\beta} 
 $$
