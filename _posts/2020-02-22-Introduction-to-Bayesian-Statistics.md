@@ -2,7 +2,7 @@
 layout: post
 title: "Introduction to Bayesian Statistics"
 date: "2020-02-22"
-description: "This post is a brief introduction to Bayesian statistics. Specifically, it's about difference between Bayesian and frequentist, and how posterior distribution changes when sample size and prior distribution change."
+description: "This post is a brief introduction to Bayesian statistics; specifically, it's about difference between Bayesian and frequentist, and how posterior distribution changes when sample size and prior distribution change."
 category: 
   - featured
 # tags will also be used as html meta keywords.
@@ -27,11 +27,12 @@ $$
   Y_{i}
 $$
 is a random variable that represents ith result of coin toss and takes a value of either 1(head) or 0(tail). Also, assume
-<br>
+<br><br>
 $$
   Y_{i} \sim Ber(\theta)
 $$ 
-<br><br>In **frequentist** view, 
+<br><br><br>
+In **frequentist** view, 
 $$
   \theta
 $$
@@ -86,17 +87,18 @@ is the number of heads.
 $$
   Beta(4,2) 
 $$
-was used as an prior distribution of 
+was used as a prior distribution of 
 $$
   \theta
 $$
 )<br>
 ![Bayesian]({{ site.urlimg }}/Introduction-to-Bayesian-Statistics/Bayesian.png "Bayesian")
 <br>Since prior distribution is taken into consideration, maximum credibility of posterior distribution deviates from 0.4.
-<br><br>Posterior distribution may change when:
-1. Sample size changes
-2. Prior distribution changes
-<br><br>When sample size increases, the posterior distribution becomes more similar to likelihood function:
+<br><br><br>Posterior distribution may change when:
+- Sample size changes
+- Prior distribution changes
+
+<br>When sample size increases, the posterior distribution becomes more similar to likelihood function:
 <br>
 ![N=1000]({{ site.urlimg }}/Introduction-to-Bayesian-Statistics/N=1000.png "N=1000")
 This makes sense because the relative affect of likelihood function increases as sample size increases.
@@ -122,4 +124,4 @@ posterior distribution derived consequently is similar to likelihood function.
 <br><br>**Summary**
 <br>In this post, followings are covered: 
 - Difference between frequentist and Bayesian
-- How posterior distribution changes as other conditions change
+- How posterior distribution changes as sample size and prior distribution change
