@@ -122,6 +122,6 @@ posterior distribution derived consequently is similar to likelihood function.
 <br>
 ![Uninformative_prior]({{ site.urlimg }}/Introduction-to-Bayesian-Statistics/Uninformative_prior.png "Uninformative_prior")
 <br><br>**Summary**
-<br>In this post, followings are covered: 
+<br>In this post, followings were covered: 
 - Difference between frequentist and Bayesian
 - How posterior distribution changes as sample size and prior distribution change
