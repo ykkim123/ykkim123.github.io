@@ -44,12 +44,10 @@ $$
   \hat{\beta} 
 $$
 is:
-<br>
+<br><br>
 $$
   \hat{\beta}\sim N((X^{T}X)^{-1}X^{T}Y,\sigma^{2}(X^{T}X)^{-1}) 
 $$
-
-
 <br><br><br>In **Bayesian** approach, posterior distribution
 $$
   P(\beta|Y,X)
