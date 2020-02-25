@@ -221,14 +221,19 @@ $$
 ? In this post, Monte Carlo method will be used to handle this problem. In other words, 
 <br><br>
 $$
-  \hat{Y}_{N+1} \approx \frac{1}{n}\sum_{i=1}^{n}\tilde{Y}^{(i)}_{N+1} where \tilde{Y}^{(i)}_{N+1} \sim N(Y_{N+1}|\mathbf{X},X_{N+1},\mathbf{\beta}^{(i)})
+  \hat{Y}_{N+1} \approx \frac{1}{n}\sum_{i=1}^{n}\tilde{Y}^{(i)}_{N+1} 
+$$
+<br><br>
+where
+$$
+  \tilde{Y}^{(i)}_{N+1} \sim N(Y_{N+1}|\mathbf{X},X_{N+1},\mathbf{\beta}^{(i)})
 $$
 <br><br>
 Let 83th and 84th data be test data and all the other remainings be train data. 
 Followings are prediction result of model1.
 ![Prediction]({{ site.urlimg }}/Bayesian-Linear-Regression/Prediction.png "Prediction")
 <br>
-where blue lines indicate true values. 
+where blue lines indicate true values. It seems that prediction result is not that good in this case.  
 
 
 
