@@ -35,7 +35,9 @@ $$
   \hat{\sigma}^{2} = Y^{T}(I-H)Y/rank(I-H) (H=(X^{T}X)^{-1}X^{T} ; projection matrix)
 $$
 <br>
-respectively. Also, the sampling distribution of 
+where 
+$$
+  H=(X^{T}X)^{-1}X^{T} is a projection matrix. Also, the sampling distribution of 
 $$
   \hat{\beta} 
 $$
@@ -53,22 +55,22 @@ $$
   \beta
 $$
 . To calculate posterior distribution, there are several prior distributions commonly used: 
-<br>
+<br><br>
 $$
-  P(\beta_{k})\propto 1
-$$
-<br>
-$$
-  \beta_{k}\propto N(0,\lambda)
+  \cdot P(\beta_{k})\propto 1
 $$
 <br>
 $$
-  \beta_{k}\propto Laplace(0,\lambda)
+  \cdot \beta_{k}\propto N(0,\lambda)
+$$
+<br>
+$$
+  \cdot \beta_{k}\propto Laplace(0,\lambda)
 $$
 <br><br>
-For the first prior distribution, posterior distribution is derived as: 
+For the first prior, posterior distribution is derived as: 
 $$
-  P(\beta|Y,X) = \frac{P(Y,X,\beta)}{P(Y,X)}
+  P(\beta|Y,X) 
 $$
 <br>
 $$
@@ -76,13 +78,17 @@ $$
 $$
 <br> 
 $$
-  = \propto P(Y|\beta,X)P(\beta)
+  \propto P(Y|\beta,X)P(\beta)
 $$  
 <br> 
 $$
-  = L(\beta)\prod_{k=0}^{p}P(\beta_{k}) (assume Cov(\beta_{i},\beta_{j})=0 for all i,j)
+  = L(\beta)\prod_{k=0}^{p}P(\beta_{k}) 
 $$  
-<br> 
+<br>
+$$
+  (assume Cov(\beta_{i},\beta_{j})=0 for all i,j)
+$$
+<br>
 $$
   = L(\beta)
 $$
@@ -90,16 +96,22 @@ $$
 $$
   \propto exp(-\frac{(Y-X\beta)^{T}(Y-X\beta)} {2\sigma^{2}})
 $$
-<br> 
+<br><br>
+Thus, proportionanl of 
 $$
-  \propto N((X^{T}X)^{-1}X^{T}Y,\sigma^{2}(X^{T}X)^{-1})
+  \beta|Y,X
 $$
-, <br>which is the same as sampling distribution of
+follows
+<br>
+$$
+  \beta|Y,X \propto N((X^{T}X)^{-1}X^{T}Y,\sigma^{2}(X^{T}X)^{-1})
+$$
+<br><br>
+which is the same as sampling distribution of
 $$
   \hat{\beta}
 $$
-.
-<br>The result is not surprising, since prior distribution is extremely noninformative. 
+. The result is not surprising, since prior distribution is extremely noninformative. 
 <br><br>Now, let's take
 $$
   N(0,\lambda)
