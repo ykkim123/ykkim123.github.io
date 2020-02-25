@@ -2,7 +2,7 @@
 layout: post
 title: "Introduction to Bayesian Statistics"
 date: "2020-02-22"
-description: "This post is a brief introduction to Bayesian statistics. Specifically, it deals with difference between Bayesian and frequentist, and how posterior distribution changes when sample size and prior distribution change."
+description: "This post is a brief introduction to Bayesian statistics. Specifically, it's about difference between Bayesian and frequentist, and how posterior distribution changes when sample size and prior distribution change."
 category: 
   - featured
 # tags will also be used as html meta keywords.
@@ -17,9 +17,8 @@ noindex: false
 nofollow: false
 ---
 
-Bayesian statistics is different from frequentist in several aspects.
-<br><br>To illustrate difference between frequentist and Bayesian view, consider the following situation: 
-<br>Person
+Bayesian statistics is different from frequentist in several aspects. To illustrate difference between frequentist and Bayesian view, consider the following situation: 
+<br><br>Person
 $$
   A
 $$
@@ -27,35 +26,37 @@ toss a coin, where
 $$
   Y_{i}
 $$
-is a random variable that represents ith result of coin toss among N observations and follows a Bernoulli distribution, i.e.,
+is a random variable that represents ith result of coin toss and takes a value of either 1(head) or 0(tail). Also, assume
+<br>
 $$
   Y_{i} \sim Ber(\theta)
-$$
-that takes a value of either 1(head) or 0(tail). 
-<br><br>In **frequentist** view, parameter 
+$$ 
+<br><br>In **frequentist** view, 
 $$
   \theta
 $$
 can be estimated by maximum likelihood estimator(*mle*), 
+<br><br>
 $$
   \hat{\theta} = \frac{\sum_{i=1}^{N}Y_{i}}{N},
 $$
+<br><br>
 which maximizes likelihood function
 $$
   P(\theta|Y).
 $$
 <br>
 ![Frequentist]({{ site.urlimg }}/Introduction-to-Bayesian-Statistics/Frequentist.png "Frequentist")
-In **Bayesian** view however, since parameter
+<br>In **Bayesian** view however, since
 $$
   \theta
 $$
 is a random variable, the following formula can be derived:
-<br>
+<br><br>
 $$
   P(\theta|Y)=\frac{P(Y|\theta)P(\theta)}{P(Y)} \propto P(Y|\theta)P(\theta)
 $$
-<br>
+<br><br>
   where
 $$
   P(Y|\theta)
@@ -64,26 +65,24 @@ is likelihood function,
 $$
   P(\theta)
 $$
-is prior distribution, and 
+is called prior distribution, and 
 $$
   P(\theta|Y)
 $$
-is posterior distribution.
-<br><br>The posterior distribution can be viewed as weighted average of likelihood function, with prior distribution functioning as weight.
-<br><br>Plus, if the posterior distribution is in the same probability distribution family as the prior probability distribution, 
-the prior and posterior are called conjugate distributions, and the prior is called a conjugate prior for the likelihood function. 
+is called posterior distribution. 
 <br><br>After some algebra, posterior distribution is calculated as:
+<br><br>
 $$
   P(\theta|Y) \sim Beta(a+\alpha,N-a+\beta)
 $$
-<br>
+<br><br>
 where 
 $$
   a
 $$
 is the number of heads.
 <br>
-(Here, 
+(In this example, 
 $$
   Beta(4,2) 
 $$
@@ -91,8 +90,7 @@ was used as an prior distribution of
 $$
   \theta
 $$
-, as an example)
-<br>
+)<br>
 ![Bayesian]({{ site.urlimg }}/Introduction-to-Bayesian-Statistics/Bayesian.png "Bayesian")
 <br>Since prior distribution is taken into consideration, maximum credibility of posterior distribution deviates from 0.4.
 <br><br>Posterior distribution may change when:
