@@ -192,23 +192,30 @@ $$
   \beta
 $$
 from the posterior distribution, sampling methods such as importance sampling and rejection sampling should be employed.
-<br><br>Then, let's check if regularization actually works. In this example, CO2 data from R was used. 
-<br>Models compared are: 
-<br>
+<br><br><br>
+The following table is the comparison of parameters using different models, using CO2 data in R:
+<br><br>
 $$  
-  - model with no regularization(constant prior distribution, model1)
+  \dot model1: model with no regularization (constant prior)
 $$
 <br>
 $$
-  - model with regularization parameter \lambda =0.1, 10, 100000 (normal prior distribution, model2,3,4 respectively)
+  \dot model with regularization parameter \lambda =0.1, 10, 100000 (normal prior, model2,3,4 respectively)
 $$
 <br><br>
-The following table shows its result: 
-<br>
-Compared to model1, there is significant effect of regularization in model2, 
-making parameters significantly differ from ones from model with no regularization. 
-On the other hand, there is little effect of regularization in model4.
-<br><br>Then, how does posterior distribution works when predicting new data 
+|  | model1 | model1 | model3 | model4 |
+| :--- | --- | --- | --- | ---: |
+| Intercept | 29.26 | 1.25 | 22.70 | 29.26 |
+| Mississippi | -12.66 | -0.07 | -8.95 | -12.66 |
+| Chilled | -6.86 | 0.24 | -4.05 | -6.86 |
+| Conc | 0.02 | 0.05 | 0.02 | 0.02 |
+<br><br>
+Compared to model1, there is significant effect of regularization in model2, making parameters significantly differ from ones from model1. On the other hand, there is little effect of regularization in model4, where 
+$$
+  \lambda
+$$
+has very large value.
+<br><br><br>Then, how this framework works when it comes to new data
 $$
   Y_{N+1}
 $$
