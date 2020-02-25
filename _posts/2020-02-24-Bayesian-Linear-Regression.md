@@ -157,8 +157,8 @@ $$
 $$
   Prop(\beta|Y,X) \sim N((X^{T}X+\frac{\sigma^{2}}{\lambda}I)^{-1}X^{T}Y,(\sigma^{-2}(X^{T}X)+\lambda^{-1}I)^{-1})
 $$
-<br><br>
-, which is the same form as sampling distribution of
+,<br><br>
+which is the same form as sampling distribution of
 $$
   \hat{\beta}
 $$
@@ -176,7 +176,7 @@ $$
 and after taking logarithm, following is derived:
 <br><br>
 $$ 
-  P_{prop}(\beta|Y,X) \propto -\frac{(Y-X\beta)^{T}(Y-X\beta)} {2\sigma^{2}}-\frac{\sum_{k=0}^{p}\left | \beta_{k} \right |}{2\lambda}
+  log(P(\beta|Y,X)) \propto -\frac{(Y-X\beta)^{T}(Y-X\beta)} {2\sigma^{2}}-\frac{\sum_{k=0}^{p}\left | \beta_{k} \right |}{2\lambda}
 $$
 ,<br><br>
 which is similar to the loss function of lasso regression, with 
