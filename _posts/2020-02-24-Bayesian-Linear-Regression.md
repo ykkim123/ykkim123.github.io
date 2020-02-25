@@ -203,13 +203,12 @@ $$
   =0.1, 10, 100000 (normal prior)
 
 | | model1 | model2 | model3 | model4 |
-| :--- | --- | --- | --- | ---: |
+| :--- | :---: | :---: | :---: | :---: |
 | Intercept | 29.26 | 1.25 | 22.70 | 29.26 |
 | Mississippi | -12.66 | -0.07 | -8.95 | -12.66 |
 | Chilled | -6.86 | 0.24 | -4.05 | -6.86 |
 | Conc | 0.02 | 0.05 | 0.02 | 0.02 |
 
-<br>
 Compared to model1, there is significant effect of regularization in model2, making parameters significantly differ from ones from model1. On the other hand, there is little effect of regularization in model4, where 
 $$
   \lambda
@@ -220,22 +219,16 @@ $$
   Y_{N+1}
 $$
 ? In this post, Monte Carlo method will be used to handle this problem. In other words, 
-<br>
+<br><br>
 $$
-  \hat{Y}_{N+1} \approx \frac{1}{n}\sum_{i=1}^{n}\tilde{Y}^{(i)}_{N+1}
-$$
-where
-<br>
-$$
-  \tilde{Y}^{(i)}_{N+1} \sim N(Y_{N+1}|\mathbf{X},X_{N+1},\mathbf{\beta}^{(i)})
+  \hat{Y}_{N+1} \approx \frac{1}{n}\sum_{i=1}^{n}\tilde{Y}^{(i)}_{N+1} where \tilde{Y}^{(i)}_{N+1} \sim N(Y_{N+1}|\mathbf{X},X_{N+1},\mathbf{\beta}^{(i)})
 $$
 <br><br>
-Using CO2 data continuously, let 83th and 84th data be test data and all other remaining be train data. 
-Followings are prediction result of different models from above example.
-
-
-
-
+Let 83th and 84th data be test data and all the other remainings be train data. 
+Followings are prediction result of model1.
+![Prediction]({{ site.urlimg }}/Bayesian-Linear-Regression/Prediction.png "Prediction")
+<br>
+where blue lines indicate true values. 
 
 
 
