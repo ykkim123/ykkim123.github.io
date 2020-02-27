@@ -19,6 +19,7 @@ nofollow: false
 ---
 
 Linear regression is one of the most frequently used statistical methods because of its usefulness in interpretation. 
+
 In **frequentist**'s view, linear regression is formulated as:
 <br><br>
 $$
