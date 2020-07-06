@@ -236,4 +236,4 @@ where blue lines indicate true values. It seems that prediction result is not th
 <br><br><br>**Summary**
 <br>In this post, followings were covered: 
 - Bayesian linear regression using different prior distributions
-- Prediction using Bayesian linear regression model
+- Prediction using Bayesian linear regression models
