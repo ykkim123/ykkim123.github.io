@@ -124,4 +124,4 @@ posterior distribution derived consequently is similar to likelihood function.
 <br><br>**Summary**
 <br>In this post, followings were covered: 
 - Difference between frequentist and Bayesian
-- How posterior distribution changes as sample size and prior distribution change
+- How posterior distribution changes as sample size and prior distribution changes
