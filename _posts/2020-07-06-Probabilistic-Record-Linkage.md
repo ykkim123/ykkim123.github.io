@@ -2,7 +2,7 @@
 layout: post
 title: "Probabilistic Record Linkage"
 date: "2020-02-22"
-description: "This post is a brief introduction to probabilistic record linkage"
+description: "This post is a brief introduction to probabilistic record linkage. This post is a brief introduction to Bayesian statistics; specifically, it's about difference between Bayesian and frequentist, and how posterior distribution changes when sample size and prior distribution change."
 category: 
   - featured
 # tags will also be used as html meta keywords.
