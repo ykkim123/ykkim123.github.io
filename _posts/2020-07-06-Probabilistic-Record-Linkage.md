@@ -287,9 +287,21 @@ eta = c(m,u,p)
 eta.list = eta
 ~~~
 
+<br>
 
-
-Now, we can implement EM by running the below code. It updates latent variable $g_{i}$ and parameter $m,u,p$ in order, and stops iteration when sum of squares for difference is less than $10^{-7}$.
+Now, we can implement EM by running the below code. It updates latent variable 
+$$
+g_{i}
+$$
+and parameter 
+$$
+m,u,p
+$$
+ in order, and stops iteration when sum of squares for difference is less than 
+$$
+10^{-7}
+$$
+.
 
 ~~~r
 repeat{
@@ -346,11 +358,11 @@ repeat{
     break}
 ~~~
 
-
+<br>
 
 Then, using the estimated parameters, similarity score is calculated as below:
 
-```{r code5}
+~~~r
 R = c()
 
 for (i in 1:N){
@@ -371,22 +383,20 @@ for (i in 1:N){
     
     R_i = num/denom
     R = append(R, R_i)}
-```
+~~~
 
-
+<br>
 
 It seems that similarity score for 12th and 16th pair is large enough to conclude that these records are from the same entity, respectively.	
 
 Therefore, the matching result with original data can be shown as:
 
 | id.x  | gender.x | year.x | month.x | date.x | id.y  | gender.y | year.y | month.y | date.y | matching |
-| :---: | :------: | :----: | :-----: | :----: | :---: | :------: | :----: | :-----: | :----: | -------- |
-| 12351 |    F     |  2008  |   12    |   14   | 12350 |    F     |  2008  |   14    |   12   | 1        |
-| 12345 |    M     |  1964  |    1    |   1    | 12352 |    F     |  2008  |   12    |   14   | 0        |
-| 12347 |    M     |  1987  |    3    |   30   | 12352 |    F     |  2008  |   12    |   14   | 0        |
-| 12349 |    F     |  1972  |   10    |   24   | 12352 |    F     |  2008  |   12    |   14   | 0        |
-| 12351 |    F     |  2008  |   12    |   14   | 12352 |    F     |  2008  |   12    |   14   | 1        |
-
-
+| :---: | :------: | :----: | :-----: | :----: | :---: | :------: | :----: | :-----: | :----: | :------: |
+| 12351 |    F     |  2008  |   12    |   14   | 12350 |    F     |  2008  |   14    |   12   |    1     |
+| 12345 |    M     |  1964  |    1    |   1    | 12352 |    F     |  2008  |   12    |   14   |    0     |
+| 12347 |    M     |  1987  |    3    |   30   | 12352 |    F     |  2008  |   12    |   14   |    0     |
+| 12349 |    F     |  1972  |   10    |   24   | 12352 |    F     |  2008  |   12    |   14   |    0     |
+| 12351 |    F     |  2008  |   12    |   14   | 12352 |    F     |  2008  |   12    |   14   |    1     |
 
 The result shows that probabilistic record linkage identifies a pair of records as data from the same entity if they have same gender and year of birth.
