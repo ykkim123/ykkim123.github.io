@@ -1,16 +1,13 @@
 ---
 layout: post
 title: "Probabilistic Record Linkage"
-date: "2020-02-22"
-description: "To begin with, let's discuss about two types of record linkage:
-
-- Deterministic record linkage
-- Probabilistic record linkage"
+date: "2020-07-07"
+description: "This post explains probabilistic record linkage for data integration; step-by-step procedure for record linkage, and parameter estimation procedure for calculating similarity score"
 category: 
   - featured
 # tags will also be used as html meta keywords.
 tags:
-  - Bayesian
+  - Data Integration
 show_meta: true
 comments: true
 mathjax: true
@@ -26,9 +23,9 @@ To begin with, let's discuss about two types of record linkage:
 - Deterministic record linkage
 - Probabilistic record linkage
 
-For deterministic record linkage, matching keys such as identification number and name, are used to integrate data. This is a practical way of integrating data, but at the same time it may miss matching pairs with typo errors. For example, for a pair with its name 'John Smith' and 'Jon Smith', these data will not be matched since 'John' and 'Jon' are not the same even if there is chance of being the same person. 
+For deterministic record linkage, matching keys such as identification number and name, are used to integrate data. This is a practical way of integrating data, but may miss matching pairs with typo errors. For example, for a pair of records with name 'John Smith' and 'Jon Smith' respectively, these records will not be matched since 'John' and 'Jon' are not the same even if there is a chance of being the same person.
 
-On the other hand, probabilistic record linkage uses characteristics of units, rather than *unique* matching keys. Probabilistic record linkage uses the following similarity score: <br>
+On the other hand, probabilistic record linkage uses characteristics of records, rather than *unique* matching key. It uses the following similarity score: <br>
 
 
 $$
@@ -44,15 +41,15 @@ $$
   \begin{array}{l}
     \gamma: an\; agreement\; pattern \\
     r: a\; pair\; of\; record \\
-    M: the\; set\; of\; true\; matches \\
-    U: the\; set\; of\; non-matches
+    M: a\; set\; of\; true\; matches \\
+    U: a\; set\; of\; non-matches
   \end{array}
 \end{equation}
 $$
 
 
 
-The above similarity score can be interpreted as the relative probability of agreement pattern, given that a pair is true match. Therefore, large value of 
+The above similarity score can be interpreted as relative probability of agreement pattern, given that a pair is true match. Therefore, large value of 
 $$
 R
 $$
@@ -64,7 +61,7 @@ R
 $$
 , probabilistic record linkage is implemented by the following procedure:
 
-1. For two distinct dataset A and B(but from the same population), construct dataset with every possible combination of pairs; in other words, for dataset A and B with size of 
+1. For two distinct dataset A and B(but from the same population), construct dataset with every possible combination of pairs. In other words, for dataset A and B with size of 
    $$
    n_{a}
    $$
@@ -72,27 +69,27 @@ $$
    $$
    n_{b}
    $$
-   respectively, dataset of cross product has size 
+   respectively, construct dataset of cross product which has size of 
    $$
    n=n_{a}\cdot n_{b}
    $$
    .
 
-2. Calculate conditional probability for each pair. That is, <br>
+2. Calculate conditional probability for each pair. That is, calculate <br>
 
 
    $$
    \begin{equation}
      \begin{array}{l}
    P(\gamma_{i}|r_{i} \in M)=\prod_{k=1}^{K}P(\gamma_{ik}|r_{i} \in M)=\prod_{k=1}^{K}m_{k}^{\gamma_{k}}(1-m_{k})^{1-\gamma_{k}} \\
-   P(\gamma|r \in U)=\prod_{k=1}^{K}P(\gamma_{k}|r \in U)=\prod_{k=1}^{K}u_{k}^{\gamma_{k}}(1-u_{k})^{1-\gamma_{k}}
+   P(\gamma_{i}|r_{i} \in U)=\prod_{k=1}^{K}P(\gamma_{ik}|r_{i} \in U)=\prod_{k=1}^{K}u_{k}^{\gamma_{k}}(1-u_{k})^{1-\gamma_{k}}
      \end{array}
    \end{equation}
    $$
 
+   
 
    where <br>
-
 
    $$
    \gamma_{i}=(\gamma_{i1},\gamma_{i2},\cdots \gamma_{iK})
@@ -110,6 +107,8 @@ $$
      \end{array}
    \end{equation}
    $$
+
+   
 
 3. Calculate similarity score 
    $$
