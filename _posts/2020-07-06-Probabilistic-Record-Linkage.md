@@ -390,6 +390,8 @@ for (i in 1:N){
 
 ![similarity-score]({{ site.urlimg }}/Probabilistic-Record-Linkage/similarity-score.png "N=1000")
 
+
+
 Above result shows that similarity scores for 12th and 16th pair are large enough to conclude that each pair is from the same entity. Therefore, the matching result for original dataset can be shown as:
 
 | id.x  | gender.x | year.x | month.x | date.x | id.y  | gender.y | year.y | month.y | date.y | matching |
