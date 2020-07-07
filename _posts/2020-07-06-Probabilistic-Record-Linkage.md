@@ -32,7 +32,9 @@ On the other hand, probabilistic record linkage uses characteristics of units, r
 $$
 R=\frac{P(\gamma|r \in M)}{P(\gamma|r \in U)}
 $$
-<br>where <br>
+​	
+
+where <br>
 $$
 \begin{equation}
   \begin{array}{l}
