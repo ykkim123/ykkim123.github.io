@@ -23,7 +23,7 @@ To begin with, let's discuss about two types of record linkage:
 - Deterministic record linkage
 - Probabilistic record linkage
 
-For deterministic record linkage, matching keys such as identification number and name, are used to integrate data. This is a practical way of integrating data, but may miss matching pairs with typo errors. For example, for a pair of records with name 'John Smith' and 'Jon Smith' respectively, these records will not be matched since 'John' and 'Jon' are not the same even if there is a chance of being the same person.
+For deterministic record linkage, matching keys such as identification number and name, are used to integrate data. This is a practical way of integrating data, but may miss matching pairs due to misspelling. For example, for a pair of records with name 'John Smith' and 'Jon Smith' respectively, these records will not be matched since 'John' and 'Jon' are not the same even if there is a chance of being the same person.
 
 On the other hand, probabilistic record linkage uses characteristics of records, rather than *unique* matching key. It uses the following similarity score: <br>
 
@@ -111,6 +111,8 @@ $$
    R_{i}
    $$
    for each pair where <br>
+
+   
    $$
    R_{i}=\frac{P(\gamma_{i}|r_{i} \in M)}{P(\gamma_{i}|r_{i} \in U)}
    $$
@@ -237,11 +239,10 @@ Here is an example for probabilistic record linkage. Below is the last 5 pairs o
 
 <br>
 
-Next, before implementing EM, we need to calculate 
+Before implementing EM, we need to calculate 
 $$
 \gamma_{i}
 $$
-'s
 
 ~~~r
 N = nrow(data.cp)
@@ -387,9 +388,13 @@ for (i in 1:N){
     R = append(R, R_i)}
 ~~~
 
+![similarity-score]({{ site.urlimg }}/Probabilistic-Record-Linkage/similarity-score.png "N=1000")
+
+
+
 <br>
 
-The result shows that similarity scores for 12th and 16th pair is large enough to conclude that these records are from the same entity, respectively. Therefore, the matching result with original data can be shown as:
+Below result shows that similarity scores for 12th and 16th pair are large enough to conclude that each pair is from the same entity. Therefore, the matching result for original dataset can be shown as:
 
 | id.x  | gender.x | year.x | month.x | date.x | id.y  | gender.y | year.y | month.y | date.y | matching |
 | :---: | :------: | :----: | :-----: | :----: | :---: | :------: | :----: | :-----: | :----: | :------: |
