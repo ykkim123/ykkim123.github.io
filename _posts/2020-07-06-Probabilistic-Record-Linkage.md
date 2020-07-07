@@ -130,8 +130,6 @@ $$
      $$
      R\leq C_{U}
      $$
-     
-
      , a pair is *designated non-match*(*designated non-link*)
 
    - If 
@@ -156,7 +154,9 @@ p=P(\gamma_{i} \in M)
 $$
  should be estimated, and this can be done by EM algorithm.
 
-First, we define the latent variable $g_{i}$ which takes the following form:
+First, we define the latent variable $g_{i}$ which takes the following form: <br>
+
+
 $$
 g_{i}=\left\{\begin{matrix}
 \;1\; if\; r_{i} \in M
@@ -195,7 +195,11 @@ $$
 $$
 
 
-For E-step, latent variable $g_{i}$ is updated as: <br>
+For E-step, latent variable 
+$$
+g_{i}
+$$
+ is updated as: <br>
 
 
 $$
@@ -204,6 +208,8 @@ $$
 
 
 and for M-step, each parameter is updated as below: <br>
+
+
 $$
 m_{k}^{(t+1)}=\frac{\sum_{i=1}^{N}g_{i}^{(t)}\gamma_{ik}}{\sum_{i=1}^{N}g_{i}^{(t)}}
 $$
