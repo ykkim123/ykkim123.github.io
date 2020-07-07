@@ -112,18 +112,51 @@ $$
    $$
    
 
-3. Calculate similarity score $R=\frac{P(\gamma|r \in M)}{P(\gamma|r \in U)}\;\;$.
+3. Calculate similarity score 
+   $$
+   R=\frac{P(\gamma|r \in M)}{P(\gamma|r \in U)}
+   $$
+   .
 
-4. Make decision with by the following rule:
-   - If $R\geq C_{U}$, a pair is *designated match*(*designated link*)
-   - If $R\leq C_{U}$, a pair is *designated non-match*(*designated non-link*)
-   - If $C_{L}<R<C_{U}$, a pair is *designated potential match*(*designated potential link*)
+4. Make decision by the following rule:
+
+   - If 
+     $$
+     R\geq C_{U}
+     $$
+     , a pair is *designated match*(*designated link*)
+
+   - If 
+     $$
+     R\leq C_{U}
+     $$
+     
+
+     , a pair is *designated non-match*(*designated non-link*)
+
+   - If 
+     $$
+     C_{L}<R<C_{U}
+     $$
+     , a pair is *designated potential match*(*designated potential link*)
 
 
 
-In order to calculate $R$, parameter $m_{k}, u_{k}$ and $p=P(\gamma_{i} \in M)$ can be estimated using EM algorithm.
+In order to calculate 
+$$
+R
+$$
+, parameter 
+$$
+m_{k}, u_{k}
+$$
+ and 
+$$
+p=P(\gamma_{i} \in M)
+$$
+ should be estimated, and this can be done by EM algorithm.
 
-For the implementation of algorithm, we use the latent variable $g_{i}$ which takes the following form:
+First, we define the latent variable $g_{i}$ which takes the following form:
 $$
 g_{i}=\left\{\begin{matrix}
 \;1\; if\; r_{i} \in M
@@ -131,28 +164,46 @@ g_{i}=\left\{\begin{matrix}
 0\; if\; r_{i} \in U
 \end{matrix}\right.
 $$
-Then, log likelihood function can be written as:
+
+
+Then, log likelihood function can be written as: <br>
+
+
 $$
 \begin{equation}
   \begin{array}{l}
     logL(\theta;\gamma,g)=\prod_{i=1}^{N}(p \cdot P(\gamma_{i}|r_{i} \in M))^{g_{i}}((1-p) \cdot P(\gamma_{i}|r_{i} \in U))^{1-g_{i}} \\ 
-    \;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;=\prod_{i=1}^{N}(p \cdot \prod_{k=1}^{K}m_{k}^{\gamma_{k}}(1-m_{k})^{1-\gamma_{k}})^{g_{i}}((1-p) \cdot \prod_{k=1}^{K}u_{k}^{\gamma_{k}}(1-u_{k})^{1-\gamma_{k}})^{1-g_{i}}
+    \;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;=\prod_{i=1}^{N}(p \cdot \prod_{k=1}^{K}m_{k}^{\gamma_{k}}(1-m_{k})^{1-\gamma_{k}})^{g_{i}}((1-p) \cdot \prod_{k=1}^{K}u_{k}^{\gamma_{k}}(1-u_{k})^{1-\gamma_{k}})^{1-g_{i}}
   \end{array}
 \end{equation}
 $$
-where
+
+
+where <br>
+
+
 $$
 m=(m_{1},m_{2},\cdots ,m_{K}),\; u=(u_{1},u_{2},\cdots ,u_{K})
 $$
-and
+
+
+and <br>
+
+
 $$
 \theta=(m,u,p)
 $$
-For E-step, latent variable $g_{i}$ is updated as:
+
+
+For E-step, latent variable $g_{i}$ is updated as: <br>
+
+
 $$
 g_{i}^{(t)}=\frac{p^{(t)} \cdot \prod_{k=1}^{K}(m_{k}^{(t)})^{\gamma_{ik}}(1-m_{k}^{(t)})^{1-\gamma_{ik}}}{p^{(t)} \cdot \prod_{k=1}^{K}(m_{k}^{(t)})^{\gamma_{ik}}(1-m_{k}^{(t)})^{1-\gamma_{ik}}+(1-p^{(t)}) \cdot \prod_{k=1}^{K}(u_{k}^{(t)})^{\gamma_{ik}}(1-u_{k}^{(t)})^{1-\gamma_{ik}}}
 $$
-and for M-step, each parameter is updated as below:
+
+
+and for M-step, each parameter is updated as below: <br>
 $$
 m_{k}^{(t+1)}=\frac{\sum_{i=1}^{N}g_{i}^{(t)}\gamma_{ik}}{\sum_{i=1}^{N}g_{i}^{(t)}}
 $$
