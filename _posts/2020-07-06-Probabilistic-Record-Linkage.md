@@ -35,6 +35,8 @@ $$
 R=\frac{P(\gamma|r \in M)}{P(\gamma|r \in U)}
 $$
 <br>where <br>
+
+
 $$
 \begin{equation}
   \begin{array}{l}
