@@ -29,10 +29,12 @@ To begin with, let's discuss about two types of record linkage:
 For deterministic record linkage, matching keys such as identification number and name, are used to integrate data. This is a practical way of integrating data, but at the same time it may miss matching pairs with typo errors. For example, for a pair with its name 'John Smith' and 'Jon Smith', these data will not be matched since 'John' and 'Jon' are not the same even if there is chance of being the same person. 
 
 On the other hand, probabilistic record linkage uses characteristics of units, rather than *unique* matching keys. Probabilistic record linkage uses the following similarity score: <br>
+
+
 $$
 R=\frac{P(\gamma|r \in M)}{P(\gamma|r \in U)}
 $$
-​	
+<br>
 
 where <br>
 $$
@@ -46,7 +48,9 @@ $$
 \end{equation}
 $$
 
-<br>The above similarity score can be interpreted as the relative probability of agreement pattern, given that a pair is true match. Therefore, large value of $R$ implies that two records are from the same entity. 
+
+
+The above similarity score can be interpreted as the relative probability of agreement pattern, given that a pair is true match. Therefore, large value of $R$ implies that two records are from the same entity. 
 
 In order to make decision based on $R$, probabilistic record linkage is implemented by the following procedure:
 
