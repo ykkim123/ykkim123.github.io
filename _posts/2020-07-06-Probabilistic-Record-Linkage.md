@@ -233,9 +233,13 @@ Now, let's understand probabilistic record linkage by example. Below is example 
 | 12349 |    F     |  1972  |   10    |   24   | 12352 |    F     |  2008  |   12    |   14   |
 | 12351 |    F     |  2008  |   12    |   14   | 12352 |    F     |  2008  |   12    |   14   |
 
+<br>
 
-
-Next, before implementing EM, we need to calculate $\gamma_{i}$'s
+Next, before implementing EM, we need to calculate 
+$$
+\gamma_{i}
+$$
+'s
 
 ~~~r
 N = nrow(data.cp)
@@ -269,7 +273,7 @@ for (i in 1:N){
 }
 ~~~
 
-
+<br>
 
 and initialize some values.
 
