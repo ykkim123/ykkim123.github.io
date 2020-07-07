@@ -28,14 +28,15 @@ Here is brief introduction:
   - BA in Applied Statistics (2015~Present)
 
 **OTHERS**
-- Data Science Lab (2019~Present)
+- Data Science Lab (2019~2020)
 
 **AWARDS**
 - Data Science Competition (2019, Yonsei University)
   - Second Prize
 
 **MAIN INTERESTS**
-- Statistics and Machine Learning
+- Statistics
+- Machine Learning
 
 **COMPUTER SKILLS**
 - R and Python
