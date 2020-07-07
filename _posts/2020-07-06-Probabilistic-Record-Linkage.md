@@ -2,7 +2,7 @@
 layout: post
 title: "Probabilistic Record Linkage"
 date: "2020-07-06"
-description: "This post explains probabilistic record linkage for data integration; step-by-step procedure for record linkage, and parameter estimation procedure for calculating similarity score"
+description: "This post explains probabilistic record linkage for data integration; step-by-step procedure for record linkage, and parameter estimation procedure for calculating similarity score."
 category: 
   - featured
 # tags will also be used as html meta keywords.
