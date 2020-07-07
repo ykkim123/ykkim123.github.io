@@ -2,7 +2,7 @@
 layout: post
 title: "Probabilistic Record Linkage"
 date: "2020-02-22"
-description: "This post is a brief introduction to probabilistic record linkage. This post is a brief introduction to Bayesian statistics; specifically, it's about difference between Bayesian and frequentist, and how posterior distribution changes when sample size and prior distribution change."
+description: "This post explains probabilistic record linkage as a method of data integration, and parameter estimation for implementing the algorithm."
 category: 
   - featured
 # tags will also be used as html meta keywords.
@@ -15,6 +15,7 @@ gistembed: true
 published: true
 noindex: false
 nofollow: false
+
 ---
 
 To begin with, let's discuss about two types of record linkage:
@@ -24,11 +25,17 @@ To begin with, let's discuss about two types of record linkage:
 
 For deterministic record linkage, matching keys such as identification number and name, are used to integrate data. This is a practical way of integrating data, but at the same time it may miss matching pairs with typo errors. For example, for a pair with its name 'John Smith' and 'Jon Smith', these data will not be matched since 'John' and 'Jon' are not the same even if there is chance of being the same person. 
 
-On the other hand, probabilistic record linkage uses characteristics of units, rather than *unique* matching keys. Probabilistic record linkage uses the following similarity score:
+On the other hand, probabilistic record linkage uses characteristics of units, rather than *unique* matching keys. Probabilistic record linkage uses the following similarity score:	
+
+​	
 $$
-R=\frac{P(\gamma|r \in M)}{P(\gamma|r \in U)}\;\;
+R=\frac{P(\gamma|r \in M)}{P(\gamma|r \in U)}
 $$
-where
+
+
+where	
+
+​	
 $$
 \gamma: an\; agreement\; pattern
 $$
@@ -49,7 +56,7 @@ The above similarity score can be interpreted as the relative probability of agr
 
 In order to make decision based on $R$, probabilistic record linkage is implemented by the following procedure:
 
-1.  For two distinct dataset $A$ and $B$(but from the same population), construct dataset with every possible combination of pairs; for dataset $A$ and $B$ with size of $n_{a}$ and $n_{b}$ respectively, dataset of cross product has size $n=n_{a}\cdot n_{b}$.
+1. For two distinct dataset $A$ and $B$(but from the same population), construct dataset with every possible combination of pairs; for dataset $A$ and $B$ with size of $n_{a}$ and $n_{b}$ respectively, dataset of cross product has size $n=n_{a}\cdot n_{b}$.
 
 2. Calculate conditional probability for each pair. That is, 
    $$
