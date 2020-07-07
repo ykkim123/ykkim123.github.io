@@ -80,7 +80,7 @@ $$
 
 2. Calculate conditional probability for each pair. That is, <br>
 
-   
+
    $$
    \begin{equation}
      \begin{array}{l}
@@ -89,19 +89,19 @@ $$
      \end{array}
    \end{equation}
    $$
-   
+
 
    where <br>
 
-   
+
    $$
    \gamma_{i}=(\gamma_{i1},\gamma_{i2},\cdots \gamma_{iK})
    $$
-   
+
 
    and <br>
 
-   
+
    $$
    \begin{equation}
      \begin{array}{l}
@@ -110,7 +110,6 @@ $$
      \end{array}
    \end{equation}
    $$
-   
 
 3. Calculate similarity score 
    $$
@@ -226,20 +225,19 @@ $$
 
 Now, let's understand probabilistic record linkage by example. Below is example data obtained from **PPRL** library.
 
-```{r code1}
-data = read.csv('testdata.csv', header=T, sep='\t')
-data1 = data[c(1,3,5,7),]
-data2 = data[c(2,4,6,8),]
-data.cp = merge(x=data1, y=data2, by=NULL)
-data.cp
-attach(data.cp)
-```
+| id.x  | gender.x | year.x | month.x | date.x | id.y  | gender.y | year.y | month.y | date.y |
+| :---: | :------: | :----: | :-----: | :----: | :---: | :------: | :----: | :-----: | :----: |
+| 12351 |    F     |  2008  |   12    |   14   | 12350 |    F     |  2008  |   14    |   12   |
+| 12345 |    M     |  1964  |    1    |   1    | 12352 |    F     |  2008  |   12    |   14   |
+| 12347 |    M     |  1987  |    3    |   30   | 12352 |    F     |  2008  |   12    |   14   |
+| 12349 |    F     |  1972  |   10    |   24   | 12352 |    F     |  2008  |   12    |   14   |
+| 12351 |    F     |  2008  |   12    |   14   | 12352 |    F     |  2008  |   12    |   14   |
 
 
 
-Next, to implement EM, we need to calculate $\gamma_{i}$'s in advance
+Next, before implementing EM, we need to calculate $\gamma_{i}$'s
 
-```{r code2}
+~~~r
 N = nrow(data.cp)
 gamma = list()
 
@@ -269,13 +267,13 @@ for (i in 1:N){
   
   gamma[[i]] = c(g,y,m,d)
 }
-```
+~~~
 
 
 
-and initialize some values
+and initialize some values.
 
-```{r code3}
+~~~r
 K=4
 
 m = rep(0.7,K)
@@ -283,13 +281,13 @@ u = rep(0.3,K)
 p = 0.5
 eta = c(m,u,p)
 eta.list = eta
-```
+~~~
 
 
 
 Now, we can implement EM by running the below code. It updates latent variable $g_{i}$ and parameter $m,u,p$ in order, and stops iteration when sum of squares for difference is less than $10^{-7}$.
 
-```{r code4}
+~~~r
 repeat{
   eta.prev = eta
   
@@ -342,7 +340,7 @@ repeat{
   diff = (eta.prev-eta)^2
   if (sum(diff)<1e-7)
     break}
-```
+~~~
 
 
 
@@ -369,7 +367,6 @@ for (i in 1:N){
     
     R_i = num/denom
     R = append(R, R_i)}
-R
 ```
 
 
@@ -378,9 +375,14 @@ It seems that similarity score for 12th and 16th pair is large enough to conclud
 
 Therefore, the matching result with original data can be shown as:
 
-```{r code6}
-data.matching = cbind(data.cp, matching)
-data.matching
-```
+| id.x  | gender.x | year.x | month.x | date.x | id.y  | gender.y | year.y | month.y | date.y | matching |
+| :---: | :------: | :----: | :-----: | :----: | :---: | :------: | :----: | :-----: | :----: | -------- |
+| 12351 |    F     |  2008  |   12    |   14   | 12350 |    F     |  2008  |   14    |   12   | 1        |
+| 12345 |    M     |  1964  |    1    |   1    | 12352 |    F     |  2008  |   12    |   14   | 0        |
+| 12347 |    M     |  1987  |    3    |   30   | 12352 |    F     |  2008  |   12    |   14   | 0        |
+| 12349 |    F     |  1972  |   10    |   24   | 12352 |    F     |  2008  |   12    |   14   | 0        |
+| 12351 |    F     |  2008  |   12    |   14   | 12352 |    F     |  2008  |   12    |   14   | 1        |
+
+
 
 The result shows that probabilistic record linkage identifies a pair of records as data from the same entity if they have same gender and year of birth.
