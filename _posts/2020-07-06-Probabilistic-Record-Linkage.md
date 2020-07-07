@@ -87,8 +87,6 @@ $$
    \end{equation}
    $$
 
-   
-
    where <br>
 
    $$
@@ -108,11 +106,13 @@ $$
    \end{equation}
    $$
 
-   
-
 3. Calculate similarity score 
    $$
-   R=\frac{P(\gamma|r \in M)}{P(\gamma|r \in U)}
+   R_{i}
+   $$
+   for each pair where <br>
+   $$
+   R_{i}=\frac{P(\gamma_{i}|r_{i} \in M)}{P(\gamma_{i}|r_{i} \in U)}
    $$
    .
 
@@ -120,19 +120,19 @@ $$
 
    - If 
      $$
-     R\geq C_{U}
+     R_{i}\geq C_{U}
      $$
      , a pair is *designated match*(*designated link*)
 
    - If 
      $$
-     R\leq C_{U}
+     R_{i}\leq C_{U}
      $$
      , a pair is *designated non-match*(*designated non-link*)
 
    - If 
      $$
-     C_{L}<R<C_{U}
+     C_{L}<R_{i}<C_{U}
      $$
      , a pair is *designated potential match*(*designated potential link*)
 
@@ -140,7 +140,7 @@ $$
 
 In order to calculate 
 $$
-R
+R_{i}
 $$
 , parameter 
 $$
@@ -148,12 +148,15 @@ m_{k}, u_{k}
 $$
  and 
 $$
-p=P(\gamma_{i} \in M)
+p=P(r_{i} \in M)
 $$
- should be estimated, and this can be done by EM algorithm.
+ should be estimated, and this can be done by implementing EM algorithm.
 
-First, we define the latent variable $g_{i}$ which takes the following form: <br>
-
+First, we need to define latent variable 
+$$
+g_{i}
+$$
+ which takes the following form: <br>
 
 $$
 g_{i}=\left\{\begin{matrix}
@@ -205,7 +208,7 @@ g_{i}^{(t)}=\frac{p^{(t)} \cdot \prod_{k=1}^{K}(m_{k}^{(t)})^{\gamma_{ik}}(1-m_{
 $$
 
 
-and for M-step, each parameter is updated as below: <br>
+and for M-step, parameters are updated as below: <br>
 
 
 $$
@@ -222,7 +225,7 @@ $$
 
 
 
-Now, let's understand probabilistic record linkage by example. Below is example data obtained from **PPRL** library.
+Here is an example for probabilistic record linkage. Below is the last 5 pairs of cross product for example data obtained from PPRL library.
 
 | id.x  | gender.x | year.x | month.x | date.x | id.y  | gender.y | year.y | month.y | date.y |
 | :---: | :------: | :----: | :-----: | :----: | :---: | :------: | :----: | :-----: | :----: |
@@ -359,7 +362,7 @@ repeat{
 
 <br>
 
-Then, using the estimated parameters, similarity score is calculated as below:
+Then, using the estimated parameters, we can calculate similarity score as below:
 
 ~~~r
 R = c()
@@ -386,9 +389,7 @@ for (i in 1:N){
 
 <br>
 
-It seems that similarity score for 12th and 16th pair is large enough to conclude that these records are from the same entity, respectively.	
-
-Therefore, the matching result with original data can be shown as:
+The result shows that similarity scores for 12th and 16th pair is large enough to conclude that these records are from the same entity, respectively. Therefore, the matching result with original data can be shown as:
 
 | id.x  | gender.x | year.x | month.x | date.x | id.y  | gender.y | year.y | month.y | date.y | matching |
 | :---: | :------: | :----: | :-----: | :----: | :---: | :------: | :----: | :-----: | :----: | :------: |
@@ -398,4 +399,3 @@ Therefore, the matching result with original data can be shown as:
 | 12349 |    F     |  1972  |   10    |   24   | 12352 |    F     |  2008  |   12    |   14   |    0     |
 | 12351 |    F     |  2008  |   12    |   14   | 12352 |    F     |  2008  |   12    |   14   |    1     |
 
-The result shows that probabilistic record linkage identifies a pair of records as data from the same entity if they have same gender and year of birth.
