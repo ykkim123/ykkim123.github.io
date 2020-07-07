@@ -14,4 +14,4 @@ category: base
 
 
 ## Data Integration
-- [Probabilistic Recrod Linkage](https://ykkim123.github.io/blog/2020/07/07/Probabilistic-Record-Linkage)
+- [Probabilistic Recrod Linkage](https://ykkim123.github.io/blog/2020/07/06/Probabilistic-Record-Linkage)
