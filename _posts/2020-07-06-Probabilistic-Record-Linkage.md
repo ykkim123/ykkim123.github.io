@@ -30,13 +30,11 @@ For deterministic record linkage, matching keys such as identification number an
 
 On the other hand, probabilistic record linkage uses characteristics of units, rather than *unique* matching keys. Probabilistic record linkage uses the following similarity score: <br>
 
-
+<br>
 $$
 R=\frac{P(\gamma|r \in M)}{P(\gamma|r \in U)}
 $$
-<br>
-
-where <br>
+<br>where <br>
 $$
 \begin{equation}
   \begin{array}{l}
