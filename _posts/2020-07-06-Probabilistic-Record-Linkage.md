@@ -2,7 +2,10 @@
 layout: post
 title: "Probabilistic Record Linkage"
 date: "2020-02-22"
-description: "This post explains probabilistic record linkage as a method of data integration, and parameter estimation for implementing the algorithm."
+description: "To begin with, let's discuss about two types of record linkage:
+
+- Deterministic record linkage
+- Probabilistic record linkage"
 category: 
   - featured
 # tags will also be used as html meta keywords.
@@ -25,17 +28,17 @@ To begin with, let's discuss about two types of record linkage:
 
 For deterministic record linkage, matching keys such as identification number and name, are used to integrate data. This is a practical way of integrating data, but at the same time it may miss matching pairs with typo errors. For example, for a pair with its name 'John Smith' and 'Jon Smith', these data will not be matched since 'John' and 'Jon' are not the same even if there is chance of being the same person. 
 
-On the other hand, probabilistic record linkage uses characteristics of units, rather than *unique* matching keys. Probabilistic record linkage uses the following similarity score:	
+On the other hand, probabilistic record linkage uses characteristics of units, rather than *unique* matching keys. Probabilistic record linkage uses the following similarity score:
 
-​	
+<br>
 $$
 R=\frac{P(\gamma|r \in M)}{P(\gamma|r \in U)}
 $$
+<br>
 
+where
 
-where	
-
-​	
+<br>
 $$
 \gamma: an\; agreement\; pattern
 $$
