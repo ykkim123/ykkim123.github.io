@@ -18,9 +18,9 @@ tags:
   - "About"
 ---
 
-Welcome to Github Pages of Yeonkang, a statistician and data scientist!
+Welcome to Github Pages of Yeonkang!
 
-Here is brief introduction:
+Here is my brief introduction:
 
 
 **EDUCATION**
