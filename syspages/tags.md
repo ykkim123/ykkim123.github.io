@@ -13,5 +13,5 @@ category: base
 - [Bayesian Linear Regression](https://ykkim123.github.io/blog/2020/02/24/Bayesian-Linear-Regression)
 
 
-## Regression
-- [Bayesian Linear Regression](https://ykkim123.github.io/blog/2020/02/24/Bayesian-Linear-Regression)
+## Data Integration
+- [Probabilistic Recrod Linkage](https://ykkim123.github.io/blog/2020/07/07/Probabilistic-Record-Linkage)
