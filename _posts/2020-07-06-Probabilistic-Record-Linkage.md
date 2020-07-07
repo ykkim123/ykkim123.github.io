@@ -34,9 +34,16 @@ On the other hand, probabilistic record linkage uses characteristics of units, r
 $$
 R=\frac{P(\gamma|r \in M)}{P(\gamma|r \in U)}
 $$
-where
+where <br>
 $$
-\gamma: an\; agreement\; pattern
+\begin{equation}
+  \begin{array}{l}
+    \gamma: an\; agreement\; pattern \\
+    r: a\; pair\; of\; record \\
+    M: the\; set\; of\; true\; matches \\
+    U: the\; set\; of\; non-matches
+  \end{array}
+\end{equation}
 $$
 
 $$
@@ -103,7 +110,7 @@ $$
 \begin{equation}
   \begin{array}{l}
     logL(\theta;\gamma,g)=\prod_{i=1}^{N}(p \cdot P(\gamma_{i}|r_{i} \in M))^{g_{i}}((1-p) \cdot P(\gamma_{i}|r_{i} \in U))^{1-g_{i}} \\ 
-    \;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;=\prod_{i=1}^{N}(p \cdot \prod_{k=1}^{K}m_{k}^{\gamma_{k}}(1-m_{k})^{1-\gamma_{k}})^{g_{i}}((1-p) \cdot \prod_{k=1}^{K}u_{k}^{\gamma_{k}}(1-u_{k})^{1-\gamma_{k}})^{1-g_{i}}
+    \;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;=\prod_{i=1}^{N}(p \cdot \prod_{k=1}^{K}m_{k}^{\gamma_{k}}(1-m_{k})^{1-\gamma_{k}})^{g_{i}}((1-p) \cdot \prod_{k=1}^{K}u_{k}^{\gamma_{k}}(1-u_{k})^{1-\gamma_{k}})^{1-g_{i}}
   \end{array}
 \end{equation}
 $$
