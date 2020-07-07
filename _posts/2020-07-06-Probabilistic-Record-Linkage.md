@@ -32,11 +32,7 @@ On the other hand, probabilistic record linkage uses characteristics of units, r
 
 
 $$
-\begin{equation}
-  \begin{array}{l}
 R=\frac{P(\gamma|r \in M)}{P(\gamma|r \in U)}
-  \end{array}
-\end{equation}
 $$
 
 
@@ -56,33 +52,65 @@ $$
 
 
 
-The above similarity score can be interpreted as the relative probability of agreement pattern, given that a pair is true match. Therefore, large value of $R$ implies that two records are from the same entity. 
+The above similarity score can be interpreted as the relative probability of agreement pattern, given that a pair is true match. Therefore, large value of 
+$$
+R
+$$
+implies that two records are from the same entity. 
 
-In order to make decision based on $R$, probabilistic record linkage is implemented by the following procedure:
+In order to make decision based on 
+$$
+R
+$$
+, probabilistic record linkage is implemented by the following procedure:
 
-1. For two distinct dataset $A$ and $B$(but from the same population), construct dataset with every possible combination of pairs; for dataset $A$ and $B$ with size of $n_{a}$ and $n_{b}$ respectively, dataset of cross product has size $n=n_{a}\cdot n_{b}$.
-
-2. Calculate conditional probability for each pair. That is, 
+1. For two distinct dataset A and B(but from the same population), construct dataset with every possible combination of pairs; in other words, for dataset A and B with size of 
    $$
-   P(\gamma_{i}|r_{i} \in M)=\prod_{k=1}^{K}P(\gamma_{ik}|r_{i} \in M)=\prod_{k=1}^{K}m_{k}^{\gamma_{k}}(1-m_{k})^{1-\gamma_{k}}
+   n_{a}
    $$
+   and 
+   $$
+   n_{b}
+   $$
+   respectively, dataset of cross product has size 
+   $$
+   n=n_{a}\cdot n_{b}
+   $$
+   .
 
+2. Calculate conditional probability for each pair. That is, <br>
+
+   
    $$
+   \begin{equation}
+     \begin{array}{l}
+   P(\gamma_{i}|r_{i} \in M)=\prod_{k=1}^{K}P(\gamma_{ik}|r_{i} \in M)=\prod_{k=1}^{K}m_{k}^{\gamma_{k}}(1-m_{k})^{1-\gamma_{k}} \\
    P(\gamma|r \in U)=\prod_{k=1}^{K}P(\gamma_{k}|r \in U)=\prod_{k=1}^{K}u_{k}^{\gamma_{k}}(1-u_{k})^{1-\gamma_{k}}
+     \end{array}
+   \end{equation}
    $$
+   
 
-where
-$$
-\gamma_{i}=(\gamma_{i1},\gamma_{i2},\cdots \gamma_{iK})
-$$
-and 
-$$
-\gamma_{ik}|r_{i} \in M\; \sim\; B(1,m_{k})\; where\; m_{k}=P(\gamma_{ik}=1|r_{i} \in M)\; for\; i=1,2,\cdots ,N
-$$
+   where <br>
 
-$$
-\gamma_{ik}|r_{i} \in U\; \sim\; B(1,u_{k})\; where\; u_{k}=P(\gamma_{ik}=1|r_{i} \in U)\; for\; i=1,2,\cdots ,N
-$$
+   
+   $$
+   \gamma_{i}=(\gamma_{i1},\gamma_{i2},\cdots \gamma_{iK})
+   $$
+   
+
+   and <br>
+
+   
+   $$
+   \begin{equation}
+     \begin{array}{l}
+   \gamma_{ik}|r_{i} \in M\; \sim\; B(1,m_{k})\; where\; m_{k}=P(\gamma_{ik}=1|r_{i} \in M)\; for\; i=1,2,\cdots ,N \\
+   \gamma_{ik}|r_{i} \in U\; \sim\; B(1,u_{k})\; where\; u_{k}=P(\gamma_{ik}=1|r_{i} \in U)\; for\; i=1,2,\cdots ,N
+     \end{array}
+   \end{equation}
+   $$
+   
 
 3. Calculate similarity score $R=\frac{P(\gamma|r \in M)}{P(\gamma|r \in U)}\;\;$.
 
