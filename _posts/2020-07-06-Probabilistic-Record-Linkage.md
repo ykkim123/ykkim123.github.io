@@ -78,33 +78,33 @@ $$
 2. Calculate conditional probability for each pair. That is, calculate <br>
 
 
-   $$
+$$
    \begin{equation}
      \begin{array}{l}
    P(\gamma_{i}|r_{i} \in M)=\prod_{k=1}^{K}P(\gamma_{ik}|r_{i} \in M)=\prod_{k=1}^{K}m_{k}^{\gamma_{k}}(1-m_{k})^{1-\gamma_{k}} \\
    P(\gamma_{i}|r_{i} \in U)=\prod_{k=1}^{K}P(\gamma_{ik}|r_{i} \in U)=\prod_{k=1}^{K}u_{k}^{\gamma_{k}}(1-u_{k})^{1-\gamma_{k}}
      \end{array}
    \end{equation}
-   $$
+$$
 
    where <br>
 
-   $$
+$$
    \gamma_{i}=(\gamma_{i1},\gamma_{i2},\cdots \gamma_{iK})
-   $$
+$$
 
 
    and <br>
 
 
-   $$
+$$
    \begin{equation}
      \begin{array}{l}
    \gamma_{ik}|r_{i} \in M\; \sim\; B(1,m_{k})\; where\; m_{k}=P(\gamma_{ik}=1|r_{i} \in M)\; for\; i=1,2,\cdots ,N \\
    \gamma_{ik}|r_{i} \in U\; \sim\; B(1,u_{k})\; where\; u_{k}=P(\gamma_{ik}=1|r_{i} \in U)\; for\; i=1,2,\cdots ,N
      \end{array}
    \end{equation}
-   $$
+$$
 
 3. Calculate similarity score 
    $$
@@ -112,7 +112,7 @@ $$
    $$
    for each pair where <br>
 
-   
+
    $$
    R_{i}=\frac{P(\gamma_{i}|r_{i} \in M)}{P(\gamma_{i}|r_{i} \in U)}
    $$
@@ -206,7 +206,7 @@ $$
 
 
 $$
-g_{i}^{(t)}=\frac{p^{(t)} \cdot \prod_{k=1}^{K}(m_{k}^{(t)})^{\gamma_{ik}}(1-m_{k}^{(t)})^{1-\gamma_{ik}}}{p^{(t)} \cdot \prod_{k=1}^{K}(m_{k}^{(t)})^{\gamma_{ik}}(1-m_{k}^{(t)})^{1-\gamma_{ik}}+(1-p^{(t)}) \cdot \prod_{k=1}^{K}(u_{k}^{(t)})^{\gamma_{ik}}(1-u_{k}^{(t)})^{1-\gamma_{ik}}}
+E(g_{i}|\gamma_{i},\theta^{t})\equiv g_{i}^{(t)}=\frac{p^{(t)} \cdot \prod_{k=1}^{K}(m_{k}^{(t)})^{\gamma_{ik}}(1-m_{k}^{(t)})^{1-\gamma_{ik}}}{p^{(t)} \cdot \prod_{k=1}^{K}(m_{k}^{(t)})^{\gamma_{ik}}(1-m_{k}^{(t)})^{1-\gamma_{ik}}+(1-p^{(t)}) \cdot \prod_{k=1}^{K}(u_{k}^{(t)})^{\gamma_{ik}}(1-u_{k}^{(t)})^{1-\gamma_{ik}}}
 $$
 
 
