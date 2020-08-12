@@ -326,13 +326,15 @@ $$
 
 ![decision tree]({{ site.urlimg }}/Decision-Tree/decision tree.png)
 
-The above illustration shows how this works. From the decision tree, a male whose age is greater than 9.5 would be predicted to be dead, while a male whose age is less than or equal to 9.5 and who has less than 3 siblings would be predicted to be survived.
+The above illustration shows how it works. Using the decision tree, a male whose age is greater than 9.5 would be predicted to be dead, and a male whose age is less than or equal to 9.5 and who has less than 3 siblings would be predicted to be survived.
 
-For rigorous explanation, define a terminal node 
+Now, let
 $$
 R_{m}
 $$
- that satisfies <br>
+ be a terminal node that satisfies <br>
+ 
+
 $$
 \begin{equation}
   \begin{array}{l}
@@ -343,15 +345,21 @@ $$
 \end{equation}
 $$
 
+<br>
 Then, the label of 
 $$
 x
 $$
- is predicted to be: <br>
+ is predicted to be <br>
+ 
+
 $$
 \hat{f}(x)=\sum_{m=1}^{M}c_{m}I(x\in R_{m})
 $$
-where 
+
+where
+
+
 $$
 \begin{equation}
   \begin{array}{l}
@@ -362,7 +370,7 @@ $$
 $$
 
 
-
+<br>
 Now, let's consider how to evaluate decision tree. A misclassification rate of tree 
 $$
 T
