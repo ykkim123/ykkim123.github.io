@@ -425,7 +425,7 @@ G(t_{i})=\frac{N_{t_{1}}}{N_{t_{i}}}G(t_{i1})+\frac{N_{t_{2}}}{N_{t_{i}}}G(t_{i2
 $$
 
 <br>
-Next, let's start from Kullback-Leibler divergence defined as
+Next, let's start from Kullback-Leibler divergence defined as:
 
 $$
 KL_{t}(p\parallel q)=\sum_{k=1}^{K}p_{k}log\frac{p_{k}}{q_{k}}
@@ -487,8 +487,8 @@ H(t_{i})=\frac{N_{t_{1}}}{N_{t_{i}}}H(t_{i1})+\frac{N_{t_{1}}}{N_{t_{i}}}H(t_{i2
 $$
 
 
-
-The following graph shows 3 different evaluation measures when 
+<br>
+The following graph shows 3 different loss functions when 
 $$
 K=2
 $$
@@ -496,19 +496,20 @@ $$
 
 ![loss function]({{ site.urlimg }}/Decision-Tree/loss function.png)
 
-You can check that:
+You can see that:
 
-- For numerical optimization, missclassification error is not a good option, since it is not differentiable
+- For the purpose of numerical optimization, misclassification error is not a good option, since it is not differentiable
 
-- Entropy>Gini impurity>Missclassification error(in terms of sensitivity to impurity)
+- Entropy>Gini impurity>Missclassification error
+  (in terms of sensitivity to impurity)
 
   
-
-Then, for the loss function 
+<br>
+For the loss function 
 $$
 R(t)
 $$
- chosen among such loss functions, the algorithm finds the optimal split for node 
+, the algorithm finds the optimal split of node 
 $$
 t
 $$
@@ -520,19 +521,25 @@ and split point
 $$
 s
 $$
- that satisfies the following: <br>
+ that satisfies:
+
 $$
-(j^{*},s^{*})=\underset{(j,s)}{argmin}\Delta(j,s)
+(j^{*},s^{*})=\underset{(j,s)}{argmax}\Delta(j,s)
 $$
-where 
-$$
-\Delta(j,s)
-$$
- is defined by a difference between current loss and loss after splitting, i.e. <br>
+
+where
+
 $$
 \Delta(j,s)=R(t)-(\frac{N_{t_{1}}}{N_{t}}R(t_{1})+\frac{N_{t_{2}}}{N_{t}}R(t_{2}))
 $$
-The following procedure is done by greedy search. That is, 
+
+, a difference between current loss and loss after splitting.
+
+Finding the optimal 
+$$
+(j^{*},s^{*})
+$$
+ is done by greedy search. That is, 
 
 - For 
   $$
@@ -563,8 +570,8 @@ The following procedure is done by greedy search. That is,
   split
 
 
-
-And here are some characteristics that decision tree has:
+<br>
+And here are some characteristics that classification tree has:
 
 - Robust to scale of features
 
@@ -572,11 +579,12 @@ And here are some characteristics that decision tree has:
 
   - Only store data of terminal nodes
 
-  - $$
+  - Has
+    $$
     O(DKN)
     $$
-
-    complexity where <br>
+    complexity where
+    
     $$
     \begin{equation}
       \begin{array}{l}
@@ -591,10 +599,10 @@ And here are some characteristics that decision tree has:
 
 - Any form of data type is possible
 
-- Robust to outliers/missing values
+- Robust to outliers and missing values
 
 
-
+<br>
 ## Decision Tree for Regression
 
 Decision tree for regression has similar structure to that of classification. However, it computes prediction by <br>
