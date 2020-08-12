@@ -180,7 +180,7 @@ $$
 $$
 x_{t}
 $$
- and  
+ and 
 $$
 x\in (A \cup C)
 $$
@@ -192,7 +192,7 @@ $$
 
 
 <br>
-Also, for finding k-nearest neighbors, simply compare 
+Also, if you want to find k-nearest neighbors, compare 
 $$
 d_{w}
 $$
@@ -200,7 +200,7 @@ and
 $$
 \underset{x\in S_{k}}{max}(d(x_{t},x))
 $$
- where 
+, where 
 $$
 S_{k}
 $$
@@ -228,7 +228,7 @@ $$
 
 
 
-
+<br>
 # Ball Tree
 
 ![ball tree]({{ site.urlimg }}/Decision-Tree/ball tree.png)
