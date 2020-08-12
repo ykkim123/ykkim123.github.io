@@ -29,10 +29,10 @@ where <br> <br>
 $$
 \begin{equation}
   \begin{array}{l}
-    U\; is\; divided\; by\; median\\
-    U=A \cup B \\
-    d(x,y): distance\; between\; x\; and\; y \\
-    d_{w}: distance\; between\; a\; point\; and\; wall 
+    \gamma: an\; agreement\; pattern \\
+    r: a\; pair\; of\; record \\
+    M: a\; set\; of\; true\; matches \\
+    U: a\; set\; of\; non-matches
   \end{array}
 \end{equation}
 $$
