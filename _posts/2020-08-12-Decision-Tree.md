@@ -359,7 +359,6 @@ $$
 
 where
 
-
 $$
 \begin{equation}
   \begin{array}{l}
@@ -371,19 +370,23 @@ $$
 
 
 <br>
-Now, let's consider how to evaluate decision tree. A misclassification rate of tree 
+After fitting a tree, it's important to evaluate the model in a proper manner. A misclassification rate of tree 
 $$
 T
 $$
- is:
+ is defined as:
+ 
+
 $$
 E(T)=\frac{\sum_{m=1}^{|T|}\sum_{x_{i}\in R_{m}}I(y_{i}\neq c_{m})}{N}
 $$
-where 
+
+where
+
 $$
 \begin{equation}
   \begin{array}{l}
-  |T|:the\; number\; of\; terminal\; nodes \\
+  |T|=the\; number\; of\; terminal\; nodes \\
   N_{m}=the\; number\; of\; samples\; in\; R_{m} \\
   N=\sum_{m=1}^{|T|}N_{m}
   \end{array}
