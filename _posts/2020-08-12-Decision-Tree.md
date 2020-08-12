@@ -616,11 +616,11 @@ c_{m}=\bar{y}_{m}
 $$
 .
 
-Then, the model would look like below:
+Then, regression tree would look like below:
 ![regression tree]({{ site.urlimg }}/Decision-Tree/regression tree.png)
 
 
-
+<br>
 Let's consider how to prune regression tree with respect to cost complexity. That is, we want to control tree size 
 $$
 |T|
@@ -649,11 +649,14 @@ $$
 $$
 is a nonnegative tuning parameter that controls the trade-off between tree size and goodness of fit.
 
-For cost complexity pruning, we should first make a sequence of trees 
+For cost complexity pruning, we should first obtain a sequence of trees
+
 $$
 T^{0}\supseteq T^{1}\supseteq \cdots \supseteq T^{n}
 $$
-where <br>
+
+where
+
 $$
 \begin{equation}
   \begin{array}{l}
@@ -662,6 +665,7 @@ $$
   \end{array}
 \end{equation}
 $$
+
 Also, denote
 $$
 \begin{equation}
@@ -672,12 +676,12 @@ $$
   \end{array}
 \end{equation}
 $$
-and take a look at the graph below. 
+and take a look at the graph below:
 
 ![cost complexity pruning]({{ site.urlimg }}/Decision-Tree/cost complexity pruning.png)
 
 
-
+<br>
 Without penalty term(
 $$
 \alpha=0
@@ -694,9 +698,9 @@ $$
 $$
 \alpha
 $$
-increases, penalty for making deeper tree increases, and after certain level(
+increases, penalty for making deeper tree also increases, and after certain level(
 $$
-{\alpha}'=\frac{R(t)-R(T_{t})}{|T_{t}|-1}
+{\alpha}'
 $$
 ), the relationship between 
 $$
@@ -706,17 +710,21 @@ $$
 $$
 R_{\alpha}(t)
 $$
- reverses. Therefore, 
+ reverses. Thus, 
 $$
 {\alpha}'
 $$
-can be viewed as a level beyond which loss is greater than gain, when you make a deeper tree from root node 
+can be interpreted as a level beyond which loss is greater than gain, when you make a tree from root node 
 $$
 t
 $$
 .
 
-Now, suppose that 
+For 
+$$
+T^{0}
+$$
+, suppose that 
 $$
 \alpha_{t_{k}}
 $$
@@ -728,18 +736,22 @@ s. Then, node
 $$
 t_{k}
 $$
-is called **the weakest link** and tree is updated as: <br>
+is called the **weakest link** and tree is updated as
+
 $$
 T^{1}=T^{0}-T^{0}_{t_{k}}
 $$
+
 while tuning parameter 
 $$
 \alpha
 $$
-is also updated as:
+is also updated as
+
 $$
 \alpha_{1}=\frac{R(t_{k})-R(T^{0}_{t_{k}})}{|T^{0}_{t_{k}}|-1}
 $$
+
 That is, 
 $$
 T_{1}
@@ -750,25 +762,24 @@ R_{\alpha_{1}}(T)
 $$
 .
 
-To summarize, cost-complexity pruning is implemented by the following procedure:
+Thus, cost-complexity pruning is implemented by the following procedure: 
 
 - Initialization
 
   - $$
-    T_{0}
-    $$
-
-    : a full tree
-
-  - $$
-    \alpha_{0}=0
+    \begin{equation}
+      \begin{array}{l}
+      T_{0}: a\; full\; tree
+      \alpha_{0}=0
+      \end{array}
+    \end{equation}
     $$
 
 - For 
   $$
   s=1,2,\cdots
   $$
-    , do:
+  ,
 
   - Select the node 
     $$
@@ -788,19 +799,20 @@ To summarize, cost-complexity pruning is implemented by the following procedure:
     \alpha_{s}=\frac{R(t)-R(T_{t}^{s-1})}{|T^{s-1}_{t}|-1}
     $$
 
-After Iterating the algorithm until it reaches
+<br>
+After iterating the algorithm until it reaches
 $$
 T_{n}
 $$
-, then we obtain a sequence of trees 
+, we obtain a sequence of trees 
 $$
 T^{0}\supseteq T^{1}\supseteq \cdots \supseteq T^{n}
 $$
-and a non-decreasing sequence of tuning parameters
+and non-decreasing sequence of tuning parameters
 $$
 \alpha_{0}\leq \alpha_{1}\leq \cdots \leq \alpha_{n}
 $$
-
+.
 
 Based on the above result, optimal value of 
 $$
