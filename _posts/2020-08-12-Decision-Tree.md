@@ -55,18 +55,22 @@ $$
 $$
  points.
 
-<br>
+
 However, under k-d tree structure, we can find the nearest neighbor by the following procedure:
 
 1. Find 
    $$
-   x^{*}\in B
+   x^{*}
    $$
-   , the nearest neighbor of 
+   , the local nearest neighbor of 
    $$
    x_{t}
    $$
-   .
+    in 
+    $$
+    B
+    $$
+    .
 
 2. If 
    $$
@@ -109,29 +113,24 @@ $$
 d_{w}>d(x_{t},x)
 $$
 , then you can reduce computation time for searching the nearest neighbor by half. 
-Of course, deeper k-d tree works in a simimlar way:
+
+Of course, deeper k-d tree works in a similar way:
 
 ![deep k-d tree]({{ site.urlimg }}/Decision-Tree/deep k-d tree.png)
 
 
 
-Similarly, the algorithm finds the nearest neighbor of 
-$$
-x_{t}
-$$
-in the following order:
-
 1. Find 
    $$
    x^{*}
    $$
-   , the nearest neighbor of 
+   , the local nearest neighbor of 
    $$
    x_{t}
    $$
-    such that 
+    in 
    $$
-   x^{*}\in D
+   D
    $$
    .
 
@@ -169,30 +168,31 @@ in the following order:
    $$
    A \cup C
    $$
+   .
 
-.
 
-Now, we found the nearest neighbor 
+<br>
+Thus, we can find the nearest neighbor 
 $$
 x^{*}
 $$
-, without calculating distance between 
+, without computing distance between 
 $$
 x_{t}
 $$
-and points in 
+ and  
 $$
-A \cup C
+x\in (A \cup C)
 $$
-! The result so far can be illustrated by the dendrogram below:
+!
 
 ![deep k-d tree2]({{ site.urlimg }}/Decision-Tree/deep k-d tree2.png)
 
 
 
 
-
-Of course, for finding k-nearest neighbors, simply compare 
+<br>
+Also, for finding k-nearest neighbors, simply compare 
 $$
 d_{w}
 $$
@@ -202,25 +202,28 @@ $$
 $$
  where 
 $$
-S_{k}: k-nearest\; neighbors\; of\; x_{t}
+S_{k}
+$$
+ is the k-nearest neighbors of 
+$$
+x_{t}
 $$
 . 
 
-However, the algorithm does not work well when
+However, the algorithm does not work well if
 
 - $$
   k
   $$
-
    is large
 
 - data is high dimensional
 
-because in above cases, it's uncommon to be 
+because it's uncommon to be 
 $$
 d_{w}>d(x_{t},x)
 $$
- and thus cannot take the advantage of k-d tree.
+ and thus we cannot take an advantage of k-d tree.
 
 
 
