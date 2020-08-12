@@ -2,7 +2,7 @@
 layout: post
 title: "Decision Tree"
 date: "2020-08-12"
-description: "This post explains decision tree algorithm; introduction of k-d tree and ball tree, and mathematical explanation for decision tree for evaluation of the model."
+description: "This post explains decision tree algorithm; introduction of k-d tree/ball tree, and mathematical explanation of decision tree with evaluation of the model."
 category: 
   - featured
 # tags will also be used as html meta keywords.
