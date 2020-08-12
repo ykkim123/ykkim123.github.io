@@ -21,11 +21,11 @@ nofollow: false
 
 # k-d Tree
 
-First, let's discuss about k-d tree, whose main purpose is to partition a space so that nearest neighbor search can be done more efficiently. For better understanding consider the following example:
+Let's start with k-d tree, whose main purpose is to partition a space so that nearest neighbor search can be done more efficiently. For better understanding, take a look at an example below:
 
 ![k-d tree]({{ site.urlimg }}/Decision-Tree/k-d tree.png)
 
-where <br>
+where <br> <br>
 $$
 \begin{equation}
   \begin{array}{l}
