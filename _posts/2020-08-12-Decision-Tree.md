@@ -41,7 +41,7 @@ $$
 
 
 <br>
-Now, suppose that we want to find the nearest neighbor of 
+Now, suppose we want to find the nearest neighbor of 
 $$
 x_{t}
 $$
@@ -55,20 +55,18 @@ $$
 $$
  points.
 
-Next, let's look at the same problem under k-d tree structure. We can find the nearest neighbor by the following procedure:
+<br>
+However, under k-d tree structure, we can find the nearest neighbor by the following procedure:
 
 1. Find 
    $$
-   x^{*}
+   x^{*}\in B
    $$
    , the nearest neighbor of 
    $$
    x_{t}
    $$
-    such that 
-   $$
-   x^{*}\in B
-   $$
+   .
 
 2. If 
    $$
@@ -78,13 +76,9 @@ Next, let's look at the same problem under k-d tree structure. We can find the n
    $$
    x^{*}
    $$
-    is the nearest neighbor of 
+    is the global nearest neighbor of 
    $$
    x_{t}
-   $$
-   in 
-   $$
-   U
    $$
    . Otherwise, calculate 
    $$
@@ -102,19 +96,19 @@ Next, let's look at the same problem under k-d tree structure. We can find the n
    $$
    {x}'
    $$
-    such that 
+    that satisfies 
    $$
    d(x_{t},{x}')<d(x_{t},x^{*})
    $$
    .
 
    
-
+<br>
 This implies that if 
 $$
 d_{w}>d(x_{t},x)
 $$
-is satisfied, then you can reduce time taken for searching the nearest neighbor by half. 
+, then you can reduce computation time for searching the nearest neighbor by half. 
 
 You can do the similar thing for deeper k-d tree:
 
