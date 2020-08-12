@@ -109,8 +109,7 @@ $$
 d_{w}>d(x_{t},x)
 $$
 , then you can reduce computation time for searching the nearest neighbor by half. 
-
-You can do the similar thing for deeper k-d tree:
+Of course, deeper k-d tree works in a simimlar way:
 
 ![deep k-d tree]({{ site.urlimg }}/Decision-Tree/deep k-d tree.png)
 
