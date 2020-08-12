@@ -425,10 +425,12 @@ G(t_{i})=\frac{N_{t_{1}}}{N_{t_{i}}}G(t_{i1})+\frac{N_{t_{2}}}{N_{t_{i}}}G(t_{i2
 $$
 
 <br>
-Next, to discuss about entropy, let's start with Kullback-Leibler divergence defined as: <br>
+Next, let's start from Kullback-Leibler divergence defined as
+
 $$
 KL_{t}(p\parallel q)=\sum_{k=1}^{K}p_{k}log\frac{p_{k}}{q_{k}}
 $$
+
 that computes closeness between 
 $$
 p
@@ -439,10 +441,12 @@ q
 $$
 . 
 
-Now, for the understanding of entropy, think of the most "impure" case where the probabilities for each label are identical, i.e. <br>
+Now, think of the most "impure" case where the probabilities for every label are identical, i.e.
+
 $$
 q_{k}=\frac{1}{K}\; for\; k=1,2,\cdots ,K
 $$
+
 Then, Kullback-Leibler divergence from 
 $$
 q
@@ -451,15 +455,17 @@ $$
 $$
 p
 $$
-is defined as: <br>
+is defined as
+
 $$
 \begin{equation}
   \begin{array}{l}
   KL_{t}(p\parallel q)=\sum_{k=1}^{K}(p_{k}log(p_{k})+p_{k}logK) \\
-  \;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;=\sum_{k=1}^{K}(p_{k}log(p_{k}))+logK
+  \;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;=\sum_{k=1}^{K}(p_{k}log(p_{k}))+logK
   \end{array}
 \end{equation}
 $$
+
 Since 
 $$
 logK
@@ -468,15 +474,14 @@ $$
 $$
 \sum_{k=1}^{K}(p_{k}log(p_{k}))
 $$
- which is equivalent to minimizing entropy: <br>
+, which is equivalent to minimizing entropy
+
 $$
 H(t)=-\sum_{k=1}^{K}(p_{k}log(p_{k}))
 $$
-and entropy of subtree 
-$$
-t_{i}
-$$
-is computed in a similar way: <br>
+
+Also, subtree version of entropy is defined similarly:
+
 $$
 H(t_{i})=\frac{N_{t_{1}}}{N_{t_{i}}}H(t_{i1})+\frac{N_{t_{1}}}{N_{t_{i}}}H(t_{i2})
 $$
