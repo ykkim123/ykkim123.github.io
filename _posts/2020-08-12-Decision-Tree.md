@@ -604,9 +604,7 @@ And here are some characteristics that classification tree has:
 <br>
 ## Decision Tree for Regression
 
-Decision tree for regression has similar structure to that of classification. However, it computes prediction by <br>
-
-
+Decision tree for regression has similar structure to that of classification. However, it computes prediction by
 
 $$
 \hat{f}(x)=\sum_{m=1}^{M}c_{m}I(x\in R_{m})
@@ -616,8 +614,11 @@ where
 $$
 c_{m}=\bar{y}_{m}
 $$
+.
 
 Then, the model would look like below:
+
+![regression tree]({{ site.urlimg }}/Decision-Tree/regression tree.png)
 
 
 
@@ -1089,7 +1090,6 @@ reg = DecisionTreeRegressor(criterion='mse', splitter='best', max_depth=2, min_s
                             max_leaf_nodes=10)
 ~~~
 
-![regression tree]({{ site.urlimg }}/Decision-Tree/regression tree.png)
 
 
 
