@@ -233,17 +233,13 @@ $$
 
 ![ball tree]({{ site.urlimg }}/Decision-Tree/ball tree.png)
 
-Ball tree is a modification of k-d tree; specifically, it partitions a space by balls, not by boxes. Compared to k-d tree, the algorithm has an advantage that is relatively robust to high dimensional data.
+Ball tree is a modification of k-d tree; it partitions a space by balls, instead of boxes. Compared to k-d tree, the algorithm has an advantage that it is relatively robust to high dimensional data.
 
-It partitions a space by the following procedure:
+The sketch of partitioning of a space is:
 
 1. Pick any 
    $$
-   x_{t}
-   $$
-   in 
-   $$
-   S
+   x_{t} \in S
    $$
    .
 
@@ -251,7 +247,7 @@ It partitions a space by the following procedure:
    $$
    x_{1}
    $$
-    such that 
+    that satisfies 
    $$
    d(x_{t},x_{1})=\underset{x\in S}{max}(d(x_{t},x))
    $$
@@ -261,41 +257,41 @@ It partitions a space by the following procedure:
    $$
    x_{2}
    $$
-    such that 
+    that satisfies 
    $$
    d(x_{1},x_{2})=\underset{x\in S}{max}(d(x_{1},x))
-   $$
-    for all 
-   $$
-   x
    $$
    .
 
 4. Partition a space by 
    $$
-   m=med(x_{1},x_{2})
+   med(x_{1},x_{2})
    $$
    .
 
-5. For each partitioned subset, calculate 
+5. Calculate 
    $$
    c_{i}
    $$
-   , an average of points in the subset.
+   , an average of points in subset
+   $$
+   S_{i}
+   $$
+   .
 
-6. Draw a circle(ball) whose centroid and radius are
+6. Draw a circle(ball) whose centroid is
    $$
    c_i
    $$
-    and
+    and diameter is 
    $$
    \underset{x\in S_{i}}{max}(d(c_i,x))
    $$
-   , respectively.
+   .
 
 
-
-The procedure for finding the nearest neighbor is identical to k-d tree. However, unlike k-d tree, a point may belong to multiple balls. In that case, the algorithm starts to find the nearest neighbor from the ball whose centroid is the closest to 
+<br>
+The procedure of finding the nearest neighbor is identical to that of k-d tree. However, unlike k-d tree, a point may belong to multiple balls. In that case, the algorithm starts finding the nearest neighbor from the ball whose centroid is the closest to 
 $$
 x_{t}
 $$
@@ -304,7 +300,7 @@ $$
 
 
 
-
+<br>
 # Decision Tree
 
 ## Decision Tree for Classification
