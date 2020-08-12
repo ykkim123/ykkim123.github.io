@@ -781,7 +781,7 @@ Thus, cost-complexity pruning is implemented by the following procedure:
   $$
   s=1,2,\cdots
   $$
-  , do
+  , do:
 
   - Select the node 
     $$
