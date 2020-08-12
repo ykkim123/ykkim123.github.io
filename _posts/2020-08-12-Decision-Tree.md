@@ -25,14 +25,16 @@ Let's start with k-d tree, whose main purpose is to partition a space so that ne
 
 ![k-d tree]({{ site.urlimg }}/Decision-Tree/k-d tree.png)
 
-where <br> <br>
+where <br>
+
+
 $$
 \begin{equation}
   \begin{array}{l}
-    \gamma: an\; agreement\; pattern \\
-    r: a\; pair\; of\; record \\
-    M: a\; set\; of\; true\; matches \\
-    U: a\; set\; of\; non-matches
+    U\; is\; divided\; by\; median\\
+    U=A \cup B \\
+    d(x,y): distance\; between\; x\; and\; y \\
+    d_{w}: distance\; between\; a\; point\; and\; wall 
   \end{array}
 \end{equation}
 $$
