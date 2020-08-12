@@ -500,12 +500,11 @@ You can see that:
 
 - For the purpose of numerical optimization, misclassification error is not a good option, since it is not differentiable
 
-- Entropy>Gini impurity>Missclassification error
-  (in terms of sensitivity to impurity)
+- Entropy>Gini impurity>Missclassification error, in terms of sensitivity to impurity
 
   
 <br>
-For the loss function 
+For loss function 
 $$
 R(t)
 $$
@@ -521,7 +520,7 @@ and split point
 $$
 s
 $$
- that satisfies:
+ that satisfies
 
 $$
 (j^{*},s^{*})=\underset{(j,s)}{argmax}\Delta(j,s)
@@ -533,9 +532,9 @@ $$
 \Delta(j,s)=R(t)-(\frac{N_{t_{1}}}{N_{t}}R(t_{1})+\frac{N_{t_{2}}}{N_{t}}R(t_{2}))
 $$
 
-, a difference between current loss and loss after splitting.
+is a difference between current loss and loss after splitting.
 
-Finding the optimal 
+Finding
 $$
 (j^{*},s^{*})
 $$
