@@ -586,17 +586,7 @@ And here are some characteristics that decision tree has:
 - Any form of data type is possible
 - Robust to outliers/missing values
 
-
-
 ## Decision Tree for Regression
-
-Decision tree for regression has similar structure to that of classification. However, it computes prediction by <br>
-
-Then, the model would look like below:
-
-![regression tree]({{ site.urlimg }}/Decision-Tree/regression tree.png)
-
-
 
 Then, the algorithm finds the optimal split that satisfies <br>
 $$
