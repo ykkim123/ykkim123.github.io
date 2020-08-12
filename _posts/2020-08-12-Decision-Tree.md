@@ -617,35 +617,37 @@ $$
 .
 
 Then, the model would look like below:
-
 ![regression tree]({{ site.urlimg }}/Decision-Tree/regression tree.png)
 
 
 
-Now, let's consider how to prune decision tree with respect to cost complexity. That is, we should control tree size 
+Let's consider how to prune regression tree with respect to cost complexity. That is, we want to control tree size 
 $$
 |T|
 $$
-in order to avoid overfitting. Parameters that are subject to optimization include:
+ to avoid overfitting. 
 
-- maximum depth
-- the maximum number of terminal nodes
-- the minimum number of samples that terminal node should have
-- the minimum number of samples to be splitted
+Finding the optimal 
+$$
+|T|
+$$
+ can be one in either naive(e.g. grid search) way, but it's hard to find the optimal level in such way. Therefore, cost complexity pruning, which is a more rigorous way of doing the thing, is often more helpful.The algorithm prunes a tree by using penalized loss function
 
- The optimization can be one in either naive(e.g. grid search) or rigorous way, but it's hard to accomplish the optimal level in naive ways. Therefore, we will take a look at cost complexity pruning, a more rigorous way of doing the same thing. Cost complexity pruning prune decision tree by introducing penalized loss function <br>
 $$
 R_{\alpha}(T)=R(T)+\alpha |T|
 $$
-where <br>
+
+where
+
 $$
 R(T)=\sum_{m=1}^{|T|} \sum_{x_{i}\in R_{m}(j,s)}(y_{i}-\bar{y}_{m})^{2}
 $$
+
 and 
 $$
 \alpha
 $$
-is the nonnegative tuning parameter that controls the trade-off between tree size and goodness of fit.
+is a nonnegative tuning parameter that controls the trade-off between tree size and goodness of fit.
 
 For cost complexity pruning, we should first make a sequence of trees 
 $$
