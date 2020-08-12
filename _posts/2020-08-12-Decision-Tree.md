@@ -31,7 +31,7 @@ where <br>
 $$
 \begin{equation}
   \begin{array}{l}
-    U\; is\; divided\; by\; median\\
+    U\; is\; divided\; by\; median\;\\
     U=A \cup B \\
     d(x,y): distance\; between\; x\; and\; y \\
     d_{w}: distance\; between\; a\; point\; and\; wall 
@@ -40,7 +40,7 @@ $$
 $$
 
 
-
+<br>
 Now, suppose that we want to find the nearest neighbor of 
 $$
 x_{t}
