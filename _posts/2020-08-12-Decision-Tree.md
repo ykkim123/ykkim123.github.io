@@ -305,24 +305,24 @@ $$
 
 ## Decision Tree for Classification
 
-The intuition of decision tree starts from k-d tree. In k-d tree, there is a backtracking step to check if the nearest neighbors we found locally are global nearest neighbors. In decision tree, however, we find the approximate nearest neighbors by omitting this step.
+The intuition of decision tree starts from k-d tree; decision tree finds the approximate nearest neighbors by omitting a backtracking step exists in k-d tree.
 
 Now, suppose we want to predict a label of new data 
 $$
-x_{t}
+x_{new}
 $$
-. Then, we can think of two cases where a terminal node consists of 
+. Then, we can think of two cases where a terminal node consists of either
 
 1. data with the a single label
 2. data with multiple labels
 
 
 
-In case 1, it's obvious that finding nearest neighbors is meaningless, since labels of the nearest neighbors are identical. In case 2, where multiple labels exist, we determine a label of 
+In case 1, it's obvious that finding nearest neighbors is meaningless, since all the labels of the nearest neighbors are identical. In case 2, where multiple labels exist, we predict a label of 
 $$
-x_{t}
+x_{new}
 $$
- by majority voting; i.e. we predict a label of the new data as the label that has the highest proportion in that node. 
+ by majority voting; we predict a label of the new data as the label that has the highest proportion. 
 
 ![decision tree]({{ site.urlimg }}/Decision-Tree/decision tree.png)
 
