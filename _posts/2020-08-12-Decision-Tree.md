@@ -595,33 +595,18 @@ And here are some characteristics that decision tree has:
 
 Decision tree for regression has similar structure to that of classification. However, it computes prediction by <br>
 
+
+
 $$
 \hat{f}(x)=\sum_{m=1}^{M}c_{m}I(x\in R_{m})
 $$
+
 where 
 $$
 c_{m}=\bar{y}_{m}
 $$
 
 Then, the model would look like below:
-
-![regression tree]({{ site.urlimg }}/Decision-Tree/regression tree.png)
-
-
-
-Then, the algorithm finds the optimal split that satisfies <br>
-$$
-(j^{*},s^{*})=\underset{(j,s)}{argmin}(\sum_{x_{i}\in R_{1}(j,s)}(y_{i}-\bar{y}_{1})^{2}+\sum_{x_{i}\in R_{2}(j,s)}(y_{i}-\bar{y}_{2})^{2})
-$$
-where <br>
-$$
-\begin{equation}
-  \begin{array}{l}
-  R_{1}(j,s)=\left\{{X|X_{j}\leq s} \right\} \\
-  R_{2}(j,s)=\left\{{X|X_{j}>s} \right\}
-  \end{array}
-\end{equation}
-$$
 
 
 
