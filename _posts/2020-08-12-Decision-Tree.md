@@ -667,6 +667,7 @@ $$
 $$
 
 Also, denote
+
 $$
 \begin{equation}
   \begin{array}{l}
@@ -676,6 +677,7 @@ $$
   \end{array}
 \end{equation}
 $$
+
 and take a look at the graph below:
 
 ![cost complexity pruning]({{ site.urlimg }}/Decision-Tree/cost complexity pruning.png)
@@ -769,7 +771,7 @@ Thus, cost-complexity pruning is implemented by the following procedure:
   - $$
     \begin{equation}
       \begin{array}{l}
-      T_{0}: a\; full\; tree
+      T_{0}: a\; full\; tree \\
       \alpha_{0}=0
       \end{array}
     \end{equation}
@@ -779,7 +781,7 @@ Thus, cost-complexity pruning is implemented by the following procedure:
   $$
   s=1,2,\cdots
   $$
-  ,
+  , do
 
   - Select the node 
     $$
