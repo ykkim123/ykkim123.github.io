@@ -592,9 +592,7 @@ And here are some characteristics that decision tree has:
 
 Decision tree for regression has similar structure to that of classification. However, it computes prediction by <br>
 
-$$
-\hat{f}(x)=\sum_{m=1}^{M}c_{m}I(x\in R_{m})
-$$
+
 where 
 $$
 c_{m}=\bar{y}_{m}
