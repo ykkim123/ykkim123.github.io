@@ -25,8 +25,7 @@ Let's start with k-d tree, whose main purpose is to partition a space so that ne
 
 ![k-d tree]({{ site.urlimg }}/Decision-Tree/k-d tree.png)
 
-where <br>
-
+where
 
 $$
 \begin{equation}
@@ -370,7 +369,7 @@ $$
 
 
 <br>
-After fitting a tree, it's important to evaluate the model in a proper manner. A misclassification rate of tree 
+After fitting a tree, evaluation the model should be done in a proper manner. A misclassification rate of tree 
 $$
 T
 $$
@@ -394,17 +393,19 @@ $$
 $$
 
 
-
-Impurity functions, which are much more commonly used, measure to which extent the node is "impure", with respect to proportion of labels. From the previous illustration, it's obvious that we want to make this impurity as low as possible.
+<br>
+Impurity functions, which are much more commonly used, measure to which extent the node is "impure", with respect to the proportion of labels.
 
 First, gini impurity of terminal node 
 $$
 t
 $$
-is defined as: <br>
+is defined as
+
 $$
 G(t)=\sum_{k=1}^{K}p_{mk}(1-p_{mk})
 $$
+
 and subtree 
 $$
 t_{i}
@@ -417,20 +418,13 @@ $$
 $$
 t_{i2}
 $$
- has a weighted mean of 
-$$
-G(t_{i1})
-$$
- and 
-$$
-G(t_{i2})
-$$
- as gini impurity, i.e. <br>
+ has gini impurity
+ 
 $$
 G(t_{i})=\frac{N_{t_{1}}}{N_{t_{i}}}G(t_{i1})+\frac{N_{t_{2}}}{N_{t_{i}}}G(t_{i2})
 $$
 
-
+<br>
 Next, to discuss about entropy, let's start with Kullback-Leibler divergence defined as: <br>
 $$
 KL_{t}(p\parallel q)=\sum_{k=1}^{K}p_{k}log\frac{p_{k}}{q_{k}}
