@@ -23,6 +23,11 @@ nofollow: false
 
 Decision tree for regression has similar structure to that of classification. However, it computes prediction by <br>
 
+where 
+$$
+c_{m}=\bar{y}_{m}
+$$
+
 Then, the model would look like below:
 
 
