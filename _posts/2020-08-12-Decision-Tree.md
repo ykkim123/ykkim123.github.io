@@ -855,7 +855,7 @@ $$
     $$
     T^{(v,k)}
     $$
-     is an optimal tree built from  
+     is an optimal tree built from 
     $$
      D^{v}
     $$
@@ -929,7 +929,6 @@ class_names = load_iris().target_names
 ~~~
 
 <br>
-
 We can make a decision tree for classification using *DecisionTreeClassifier* in *sklearn*
 
 ~~~python
@@ -998,7 +997,6 @@ cf_iris
 |   virginica    |   0    |     50     |     0     |
 
 <br>
-
 Also, we can check feature importance:
 
 ~~~python
@@ -1081,7 +1079,7 @@ for i in range(len(cc_pruning['ccp_alphas'])-1):
 ~~~
 
 <br>
-Using the geometric sequence, we can obtain accuracy by cross validation.
+Using the geometric sequence, we can obtain accuracy by cross validation:
 
 |  Alpha   | Accuracy |
 | :------: | :------: |
