@@ -769,12 +769,12 @@ Thus, cost-complexity pruning is implemented by the following procedure:
 - Initialization
 
   - $$
-    \begin{equation}
-      \begin{array}{l}
-      T_{0}: a\; full\; tree \\
-      \alpha_{0}=0
-      \end{array}
-    \end{equation}
+    T_{0}
+    $$
+    : a full tree
+      
+  - $$
+    \alpha_{0}=0
     $$
 
 - For 
@@ -816,7 +816,7 @@ $$
 $$
 .
 
-Based on the above result, optimal value of 
+Based on the above result, optimal value  
 $$
 \alpha^{*}
 $$
