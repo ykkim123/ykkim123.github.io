@@ -1136,5 +1136,5 @@ Unlike classification tree, regression tree
 - uses R-squared instead of accuracy
 - splits a node by dividing into intervals
 
-and remaining things can be done in a similar way(click here for more detail).
+and remaining things can be done in a similar way(click here[https://github.com/ykkim123/Data_Science/blob/master/Decision-Tree.ipynb] for more detail).
 
