@@ -861,14 +861,7 @@ $$
     $$
      for a tuning parameter 
     $$
-    \alpha_{k}'
-    
-    \alpha_{0}'\leq \alpha_{1}'\leq \cdots \leq \alpha_{n-1}'
-    $$
-
-    from 
-    $$
-    D^{(v)}
+    {\alpha_{k}}'
     $$
 
 - For 
@@ -900,11 +893,11 @@ T(\alpha)=T(\alpha_{k})
 $$
  for 
 $$
- \alpha_{k} \leq \alpha \leq \alpha_{k+1}
+ \alpha_{k} \leq \alpha < \alpha_{k+1}
 $$
 .
 
-These pruning methods can be apllied to classification tree in a similar way, just by using 
+These pruning methods can be applied to classification tree in a similar way, just by using 
 $$
 R(T)
 $$
@@ -1045,7 +1038,7 @@ which has the following result:
 | min_samples_split |      40       |
 
 
-
+<br>
 Consequently, we can build the optimized tree as illustrated below.
 
 ![classification tree2]({{ site.urlimg }}/Decision-Tree/classification tree2.png)
@@ -1073,6 +1066,7 @@ cc_pruning
 | 0.46010691 | 0.66666667 |
 | 0.91829583 | 1.5849625  |
 
+<br>
 and make a geometric sequence of 
 $$
 \alpha
@@ -1099,6 +1093,7 @@ Using the geometric sequence, we can obtain accuracy by cross validation.
 | 0.187907 | 0.933333 |
 | 0.650011 | 0.666667 |
 
+<br>
 Thus, we can find 
 $$
 \alpha^{*}=0.650011
@@ -1107,7 +1102,7 @@ and construct the pruned tree:
 
 ![classification tree3]({{ site.urlimg }}/Decision-Tree/classification tree3.png)
 
-
+<br>
 The evaluation result of 3 difference cases can be summarized as:
 
 |         Optimization Method          | Accuracy |
@@ -1116,7 +1111,6 @@ The evaluation result of 3 difference cases can be summarized as:
 |       Optimized by grid search       |  0.767   |
 | Optimized by cost complexity pruning |  0.960   |
 
-<br>
 
 Although grid search increases accuracy, in many cases, optimized hyperparameters are at most local optimum. On the other hand, by cost complexity pruning, we can attain much higher level of accuracy by controlling tuning parameter 
 $$
@@ -1124,8 +1118,7 @@ $$
 $$
 .
 
-
-
+<br>
 Similarly you can build a regression tree, using *DecisionTreeRegressor*:
 
 ~~~python
@@ -1138,7 +1131,7 @@ reg = DecisionTreeRegressor(criterion='mse', splitter='best', max_depth=2, min_s
 ![regression tree2]({{ site.urlimg }}/Decision-Tree/regression tree2.png)
 
 
-
+<br>
 Unlike classification tree, regression tree
 
 - uses MSE as an criterion
