@@ -30,8 +30,7 @@ where
 $$
 \begin{equation}
   \begin{array}{l}
-    U\; is\; divided\; by\; median\;\\
-    U=A \cup B \\
+    U=A \cup B\; is\; divided\; by\; median\;\\
     d(x,y): distance\; between\; x\; and\; y \\
     d_{w}: distance\; between\; a\; point\; and\; wall 
   \end{array}
@@ -44,16 +43,15 @@ Now, suppose we want to find the nearest neighbor of
 $$
 x_{t}
 $$
-. Without k-d tree structure, we have to calculate every
+. Without k-d tree structure, we have to calculate 
 $$
 d(x_{t},x)
 $$
-for  
+for every   
 $$
 (n-1)
 $$
- points.
-
+ point.
 
 However, under k-d tree structure, we can find the nearest neighbor by the following procedure:
 
@@ -61,7 +59,7 @@ However, under k-d tree structure, we can find the nearest neighbor by the follo
    $$
    x^{*}
    $$
-   , the local nearest neighbor of 
+   , the nearest neighbor of 
    $$
    x_{t}
    $$
@@ -123,7 +121,7 @@ Of course, deeper k-d tree works in a similar way:
    $$
    x^{*}
    $$
-   , the local nearest neighbor of 
+   , the nearest neighbor of 
    $$
    x_{t}
    $$
@@ -234,7 +232,11 @@ $$
 
 Ball tree is a modification of k-d tree; it partitions a space by balls, instead of boxes. Compared to k-d tree, the algorithm has an advantage that it is relatively robust to high dimensional data.
 
-The sketch of partitioning of a space is:
+The sketch of partitioning a space 
+$$
+S
+$$
+ is:
 
 1. Pick any 
    $$
@@ -282,15 +284,14 @@ The sketch of partitioning of a space is:
    $$
    c_i
    $$
-    and diameter is 
+    and radius is 
    $$
    \underset{x\in S_{i}}{max}(d(c_i,x))
    $$
    .
 
-
 <br>
-The procedure of finding the nearest neighbor is identical to that of k-d tree. However, unlike k-d tree, a point may belong to multiple balls. In that case, the algorithm starts finding the nearest neighbor from the ball whose centroid is the closest to 
+The procedure of finding the nearest neighbor is identical to that of k-d tree. However, unlike k-d tree, a point may belong to multiple balls. In that case, the algorithm starts finding the nearest neighbor from the ball whose centroid is closest to 
 $$
 x_{t}
 $$
@@ -304,7 +305,7 @@ $$
 
 ## Decision Tree for Classification
 
-The intuition of decision tree starts from k-d tree; decision tree finds the approximate nearest neighbors by omitting a backtracking step exists in k-d tree.
+The intuition of decision tree starts from k-d tree; decision tree finds approximate nearest neighbors by omitting a backtracking step exists in k-d tree.
 
 Now, suppose we want to predict a label of new data 
 $$
@@ -394,7 +395,7 @@ $$
 
 
 <br>
-Impurity functions, which are much more commonly used, measure to which extent the node is "impure", with respect to the proportion of labels.
+Impurity functions, which are more commonly used, measure to which extent the node is "impure", with respect to the proportion of labels.
 
 First, gini impurity of terminal node 
 $$
@@ -550,7 +551,7 @@ $$
   $$
   unique values respectively, the algorithm tries every possible
   $$
-  d_{n}\cdot n
+  (d_{n}\cdot n) 
   $$
   split
 
@@ -576,7 +577,7 @@ And here are some characteristics that classification tree has:
 
 - Computation is fast
 
-  - Only store data of terminal nodes
+  - Only store data in terminal nodes
 
   - Has
     $$
@@ -631,7 +632,7 @@ Finding the optimal
 $$
 |T|
 $$
- can be one in either naive(e.g. grid search) way, but it's hard to find the optimal level in such way. Therefore, cost complexity pruning, which is a more rigorous way of doing the thing, is often more helpful.The algorithm prunes a tree by using penalized loss function
+ can be done in a naive(e.g. grid search) way, but it's hard to find the optimal value. Therefore, cost complexity pruning, which is a more rigorous way of optimizing hyperparameters, is often more helpful. The algorithm prunes a tree by using penalized loss function
 
 $$
 R_{\alpha}(T)=R(T)+\alpha |T|
@@ -640,7 +641,7 @@ $$
 where
 
 $$
-R(T)=\sum_{m=1}^{|T|} \sum_{x_{i}\in R_{m}(j,s)}(y_{i}-\bar{y}_{m})^{2}
+R(T)=\sum_{m=1}^{|T|} \sum_{x_{i}\in R_{m}}(y_{i}-\bar{y}_{m})^{2}
 $$
 
 and 
@@ -655,16 +656,15 @@ $$
 T^{0}\supseteq T^{1}\supseteq \cdots \supseteq T^{n}
 $$
 
-where
-
+where 
 $$
-\begin{equation}
-  \begin{array}{l}
-  T^{n}: null\; tree \\
-  T^{0}: full\; tree
-  \end{array}
-\end{equation}
+T^{0}
 $$
+ is a fully grown tree and 
+$$
+T^{n}
+$$
+ is a null tree.
 
 Also, denote
 
@@ -756,15 +756,15 @@ $$
 
 That is, 
 $$
-T_{1}
+T^{1}
 $$
 is the optimal tree that minimizes 
 $$
-R_{\alpha_{1}}(T)
+R_{\alpha_{1}}(T^{0})
 $$
 .
 
-Thus, cost-complexity pruning is implemented by the following procedure: 
+Thus, cost-complexity pruning can be implemented in the following order: 
 
 - Initialization
 
@@ -782,7 +782,7 @@ Thus, cost-complexity pruning is implemented by the following procedure:
   $$
   , do:
 
-  - Select the node 
+  - Find the node 
     $$
     t
     $$
@@ -809,7 +809,7 @@ $$
 $$
 T^{0}\supseteq T^{1}\supseteq \cdots \supseteq T^{n}
 $$
-and non-decreasing sequence of tuning parameters
+and a non-decreasing sequence of tuning parameters 
 $$
 \alpha_{0}\leq \alpha_{1}\leq \cdots \leq \alpha_{n}
 $$
@@ -819,7 +819,7 @@ Based on the above result, optimal value
 $$
 \alpha^{*}
 $$
- is obtained by cross validation:
+ can be obtained by cross validation:
 
 - Initialization
 
@@ -834,7 +834,7 @@ $$
 
   - Make a sequence
     $$
-    \left \{\alpha_{1}',\alpha_{2}',\cdots,\alpha_{n-1}' \right\}
+    \alpha_{1}',\alpha_{2}',\cdots,\alpha_{n-1}'
     $$
      where 
     $$
@@ -897,7 +897,7 @@ $$
 $$
 .
 
-These pruning methods can be applied to classification tree in a similar way, just by using 
+These pruning methods can be applied to classification tree in a similar way, by using 
 $$
 R(T)
 $$
@@ -1011,7 +1011,7 @@ importances
 | petal length (cm) |    0.0     |
 | petal width (cm)  |    1.0     |
 
-which returns values based on the (normalized) total reduction of the criterion brought by each feature.
+which returns value based on the (normalized) total reduction of the criterion brought by each feature.
 
 <br>
 Now, for hyperparameter optimization, let's start with grid search
@@ -1105,9 +1105,9 @@ The evaluation result of 3 difference cases can be summarized as:
 
 |         Optimization Method          | Accuracy |
 | :----------------------------------: | :------: |
-|        Random hyperparameter         |  0.660   |
-|       Optimized by grid search       |  0.767   |
-| Optimized by cost complexity pruning |  0.960   |
+|        random hyperparameter         |  0.660   |
+|       optimized by grid search       |  0.767   |
+| optimized by cost complexity pruning |  0.960   |
 
 
 Although grid search increases accuracy, in many cases, optimized hyperparameters are at most local optimum. On the other hand, by cost complexity pruning, we can attain much higher level of accuracy by controlling tuning parameter 
@@ -1136,7 +1136,5 @@ Unlike classification tree, regression tree
 - uses R-squared instead of accuracy
 - splits a node by dividing into intervals
 
-
-
-but remaining things can be done in a similar way(click here fore more detail).
+and remaining things can be done in a similar way(click here for more detail).
 
