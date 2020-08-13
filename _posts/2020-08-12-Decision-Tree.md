@@ -769,9 +769,8 @@ Thus, cost-complexity pruning is implemented by the following procedure:
 - Initialization
 
   - $$
-    T_{0}
+    \alpha_{0}=0
     $$
-    : a full tree
       
   - $$
     \alpha_{0}=0
