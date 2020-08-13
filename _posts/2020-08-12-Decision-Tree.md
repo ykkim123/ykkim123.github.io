@@ -815,27 +815,27 @@ $$
 $$
 .
 
-Based on the above result, optimal value  
+Based on the above result, optimal value 
 $$
 \alpha^{*}
 $$
- can be obtained by cross validation:
+ is obtained by cross validation:
 
 - Initialization
 
-  - $$
-    D^{(v)}=D-D_{v}
-    $$
-
-    where 
+  - For 
     $$
     v\in \left \{1,2,\cdots,V \right\}
     $$
-
-  - $$
-    \alpha \in \left \{\alpha_{1}',\alpha_{2}',\cdots,\alpha_{n-1}' \right\}
+    , set 
+    $$
+    D^{(v)}=D-D_{v}
     $$
 
+  - Make a sequence
+    $$
+    \left \{\alpha_{1}',\alpha_{2}',\cdots,\alpha_{n-1}' \right\}
+    $$
      where 
     $$
     \alpha_{k}'=\sqrt{\alpha_{k} \alpha_{k+1}}
@@ -847,12 +847,22 @@ $$
   $$
   , do:
 
-  - Make sequences <br>
+  - Make a sequence
     $$
     T^{(v,0)}\supseteq T^{(v,1)}\supseteq \cdots \supseteq T^{(v,n)}
     $$
-
+    where 
     $$
+    T^{(v,k)}
+    $$
+     is an optimal tree built from  
+    $$
+     D^{v}
+    $$
+     for a tuning parameter 
+    $$
+    \alpha_{k}'
+    
     \alpha_{0}'\leq \alpha_{1}'\leq \cdots \leq \alpha_{n-1}'
     $$
 
@@ -865,29 +875,52 @@ $$
   $$
   k=1,2,\cdots, n-1
   $$
-  , compute cross validation error and choose one among 
+  , compute cross validation error and choose 
   $$
-  {\alpha_{1}}',{\alpha_{1}}',\cdots, {\alpha_{n-1}}'
+  {\alpha_{k}}'
   $$
-   that minimizes the error.
+   that minimizes the error
 
-The above pruning methods are also valid for classification tree; just use 
+<br>
+You can see that the algorithm uses 
+$$
+{\alpha_{k}}'
+$$
+, a geometric mean of 
+$$
+\alpha_{k} 
+$$
+ and 
+$$
+ \alpha_{k+1}
+$$
+, to make computation simpler. Note that this is possible because 
+$$
+T(\alpha)=T(\alpha_{k})
+$$
+ for 
+$$
+ \alpha_{k} \leq \alpha \leq \alpha_{k+1}
+$$
+.
+
+These pruning methods can be apllied to classification tree in a similar way, just by using 
 $$
 R(T)
 $$
- based on Gini impurity or entropy instead.
+ of Gini impurity or entropy instead.
 
-And some characteristics of regression tree are:
+And some characteristics of regression tree are listed below:
 
 - Easy to capture the overall pattern
-- Useful than linear regression, especially when non-linear relationship exists
-- Easy to deal with categorical features
+- Useful than linear regression when non-linear relationship exists
+- Easy to deal with categorical features; no need for dummification
 - Discontinuities exist in split points
 
 
 
 
-
+<br>
 # Implementation using Python
 
 ## Decision Tree for Classification
@@ -904,7 +937,7 @@ class_names = load_iris().target_names
 
 <br>
 
-We can make decision tree for classification using *DecisionTreeClassifier* in *sklearn*
+We can make a decision tree for classification using *DecisionTreeClassifier* in *sklearn*
 
 ~~~python
 from sklearn.tree import DecisionTreeClassifier
@@ -917,11 +950,11 @@ where
 
 - max_depth: maximum depth
 - max_leaf_nodes: the maximum number of terminal nodes
-- min_samples_leaf: the minimum number of samples that terminal node should have
+- min_samples_leaf: the minimum number of samples that each terminal node should have
 - min_samples_split: the minimum number of samples to be splitted
 
 
-
+<br>
 and visualize the result:
 
 ~~~python
@@ -946,14 +979,14 @@ draw_decision_tree(tree, feature_names, class_names)
 ![classification tree]({{ site.urlimg }}/Decision-Tree/classification tree.png)
 
 
-
-And for evaulation of the model, we can use *cross_val_score* function
+<br>
+For evaulation of the model, we can use *cross_val_score*
 
 ~~~python
 from sklearn.model_selection import cross_val_score
 
 res = cross_val_score(clf, X, y, cv=5)
-res.mean() #Output is 0.6599999999999999
+res.mean()
 ~~~
 
 or compute a confusion matrix:
@@ -973,7 +1006,7 @@ cf_iris
 
 <br>
 
-Also, you can check importance of each feature:
+Also, we can check feature importance:
 
 ~~~python
 importances = pd.Series(tree.feature_importances_, index=feature_names)
@@ -987,9 +1020,10 @@ importances
 | petal length (cm) |    0.0     |
 | petal width (cm)  |    1.0     |
 
-which returns values based on the (normalized) total reduction of the criterion brought by that feature.
+which returns values based on the (normalized) total reduction of the criterion brought by each feature.
 
-Now, in order to optimize hyperparameters, let's start with grid search
+<br>
+Now, for hyperparameter optimization, let's start with grid search
 
 ~~~python
 from sklearn.model_selection import GridSearchCV
@@ -1012,17 +1046,21 @@ which has the following result:
 
 
 
-And optimized tree by grid search can be illustrated as below:
+Consequently, we can build the optimized tree as illustrated below.
 
 ![classification tree2]({{ site.urlimg }}/Decision-Tree/classification tree2.png)
 
 
-
-Also, we can optimize hyperparameters by cost complexity pruning. First, we can obtain a sequence of 
+<br>
+We can also optimize hyperparameters by cost complexity pruning. First, obtain a sequence of 
 $$
 \alpha
 $$
- and corresponding impurity:
+ with corresponding impurity
+~~~python
+cc_pruning = clf_full.cost_complexity_pruning_path(X, y)
+cc_pruning
+~~~
 
 |   Alpha    |  Impurity  |
 | :--------: | :--------: |
@@ -1035,13 +1073,11 @@ $$
 | 0.46010691 | 0.66666667 |
 | 0.91829583 | 1.5849625  |
 
-<br>
-
 and make a geometric sequence of 
 $$
 \alpha
 $$
- based on the previous result.
+ based on the previous result:
 
 ~~~python
 alphas = []
@@ -1051,7 +1087,6 @@ for i in range(len(cc_pruning['ccp_alphas'])-1):
 ~~~
 
 <br>
-
 Using the geometric sequence, we can obtain accuracy by cross validation.
 
 |  Alpha   | Accuracy |
@@ -1064,23 +1099,18 @@ Using the geometric sequence, we can obtain accuracy by cross validation.
 | 0.187907 | 0.933333 |
 | 0.650011 | 0.666667 |
 
-Thus, we can find the optiaml value of 
-$$
-\alpha
-$$
-: <br>
+Thus, we can find 
 $$
 \alpha^{*}=0.650011
 $$
-and construct a pruned tree based on the result: 
+and construct the pruned tree: 
 
 ![classification tree3]({{ site.urlimg }}/Decision-Tree/classification tree3.png)
 
 
+The evaluation result of 3 difference cases can be summarized as:
 
-The result so far can be summarized as:
-
-|           Hyperparameters            | Accuracy |
+|         Optimization Method          | Accuracy |
 | :----------------------------------: | :------: |
 |        Random hyperparameter         |  0.660   |
 |       Optimized by grid search       |  0.767   |
@@ -1088,7 +1118,7 @@ The result so far can be summarized as:
 
 <br>
 
-Although grid search increases accuracy, hyperparameters are only local optimum obtained by some candidates we assigned in advance. By cost complexity pruning, on the other hand, we can attain much higher level of accuracy by controlling tuning parameter
+Although grid search increases accuracy, in many cases, optimized hyperparameters are at most local optimum. On the other hand, by cost complexity pruning, we can attain much higher level of accuracy by controlling tuning parameter 
 $$
 \alpha
 $$
@@ -1096,7 +1126,7 @@ $$
 
 
 
-Similarly, you can build a regression tree, using *DecisionTreeRegressor*:
+Similarly you can build a regression tree, using *DecisionTreeRegressor*:
 
 ~~~python
 from sklearn.tree import DecisionTreeRegressor
@@ -1105,6 +1135,7 @@ reg = DecisionTreeRegressor(criterion='mse', splitter='best', max_depth=2, min_s
                             max_leaf_nodes=10)
 ~~~
 
+![regression tree2]({{ site.urlimg }}/Decision-Tree/regression tree2.png)
 
 
 
@@ -1115,5 +1146,5 @@ Unlike classification tree, regression tree
 
 
 
-and remaining things can be done in a similar way to what we did for classification tree(check more detail here).
+but remaining things can be done in a similar way(click here fore more detail).
 
