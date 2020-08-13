@@ -1133,6 +1133,7 @@ reg = DecisionTreeRegressor(criterion='mse', splitter='best', max_depth=2, min_s
 Unlike classification tree, regression tree
 
 - uses MSE as an criterion
+- uses R-squared instead of accuracy
 - splits a node by dividing into intervals
 
 
