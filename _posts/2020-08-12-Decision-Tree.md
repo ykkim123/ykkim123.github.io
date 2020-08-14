@@ -1222,7 +1222,7 @@ Multiple[^1]<sup>,</sup>[^3] and with comments[^2]
 
 Want to see something else added? <a href="https://github.com/dyndna/lanyon-plus/issues/new">Open an issue.</a>
 
-[^1]: [lanyon theme](http://lanyon.getpoole.com)
+[^1]: (http://www.cs.cornell.edu/courses/cs4780/2018fa/lectures/lecturenote16.html)
 [^2]: 
     [lanyon-plus theme](https://github.com/dyndna/lanyon-plus "accessed on {{ page.date | date: '%B %d, %Y' }}")
 
