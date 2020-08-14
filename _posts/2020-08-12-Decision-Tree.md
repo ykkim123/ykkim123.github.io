@@ -524,7 +524,7 @@ $$
  that satisfies
 
 $$
-(j^{*},s^{*})=\underset{(j,s)}{argmax}\Delta(j,s)
+(j^{*},s^{*})=\underset{(j,s)}{argmax}(\Delta(j,s))
 $$
 
 where
@@ -865,13 +865,18 @@ $$
 $$
 .
 
-Decision tree we've discussed so far is called CART(Classification And Regression Tree), which has characteristics such as:
+Decision tree we've discussed so far is called CART(Classification And Regression Tree), which has following characteristics:
 
 - Robust to scale of features
+
 - Robust to outliers and missing values
+
 - Any data type is possible
+
 - Easy to deal with categorical features; no need for dummification
+
 - Easy to interpret
+
 - Computation is fast
 
   - Only store data of terminal nodes
@@ -893,10 +898,11 @@ Decision tree we've discussed so far is called CART(Classification And Regressio
     $$
 
 - Useful than linear regression, especially when non-linear relationship exists(regression)
+
 - Discontinuities exist in split points(regression)
 
 
-
+<br>
 CHAID(Chi-Squared Automatic Interaction Detection) is an another way of building decision tree. Overall structure of CHAID is similar, but it differs from CART in that:
 
 - it can split a node into more than 2 nodes
@@ -914,7 +920,7 @@ $$
 $$
 \chi^{2}
 $$
- is chi-squared statistic to test homogeneity among different groups of feature. That is, the best pair of 
+ is a chi-squared statistic to test homogeneity among different groups of feature. That is, the best pair of 
 $$
 j
 $$
@@ -1156,9 +1162,10 @@ Unlike classification tree, regression tree
 
 and remaining things can be done in a similar way(click [here](https://github.com/ykkim123/Data_Science/blob/master/Decision-Tree.ipynb) for more detail).
 
+<br>
 ## CHAID
 
-To apply CHAID to classification problem, we will use the following data.
+For classification problem, we will use the following data.
 
 ~~~python
 X = np.array(([1, 2, 3]*5) + ([2, 2, 3]*5)).reshape(10, 3)
@@ -1167,11 +1174,11 @@ y = np.array(([1]*5) + ([2]*5))
 
 
 <br>
-As explained, the algorithm find the optimal split based on 
+As explained, the algorithm finds the optimal split based on 
 $$
 \chi^{2}
 $$
- statistic,
+ statistic
 
 ~~~python
 from CHAID import Tree
