@@ -301,7 +301,7 @@ $$
 
 
 <br>
-# Decision Tree
+# CART
 
 ## Decision Tree for Classification
 
@@ -568,38 +568,6 @@ $$
   d_{m}\cdot (2^{m-1}-1)
   $$
   split
-
-
-<br>
-And here are some characteristics that classification tree has:
-
-- Robust to scale of features
-
-- Computation is fast
-
-  - Only store data in terminal nodes
-
-  - Has
-    $$
-    O(DKN)
-    $$
-    complexity where
-    
-    $$
-    \begin{equation}
-      \begin{array}{l}
-      D:the\; number\; of \; dimensions \\
-      K:the\; number\; of\; classes \\
-      N:the\; number\; of \; samples\;
-      \end{array}
-    \end{equation}
-    $$
-
-- Easy to interpret
-
-- Any form of data type is possible
-
-- Robust to outliers and missing values
 
 
 <br>
@@ -897,18 +865,68 @@ $$
 $$
 .
 
-These pruning methods can be applied to classification tree in a similar way, by using 
-$$
-R(T)
-$$
- of Gini impurity or entropy instead.
+Decision tree we've discussed so far is called CART(Classification And Regression Tree), which has characteristics such as:
 
-And some characteristics of regression tree are listed below:
-
-- Easy to capture the overall pattern
-- Useful than linear regression when non-linear relationship exists
+- Robust to scale of features
+- Robust to outliers and missing values
+- Any data type is possible
 - Easy to deal with categorical features; no need for dummification
-- Discontinuities exist in split points
+- Easy to interpret
+- Computation is fast
+
+  - Only store data of terminal nodes
+
+  - For classification, 
+    $$
+    O(DKN)
+    $$
+     complexity where
+    
+    $$
+    \begin{equation}
+      \begin{array}{l}
+      D:the\; number\; of \; dimensions \\
+      K:the\; number\; of\; classes \\
+      N:the\; number\; of \; samples\;
+      \end{array}
+    \end{equation}
+    $$
+
+- Useful than linear regression, especially when non-linear relationship exists(regression)
+- Discontinuities exist in split points(regression)
+
+
+
+CHAID(Chi-Squared Automatic Interaction Detection) is an another way of building decision tree. Overall structure of CHAID is similar, but it differs from CART in that:
+
+- it can split a node into more than 2 nodes
+- it finds the optimal split by using test statistic 
+
+
+
+For classification,
+
+$$
+(j^{*},s^{*})=\underset{(j,s)}{argmax}(\chi^{2})
+$$
+
+ where 
+$$
+\chi^{2}
+$$
+ is chi-squared statistic to test homogeneity among different groups of feature. That is, the best pair of 
+$$
+j
+$$
+ and 
+$$
+s
+$$
+ is the pair which maximizes heterogeneity of distribution among different groups. Similarly, for regression, F-statistic from ANOVA is used to find the optimal value of 
+$$
+(j,s)
+$$
+. 
 
 
 
@@ -916,7 +934,7 @@ And some characteristics of regression tree are listed below:
 <br>
 # Implementation using Python
 
-## Decision Tree for Classification
+## CART
 
 For classification problem, we will use iris dataset: 
 
@@ -1137,4 +1155,56 @@ Unlike classification tree, regression tree
 - splits a node by dividing into intervals
 
 and remaining things can be done in a similar way(click [here](https://github.com/ykkim123/Data_Science/blob/master/Decision-Tree.ipynb) for more detail).
+
+## CHAID
+
+To apply CHAID to classification problem, we will use the following data.
+
+~~~python
+X = np.array(([1, 2, 3]*5) + ([2, 2, 3]*5)).reshape(10, 3)
+y = np.array(([1]*5) + ([2]*5))
+~~~
+
+
+<br>
+As explained, the algorithm find the optimal split based on 
+$$
+\chi^{2}
+$$
+ statistic,
+
+~~~python
+from CHAID import Tree
+
+tree = Tree.from_numpy(X, y, split_titles=['a', 'b', 'c'], max_depth=2, min_parent_node_size=5, min_child_node_size=5, 
+                       dep_variable_type='categorical') #hyperparameters are defined similarly
+tree.print_tree()
+~~~
+
+which outputs
+
+![CHAID]({{ site.urlimg }}/Decision-Tree/CHAID.png)
+
+
+<br>
+Similarly, you can apply CHAID to regression problem 
+
+~~~python
+np.random.seed(0)
+y = np.random.normal(300, 100, 10)
+~~~
+
+
+<br>
+by changing *dep_variable_type* to *categorical*:
+
+~~~python
+tree = Tree.from_numpy(X, y, split_titles=['a', 'b', 'c'], max_depth=2, min_parent_node_size=3, min_child_node_size=3,
+                       dep_variable_type='continuous')
+tree.print_tree()
+~~~
+
+![CHAID2]({{ site.urlimg }}/Decision-Tree/CHAID2.png)
+
+
 
