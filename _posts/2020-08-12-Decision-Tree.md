@@ -899,6 +899,10 @@ Decision tree we've discussed so far is called CART(Classification And Regressio
 
 - Useful than linear regression, especially when non-linear relationship exists(regression)
 
+- Prediction is relatively less accurate than other models(has high variance)
+  
+  - Due to hierarchical structure of the model; error of parent nodes are spread to the child nodes
+
 - Discontinuities exist in split points(regression)
 
 
