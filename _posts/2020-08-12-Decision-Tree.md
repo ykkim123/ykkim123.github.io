@@ -903,6 +903,8 @@ Decision tree we've discussed so far is called CART(Classification And Regressio
 
 
 <br>
+# CHAID
+
 CHAID(Chi-Squared Automatic Interaction Detection) is an another way of building decision tree. Overall structure of CHAID is similar, but it differs from CART in that:
 
 - it can split a node into more than 2 nodes
@@ -1213,5 +1215,17 @@ tree.print_tree()
 
 ![CHAID2]({{ site.urlimg }}/Decision-Tree/CHAID2.png)
 
+<br>
+## References
 
+Multiple[^1]<sup>,</sup>[^3] and with comments[^2]
 
+Want to see something else added? <a href="https://github.com/dyndna/lanyon-plus/issues/new">Open an issue.</a>
+
+[^1]: [lanyon theme](http://lanyon.getpoole.com)
+[^2]: 
+    [lanyon-plus theme](https://github.com/dyndna/lanyon-plus "accessed on {{ page.date | date: '%B %d, %Y' }}")
+
+    >Excerpt: Sample post showing enabled features for post: `inline code`, `text highlight`{:.yelhglt}, code block with syntax highlights, embed gist, stylized blockquotes, video and image cards for twitter, markdown tables, inline and code bocks having mathjax support, references, print format, disqus comments, related posts, tags.
+
+[^3]: [About]({{ site.url }}/about)
