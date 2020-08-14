@@ -869,9 +869,9 @@ Decision tree we've discussed so far is called CART(Classification And Regressio
 
 - Robust to scale of features
 
-- Robust to outliers and missing values
+- Robust to outliers
 
-- Any data type is possible
+- Any data type can be used
 
 - Easy to deal with categorical features; no need for dummification
 
@@ -1218,14 +1218,10 @@ tree.print_tree()
 <br>
 ## References
 
-Multiple[^1]<sup>,</sup>[^3] and with comments[^2]
+- [http://www.cs.cornell.edu/courses/cs4780/2018fa/lectures/lecturenote16.html](http://www.cs.cornell.edu/courses/cs4780/2018fa/lectures/lecturenote16.html)
 
-Want to see something else added? <a href="https://github.com/dyndna/lanyon-plus/issues/new">Open an issue.</a>
+- [http://www.cs.cornell.edu/courses/cs4780/2018fa/lectures/lecturenote17.html](http://www.cs.cornell.edu/courses/cs4780/2018fa/lectures/lecturenote17.html)
 
-[^1]: (http://www.cs.cornell.edu/courses/cs4780/2018fa/lectures/lecturenote16.html)
-[^2]: 
-    [lanyon-plus theme](https://github.com/dyndna/lanyon-plus "accessed on {{ page.date | date: '%B %d, %Y' }}")
+- [https://online.stat.psu.edu/stat508/lesson/11/11.8/11.8.2](https://online.stat.psu.edu/stat508/lesson/11/11.8/11.8.2)
 
-    >Excerpt: Sample post showing enabled features for post: `inline code`, `text highlight`{:.yelhglt}, code block with syntax highlights, embed gist, stylized blockquotes, video and image cards for twitter, markdown tables, inline and code bocks having mathjax support, references, print format, disqus comments, related posts, tags.
-
-[^3]: [About]({{ site.url }}/about)
+- [https://github.com/Rambatino/CHAID](https://github.com/Rambatino/CHAID)
