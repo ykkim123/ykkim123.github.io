@@ -62,14 +62,14 @@ You can normalize data in either way:
 
   (each pixel has value between 0 and 255)
 
-<br>
+
 
 That is, to improve the algorithm, 
 
 - Data should lie between 0 and 1
 - Each feature should have the same range
 
-
+<br>
 
 Also, note that we normalized data by 0.1307 and 0.3081, because MNIST dataset contains only black-and-white images; for colored ones, mean and variance vector of length 3 should be used.
 
@@ -90,36 +90,21 @@ where
 
 <br>
 
-For better understanding of the dataset, let's visualize the image. First, define *plot_img* that is implemented by the following procedure:
+For better understanding of the dataset, let's visualize the image by using *plot_img*.
 
-CODE
+<code data-gist-id="49d0efcee07fa9efa4e1932a6901f95e" data-gist-file="Convolutional-Neural-Network.py" data-gist-line="51-56"></code>
 
 1. Convert tensor to numpy, then choose the first element
 
-   - second element contains labels of each image
-
 2. Denormalize data
-
-   - from 
-     $$
-     x_{i,new}
-     $$
-     , extract 
-     $$
-     x_{i}
-     $$
 
 3. Plot the image
 
-   - *cmap* option is used to map scalar data to colors
-
 <br>
 
-Then, we can visualize an image as below:
+Then, we can visualize image as below:
 
-CODE
-
-![digit visualization]({{ site.urlimg }}/Convolution Neural Network/digit visualization.png)
+![digit visualization]({{ site.urlimg }}/Image Recognition/Convolution Neural Network/digit visualization.png)
 
 <br>
 
@@ -127,11 +112,11 @@ CODE
 
 Below is the architecture of CNN.
 
-CODE
+<code data-gist-id="49d0efcee07fa9efa4e1932a6901f95e" data-gist-file="Convolutional-Neural-Network.py" data-gist-line="159-175"></code>
 
-Let's start from identifying what do some variables mean:
+Let's start from identifying the variables:
 
-- self.conv1 = nn.Conv2d(1, 10, kernel_size=5, stride=1, padding=0)
+- self.conv1 = nn.Conv2d(1,10,kernel_size=5,stride=1,padding=0)
 
   - 1 input channel and 10 output channels
 
@@ -144,8 +129,6 @@ Let's start from identifying what do some variables mean:
     $$
      with stride=1 and padding=0
 
-<br>
-
 - self.conv2_drop = nn.Dropout2d()
 
   - dropout with default 
@@ -153,14 +136,12 @@ Let's start from identifying what do some variables mean:
     p=0.5
     $$
 
-<br>
-
 - self.fc1 = nn.Linear(320,50)
   - takes 320 input features and 50 output features
 
 <br>
 
-Then, the whole procedure can be summarized as:
+Then, overall structure of the algorithm can be shown as
 
 1. convolutional layer1- max pooling - ReLU activation
 2. convolutional layer2- dropout - max pooling - ReLU activation
@@ -170,17 +151,7 @@ Then, the whole procedure can be summarized as:
 6. linear layer2
 7. softmax
 
-<br>
-
-Note that *view(-1,320)* is used to convert shape of a tensor from 
-$$
-(32\times 20\times 4\times 4)
-$$
-to 
-$$
-(32\times 320)
-$$
- so that it can be taken as an input of *nn.Linear(320,50)*.
+Note that *view(-1,320)* is used to convert shape of a tensor from (32 X 20 X 4 X 4) to (32 X 320) so that it can be taken as an input of *nn.Linear(320,50)*.
 
 
 
