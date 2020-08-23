@@ -2,7 +2,7 @@
 layout: post
 title: "Convolutional Neural Network"
 date: "2020-08-12"
-description: "This post explains how to implement convolutional neural network using PyTorch; creating some basic structures of the algorithm, and actual implementations of it using MNIST dataset"
+description: "This post explains how to implement convolutional neural network using PyTorch-from building basic structures of the algorithm to actual implementation using MNIST dataset."
 category: 
   - featured
 # tags will also be used as html meta keywords.
@@ -119,6 +119,7 @@ Let's start from identifying the variables:
     $$
 
 - self.fc1 = nn.Linear(320,50)
+
   - takes 320 input features and 50 output features
 
 <br>
@@ -167,11 +168,13 @@ Next, define the function for fitting the algorithm:
      accuracy=100\times \frac{total\; number\; of\; correctly\; predicted\; cases}{N}
      \end{array}
    \end{equation}
-   $$
-   
 
+$$
+   
+   
    where 
-   $$
+$$
+
    N
    $$
     is the size of dataset.
