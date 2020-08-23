@@ -40,19 +40,11 @@ You can normalize data in either way:
   $$
   \mu_{i}
   $$
-   is the mean of 
-  $$
-  i
-  $$
-  th feature and 
+  and 
   $$
   \sigma_{i}
   $$
-   is the standard deviation of 
-  $$
-  i
-  $$
-  th feature.
+   are the mean and standard deviation of ith feature, respectively.
 
 <br>
 
@@ -94,7 +86,7 @@ Also, we can visualize the image as below:
 
 <code data-gist-id="49d0efcee07fa9efa4e1932a6901f95e" data-gist-file="Convolutional-Neural-Network.py" data-gist-line="51-56,72"></code>
 
-![digit visualization]({{ site.urlimg }}/Image Recognition/Convolution Neural Network/digit visualization.png)
+![digit visualization]({{ site.urlimg }}/Convolution Neural Network/digit visualization.png)
 
 <br>
 
@@ -141,7 +133,7 @@ Then, overall structure of the algorithm can be shown as
 6. linear layer2
 7. softmax
 
-<br>
+
 
 Note that *view(-1,320)* is used to convert the shape of tensor from (32 X 20 X 4 X 4) to (32 X 320) so that it can be taken as input of *nn.Linear(320,50)*.
 
@@ -151,23 +143,21 @@ Next, define the function for fitting the algorithm:
 
 <code data-gist-id="49d0efcee07fa9efa4e1932a6901f95e" data-gist-file="Convolutional-Neural-Network.py" data-gist-line="181-209"></code>
 
-1. For training, set as *model.train()*. Otherwise, set as *model.eval()* and *volatile=True*
+1. When *phase='training'*, set as *model.train()*. Otherwise, set as *model.eval()* and *volatile=True*
 
 2. Initialize *running_loss* and *running_correct* for the computation of loss and accuracy
 
 3. For each batch, do:
 
-   1. If you can use GPU, convert data to GPU tensor and assign make them variables
-   2. For training, set as *optimizer.zero_grad()* to avoid accumulation of gradients
+   1. If you can use GPU, convert data to GPU tensor and make them variables
+   2. When *phase='training'*, set as *optimizer.zero_grad()* to avoid accumulation of gradients
    3. After forward propagation, compute loss based on negative log-likelihood
    4. Update *running_loss* by adding average loss of new batch
    5. Predict label as the one that has the highest probability
    6. Update *running_correct* by adding the total number of correctly predicted cases of new batch
-   7. For training, compute the gradient of loss function and update parameters
+   7. When *phase='training'*, compute the gradient of loss function and update parameters
 
 4. Loss and accuracy of the whole dataset are computed as 
-
-   <br>
    $$
    \begin{equation}
      \begin{array}{l}
@@ -186,7 +176,7 @@ Next, define the function for fitting the algorithm:
 
 <br>
 
-Now, we can train and evaluate the algorithm iteratively 
+Finally, we can train and evaluate the algorithm iteratively 
 
 <code data-gist-id="49d0efcee07fa9efa4e1932a6901f95e" data-gist-file="Convolutional-Neural-Network.py" data-gist-line="236-252"></code>
 
@@ -194,15 +184,13 @@ Now, we can train and evaluate the algorithm iteratively
 
 and visualize the result as below.
 
-![loss]({{ site.urlimg }}/Image Recognition/Convolution Neural Network/loss.png)
+![loss]({{ site.urlimg }}/Convolution Neural Network/loss.png)
 
-![accuracy]({{ site.urlimg }}/Image Recognition/Convolution Neural Network/accuracy.png)
-
-<br>
-
-Also, some other applications of CNN can be found here. 
+![accuracy]({{ site.urlimg }}/Convolution Neural Network/accuracy.png)
 
 <br>
+
+Also, some other applications of CNN can be found [here](https://github.com/ykkim123/Data_Science/tree/master/Convolutional%20Neural%20Network).
 
 # References
 
