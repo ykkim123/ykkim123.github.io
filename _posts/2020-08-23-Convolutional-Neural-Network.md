@@ -26,7 +26,7 @@ First, run the code below so that we can use GPU for computation.
 
 # Load data
 
-Before loading MNIST dataset, define *transformation*, which converts data into PyTorch tensor and normalizes it by mean and standard deviation of the data. Normalizing data is important, since gradients may not converge otherwise.
+Before loading MNIST dataset, define *transformation* which converts data into PyTorch tensor and normalizes it by mean and standard deviation. Normalizing data is important, since gradients may not converge otherwise.
 
 <code data-gist-id="49d0efcee07fa9efa4e1932a6901f95e" data-gist-file="Convolutional-Neural-Network.py" data-gist-line="28-29"></code>
 
@@ -44,7 +44,7 @@ You can normalize data in either way:
   $$
   \sigma_{i}
   $$
-   are the mean and standard deviation of ith feature, respectively.
+   are the mean and standard deviation of ith feature, respectively
 
 <br>
 
@@ -52,7 +52,7 @@ You can normalize data in either way:
   x_{new}=\frac{x}{255}
   $$
 
-  (each pixel has value between 0 and 255)
+  because each pixel has value between 0 and 255
 
 <br>
 
@@ -86,7 +86,7 @@ Also, we can visualize the image as below:
 
 <code data-gist-id="49d0efcee07fa9efa4e1932a6901f95e" data-gist-file="Convolutional-Neural-Network.py" data-gist-line="51-56,72"></code>
 
-![digit visualization]({{ site.urlimg }}/Convolution Neural Network/digit visualization.png)
+![digit visualization]({{ site.urlimg }}/Convolutional Neural Network/digit visualization.png)
 
 <br>
 
@@ -143,7 +143,7 @@ Next, define the function for fitting the algorithm:
 
 <code data-gist-id="49d0efcee07fa9efa4e1932a6901f95e" data-gist-file="Convolutional-Neural-Network.py" data-gist-line="181-209"></code>
 
-1. When *phase='training'*, set as *model.train()*. Otherwise, set as *model.eval()* and *volatile=True*
+1. When phase is training, set as *model.train()*. Otherwise, set as *model.eval()* and *volatile=True*
 
 2. Initialize *running_loss* and *running_correct* for the computation of loss and accuracy
 
@@ -155,14 +155,16 @@ Next, define the function for fitting the algorithm:
    4. Update *running_loss* by adding average loss of new batch
    5. Predict label as the one that has the highest probability
    6. Update *running_correct* by adding the total number of correctly predicted cases of new batch
-   7. When *phase='training'*, compute the gradient of loss function and update parameters
+   7. When phase is training, compute the gradient of loss function and update parameters
 
 4. Loss and accuracy of the whole dataset are computed as 
+
+   <br>
    $$
    \begin{equation}
      \begin{array}{l}
-       loss=\frac{\sum negative\; log-likelihood}{N} \\
-       accuracy=100\times \frac{total\; number\; of\; correctly\; predicted\; cases}{N}
+     loss=\frac{\sum negative\; log-likelihood}{N} \\
+     accuracy=100\times \frac{total\; number\; of\; correctly\; predicted\; cases}{N}
      \end{array}
    \end{equation}
    $$
@@ -180,17 +182,17 @@ Finally, we can train and evaluate the algorithm iteratively
 
 <code data-gist-id="49d0efcee07fa9efa4e1932a6901f95e" data-gist-file="Convolutional-Neural-Network.py" data-gist-line="236-252"></code>
 
-<br>
-
 and visualize the result as below.
 
-![loss]({{ site.urlimg }}/Convolution Neural Network/loss.png)
+![loss]({{ site.urlimg }}/Convolutional Neural Network/loss.png)
 
-![accuracy]({{ site.urlimg }}/Convolution Neural Network/accuracy.png)
+![accuracy]({{ site.urlimg }}/Convolutional Neural Network/accuracy.png)
 
 <br>
 
 Also, some other applications of CNN can be found [here](https://github.com/ykkim123/Data_Science/tree/master/Convolutional%20Neural%20Network).
+
+<br>
 
 # References
 
