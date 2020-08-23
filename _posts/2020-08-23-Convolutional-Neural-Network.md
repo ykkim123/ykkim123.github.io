@@ -62,7 +62,7 @@ You can normalize data in either way:
 
   (each pixel has value between 0 and 255)
 
-
+<br>
 
 That is, to improve the algorithm, 
 
@@ -71,7 +71,7 @@ That is, to improve the algorithm,
 
 <br>
 
-Also, note that we normalized data by 0.1307 and 0.3081, because MNIST dataset contains only black-and-white images; for colored ones, mean and variance vector of length 3 should be used.
+Note that we normalized data by 0.1307 and 0.3081, because MNIST dataset contains only black-and-white images; for colored ones, mean and variance vector of length 3 should be used.
 
 Now, we can download MNIST dataset
 
@@ -90,19 +90,9 @@ where
 
 <br>
 
-For better understanding of the dataset, let's visualize the image by using *plot_img*.
+Also, we can visualize the image as below:
 
-<code data-gist-id="49d0efcee07fa9efa4e1932a6901f95e" data-gist-file="Convolutional-Neural-Network.py" data-gist-line="51-56"></code>
-
-1. Convert tensor to numpy, then choose the first element
-
-2. Denormalize data
-
-3. Plot the image
-
-<br>
-
-Then, we can visualize image as below:
+<code data-gist-id="49d0efcee07fa9efa4e1932a6901f95e" data-gist-file="Convolutional-Neural-Network.py" data-gist-line="51-56,72"></code>
 
 ![digit visualization]({{ site.urlimg }}/Image Recognition/Convolution Neural Network/digit visualization.png)
 
@@ -151,39 +141,37 @@ Then, overall structure of the algorithm can be shown as
 6. linear layer2
 7. softmax
 
-Note that *view(-1,320)* is used to convert shape of a tensor from (32 X 20 X 4 X 4) to (32 X 320) so that it can be taken as an input of *nn.Linear(320,50)*.
+<br>
 
-
+Note that *view(-1,320)* is used to convert the shape of tensor from (32 X 20 X 4 X 4) to (32 X 320) so that it can be taken as input of *nn.Linear(320,50)*.
 
 <br>
 
-Next, define *fit* for fitting the algorithm:
+Next, define the function for fitting the algorithm:
 
-CODE
+<code data-gist-id="49d0efcee07fa9efa4e1932a6901f95e" data-gist-file="Convolutional-Neural-Network.py" data-gist-line="181-209"></code>
 
 1. For training, set as *model.train()*. Otherwise, set as *model.eval()* and *volatile=True*
 
-   - *volatile=True* implies that you won't be running backpropagation; this conserves memory
-
-2. Initialize *running_loss* and *running_correct* for computation of loss and accuracy
+2. Initialize *running_loss* and *running_correct* for the computation of loss and accuracy
 
 3. For each batch, do:
 
-   1. If you can use GPU, convert data to GPU tensor and assign them as variables
+   1. If you can use GPU, convert data to GPU tensor and assign make them variables
    2. For training, set as *optimizer.zero_grad()* to avoid accumulation of gradients
-   3. After forward propagation, compute loss based on negative log likelihood
+   3. After forward propagation, compute loss based on negative log-likelihood
    4. Update *running_loss* by adding average loss of new batch
    5. Predict label as the one that has the highest probability
-      - *dim=1* implies that we will find the maximum for each image
-      - *[1]* under *keepdim=True* implies the we will find the label which has the highest probability(largest output)
    6. Update *running_correct* by adding the total number of correctly predicted cases of new batch
-   7. Under training, calculate the gradient of loss function and update parameters
+   7. For training, compute the gradient of loss function and update parameters
 
 4. Loss and accuracy of the whole dataset are computed as 
+
+   <br>
    $$
    \begin{equation}
      \begin{array}{l}
-       loss=\frac{\sum negative\; log\; likelihood}{N} \\
+       loss=\frac{\sum negative\; log-likelihood}{N} \\
        accuracy=100\times \frac{total\; number\; of\; correctly\; predicted\; cases}{N}
      \end{array}
    \end{equation}
@@ -194,25 +182,25 @@ CODE
    $$
    N
    $$
-    is size of dataset.
+    is the size of dataset.
 
 <br>
 
 Now, we can train and evaluate the algorithm iteratively 
 
-CODE
+<code data-gist-id="49d0efcee07fa9efa4e1932a6901f95e" data-gist-file="Convolutional-Neural-Network.py" data-gist-line="236-252"></code>
 
 <br>
 
 and visualize the result as below.
 
-![loss]({{ site.urlimg }}/Convolution Neural Network/loss.png)
+![loss]({{ site.urlimg }}/Image Recognition/Convolution Neural Network/loss.png)
 
-![accuracy]({{ site.urlimg }}/Convolution Neural Network/accuracy.png)
+![accuracy]({{ site.urlimg }}/Image Recognition/Convolution Neural Network/accuracy.png)
 
 <br>
 
-Some other applications of the algorithm can be found here. 
+Also, some other applications of CNN can be found here. 
 
 <br>
 
