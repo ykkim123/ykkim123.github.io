@@ -19,7 +19,7 @@ nofollow: false
 
 First, run the code below so that we can use GPU for computation.
 
-<code data-gist-id="14bafbf941a8bfe4ec974447d167b483" data-gist-file="7dcbc111d309c738a32f9efd10497f9c.js" data-gist-line="20-30"></code>
+<code data-gist-id="5da556a66317060418af51fdab23fcd8" data-gist-file="Convolutional Neural Network.ipynb" data-gist-line="20-30"></code>
 
 <br>
 
