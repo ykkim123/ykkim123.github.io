@@ -157,7 +157,7 @@ Next, define the function for fitting the algorithm:
    6. Update *running_correct* by adding the total number of correctly predicted cases of new batch
    7. When phase is training, compute the gradient of loss function and update parameters
 
-4. Loss and accuracy of the whole dataset are computed as 
+4. Loss and accuracy of the whole dataset are computed as:
 
    <br>
    $$
@@ -168,6 +168,8 @@ Next, define the function for fitting the algorithm:
      \end{array}
    \end{equation}
    $$
+   
+
    <br>
 
    where 
