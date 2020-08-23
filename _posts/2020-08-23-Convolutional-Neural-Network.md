@@ -15,31 +15,29 @@ gistembed: true
 published: true
 noindex: false
 nofollow: false
+
 ---
 
 First, run the code below so that we can use GPU for computation.
 
-<code data-gist-id="49d0efcee07fa9efa4e1932a6901f95e" data-gist-file="Convolutional-Neural-Network.py" data-gist-line="20-30"></code>
+<code data-gist-id="49d0efcee07fa9efa4e1932a6901f95e" data-gist-file="Convolutional-Neural-Network.py" data-gist-line="18-20"></code>
 
 <br>
 
 # Load data
 
-Before loading MNIST dataset, define the *transformation* that converts data into PyTorch tensor and normalizes it by mean and standard deviation. Without normalization, cases where gradients do not converge may occur.
+Before loading MNIST dataset, define *transformation*, which converts data into PyTorch tensor and normalizes it by mean and standard deviation of the data. Normalizing data is important, since gradients may not converge otherwise.
 
 CODE
 
-Also, you can normalize in either way:
+You can normalize data in either way:
 
 - $$
   x_{i,new}=\frac{x_{i}-\mu_{i}}{\sigma_{i}}
   $$
 
-  <br>
-
   where 
-  
-  <br>
+
   $$
   \begin{equation}
     \begin{array}{l}
@@ -48,7 +46,7 @@ Also, you can normalize in either way:
   \end{array}
   \end{equation}
   $$
-  
+
 - $$
   x_{new}=\frac{x}{255}
   $$
