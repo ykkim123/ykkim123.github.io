@@ -20,7 +20,7 @@ nofollow: false
 
 First, run the code below so that we can use GPU for computation.
 
-<code data-gist-id="49d0efcee07fa9efa4e1932a6901f95e" data-gist-file="Convolutional-Neural-Network.py" data-gist-line="18-20"></code>
+<code data-gist-id="1245d8e68d078207fd2bad1a061e6245" data-gist-file="Convolutional-Neural-Network.py" data-gist-line="18-20"></code>
 
 <br>
 
@@ -28,7 +28,7 @@ First, run the code below so that we can use GPU for computation.
 
 Before loading MNIST dataset, define *transformation* which converts data into PyTorch tensor and normalizes it by mean and standard deviation. Normalizing data is important, since gradients may not converge otherwise.
 
-<code data-gist-id="49d0efcee07fa9efa4e1932a6901f95e" data-gist-file="Convolutional-Neural-Network.py" data-gist-line="28-29"></code>
+<code data-gist-id="1245d8e68d078207fd2bad1a061e6245" data-gist-file="Convolutional-Neural-Network.py" data-gist-line="28-29"></code>
 
 You can normalize data in either way:
 
@@ -67,13 +67,13 @@ Note that we normalized data by 0.1307 and 0.3081, because MNIST dataset contain
 
 Now, we can download MNIST dataset
 
-<code data-gist-id="49d0efcee07fa9efa4e1932a6901f95e" data-gist-file="Convolutional-Neural-Network.py" data-gist-line="35-38"></code>
+<code data-gist-id="1245d8e68d078207fd2bad1a061e6245" data-gist-file="Convolutional-Neural-Network.py" data-gist-line="37-38"></code>
 
 
 
 and convert the images into data loaders 
 
-<code data-gist-id="49d0efcee07fa9efa4e1932a6901f95e" data-gist-file="Convolutional-Neural-Network.py" data-gist-line="44-45"></code>
+<code data-gist-id="1245d8e68d078207fd2bad1a061e6245" data-gist-file="Convolutional-Neural-Network.py" data-gist-line="44-45"></code>
 
 where 
 
@@ -84,7 +84,7 @@ where
 
 Also, we can visualize the image as below:
 
-<code data-gist-id="49d0efcee07fa9efa4e1932a6901f95e" data-gist-file="Convolutional-Neural-Network.py" data-gist-line="51-56,72"></code>
+<code data-gist-id="1245d8e68d078207fd2bad1a061e6245" data-gist-file="Convolutional-Neural-Network.py" data-gist-line="51-56,78"></code>
 
 ![digit visualization]({{ site.urlimg }}/Convolutional Neural Network/digit visualization.png)
 
@@ -94,7 +94,7 @@ Also, we can visualize the image as below:
 
 Below is the architecture of CNN.
 
-<code data-gist-id="49d0efcee07fa9efa4e1932a6901f95e" data-gist-file="Convolutional-Neural-Network.py" data-gist-line="159-175"></code>
+<code data-gist-id="1245d8e68d078207fd2bad1a061e6245" data-gist-file="Convolutional-Neural-Network.py" data-gist-line="165-181"></code>
 
 Let's start from identifying the variables:
 
@@ -141,7 +141,7 @@ Note that *view(-1,320)* is used to convert the shape of tensor from (32 X 20 X 
 
 Next, define the function for fitting the algorithm:
 
-<code data-gist-id="49d0efcee07fa9efa4e1932a6901f95e" data-gist-file="Convolutional-Neural-Network.py" data-gist-line="181-209"></code>
+<code data-gist-id="1245d8e68d078207fd2bad1a061e6245" data-gist-file="Convolutional-Neural-Network.py" data-gist-line="187-215"></code>
 
 1. When phase is training, set as *model.train()*. Otherwise, set as *model.eval()* and *volatile=True*
 
@@ -170,8 +170,6 @@ Next, define the function for fitting the algorithm:
    $$
    
 
-   <br>
-
    where 
    $$
    N
@@ -182,7 +180,7 @@ Next, define the function for fitting the algorithm:
 
 Finally, we can train and evaluate the algorithm iteratively 
 
-<code data-gist-id="49d0efcee07fa9efa4e1932a6901f95e" data-gist-file="Convolutional-Neural-Network.py" data-gist-line="236-252"></code>
+<code data-gist-id="1245d8e68d078207fd2bad1a061e6245" data-gist-file="Convolutional-Neural-Network.py" data-gist-line="246-262"></code>
 
 and visualize the result as below.
 
