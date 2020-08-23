@@ -37,36 +37,41 @@ You can normalize data in either way:
   $$
 
   where 
+  $$
+  \mu_{i}
+  $$
+   is the mean of 
+  $$
+  i
+  $$
+  th feature and 
+  $$
+  \sigma_{i}
+  $$
+   is the standard deviation of 
+  $$
+  i
+  $$
+  th feature.
 
-  $$
-  \begin{equation}
-    \begin{array}{l}
-      \mu_{i}=mean\; of\; ith\; feature\\
-      \sigma_{i}=standard\; deviation\; of\; ith\; feature
-  \end{array}
-  \end{equation}
-  $$
+<br>
 
 - $$
   x_{new}=\frac{x}{255}
   $$
 
-  , since each pixel has value between 0 and 255
+  (each pixel has value between 0 and 255)
 
 <br>
 
-That is, in order to improve the algorithm, 
+That is, to improve the algorithm, 
 
 - Data should lie between 0 and 1
 - Each feature should have the same range
 
 <br>
 
-Also, note that we normalized data by 
-$$
-((0.1307,),(0.3081,))
-$$
-, because MNIST dataset contains only black-and-white images; for colored images, mean and variance vector of length 3 respectively would be used.
+Also, note that we normalized data by 0.1307 and 0.3081, because MNIST dataset contains only black-and-white images; for colored ones, mean and variance vector of length 3 should be used.
 
 Now, we can download MNIST dataset
 
