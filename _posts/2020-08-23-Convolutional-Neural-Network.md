@@ -19,7 +19,7 @@ nofollow: false
 
 First, run the code below so that we can use GPU for computation.
 
-<code data-gist-id="5da556a66317060418af51fdab23fcd8" data-gist-file="Convolutional Neural Network.ipynb" data-gist-line="20-30"></code>
+<code data-gist-id="5da556a66317060418af51fdab23fcd8" data-gist-file="abc.py" data-gist-line="20-30"></code>
 
 <br>
 
