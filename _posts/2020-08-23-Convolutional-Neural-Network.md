@@ -28,7 +28,7 @@ First, run the code below so that we can use GPU for computation.
 
 Before loading MNIST dataset, define *transformation*, which converts data into PyTorch tensor and normalizes it by mean and standard deviation of the data. Normalizing data is important, since gradients may not converge otherwise.
 
-CODE
+<code data-gist-id="49d0efcee07fa9efa4e1932a6901f95e" data-gist-file="Convolutional-Neural-Network.py" data-gist-line="28-29"></code>
 
 You can normalize data in either way:
 
@@ -69,19 +69,19 @@ That is, to improve the algorithm,
 - Data should lie between 0 and 1
 - Each feature should have the same range
 
-<br>
+
 
 Also, note that we normalized data by 0.1307 and 0.3081, because MNIST dataset contains only black-and-white images; for colored ones, mean and variance vector of length 3 should be used.
 
 Now, we can download MNIST dataset
 
-CODE
+<code data-gist-id="49d0efcee07fa9efa4e1932a6901f95e" data-gist-file="Convolutional-Neural-Network.py" data-gist-line="35-38"></code>
 
-<br>
+
 
 and convert the images into data loaders 
 
-CODE
+<code data-gist-id="49d0efcee07fa9efa4e1932a6901f95e" data-gist-file="Convolutional-Neural-Network.py" data-gist-line="44-45"></code>
 
 where 
 
