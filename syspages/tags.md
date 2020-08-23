@@ -8,6 +8,9 @@ sitemap: false
 category: base
 ---
 
+## Image Recognition
+- [Convolutional Neural Network](https://ykkim123.github.io/blog/2020/08/12/Convolutional-Neural-Network)
+
 ## Machine Learning
 - [Decision Tree](https://ykkim123.github.io/blog/2020/08/12/Decision-Tree)
 
