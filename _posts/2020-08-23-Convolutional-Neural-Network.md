@@ -169,6 +169,8 @@ Next, define the function for fitting the algorithm:
      \end{array}
    \end{equation}
    $$
+   <br>
+
    where 
    $$
    N
