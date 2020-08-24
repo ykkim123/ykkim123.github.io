@@ -164,17 +164,13 @@ Next, define the function for fitting the algorithm:
    $$
    \begin{equation}
      \begin{array}{l}
-     loss=\frac{\sum negative\; log-likelihood}{N} \\
-     accuracy=100\times \frac{total\; number\; of\; correctly\; predicted\; cases}{N}
+        loss=\frac{\sum negative\; log-likelihood}{N} \\
+        accuracy=100\times \frac{total\; number\; of\; correctly\; predicted\; cases}{N}
      \end{array}
    \end{equation}
-
-$$
-   
-   
+   $$
    where 
-$$
-
+   $$
    N
    $$
     is the size of dataset.
