@@ -144,19 +144,19 @@ Next, define the function for fitting the algorithm:
 
 <code data-gist-id="1245d8e68d078207fd2bad1a061e6245" data-gist-file="Convolutional-Neural-Network.py" data-gist-line="187-215"></code>
 
-1. When phase=training, set as *model.train()*. Otherwise, set as *model.eval()* and *volatile=True*
+1. When phase=training, set as *model.train()*. Otherwise, set as *model.eval()* and *volatile=True*.
 
-2. Initialize *running_loss* and *running_correct* for the computation of loss and accuracy
+2. Initialize *running_loss* and *running_correct* for the computation of loss and accuracy.
 
 3. For each batch, do:
 
-   1. If you can use GPU, convert data to GPU tensor and make them variables
-   2. When phase=training, set as *optimizer.zero_grad()* to avoid accumulation of gradients
-   3. After forward propagation, compute loss based on negative log-likelihood
-   4. Update *running_loss* by adding average loss of new batch
-   5. Predict label as the one that has the highest probability
-   6. Update *running_correct* by adding the total number of correctly predicted cases of new batch
-   7. When phase=training, compute the gradient of loss function and update parameters
+   1. If you can use GPU, convert data to GPU tensor and make them variables.
+   2. When phase=training, set as *optimizer.zero_grad()* to avoid accumulation of gradients.
+   3. After forward propagation, compute loss based on negative log-likelihood.
+   4. Update *running_loss* by adding average loss of new batch.
+   5. Predict label as the one that has the highest probability.
+   6. Update *running_correct* by adding the total number of correctly predicted cases of new batch.
+   7. When phase=training, compute the gradient of loss function and update parameters.
 
 4. Loss and accuracy of the whole dataset are computed as:
 
@@ -175,7 +175,7 @@ Next, define the function for fitting the algorithm:
    $$
    N
    $$
-    is the size of dataset
+    is the size of dataset.
 
 <br>
 
