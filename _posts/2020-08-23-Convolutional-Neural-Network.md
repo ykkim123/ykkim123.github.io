@@ -175,7 +175,7 @@ Next, define the function for fitting the algorithm:
    $$
    N
    $$
-    is the size of dataset.
+    is the size of dataset
 
 <br>
 
