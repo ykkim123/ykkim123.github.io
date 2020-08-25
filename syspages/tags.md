@@ -9,7 +9,7 @@ category: base
 ---
 
 ## Image Recognition
-- [Convolutional Neural Network](https://ykkim123.github.io/blog/2020/08/12/Convolutional-Neural-Network)
+- [Vanilla CNN](https://ykkim123.github.io/blog/2020/08/12/Vanilla-CNN)
 
 ## Machine Learning
 - [Decision Tree](https://ykkim123.github.io/blog/2020/08/12/Decision-Tree)
