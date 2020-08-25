@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Convolutional Neural Network"
+title: "Vanilla CNN"
 date: "2020-08-12"
-description: "This post explains how to implement convolutional neural network using PyTorch-from building basic structures of the algorithm to actual implementation using MNIST dataset."
+description: "This post explains how to implement vanilla convolutional neural network using PyTorch-from building basic structures of the algorithm to actual implementation using MNIST dataset."
 category: 
   - featured
 # tags will also be used as html meta keywords.
@@ -20,7 +20,7 @@ nofollow: false
 
 First, run the code below so that we can use GPU for computation.
 
-<code data-gist-id="1245d8e68d078207fd2bad1a061e6245" data-gist-file="Convolutional-Neural-Network.py" data-gist-line="18-20"></code>
+<code data-gist-id="e282ee3c4e21fa6759984ddbd2817a33" data-gist-file="Vanilla_CNN-MNIST.py" data-gist-line="18-20"></code>
 
 <br>
 
@@ -28,7 +28,7 @@ First, run the code below so that we can use GPU for computation.
 
 Before loading MNIST dataset, define *transformation* which converts data into PyTorch tensor and normalizes it by mean and standard deviation. Normalizing data is important, since gradients may not converge otherwise.
 
-<code data-gist-id="1245d8e68d078207fd2bad1a061e6245" data-gist-file="Convolutional-Neural-Network.py" data-gist-line="28-29"></code>
+<code data-gist-id="e282ee3c4e21fa6759984ddbd2817a33" data-gist-file="Vanilla_CNN-MNIST.py" data-gist-line="28-29"></code>
 
 You can normalize data in either way:
 
@@ -67,13 +67,13 @@ Note that we normalized data by 0.1307 and 0.3081, because MNIST dataset contain
 
 Now, we can download MNIST dataset
 
-<code data-gist-id="1245d8e68d078207fd2bad1a061e6245" data-gist-file="Convolutional-Neural-Network.py" data-gist-line="37-38"></code>
+<code data-gist-id="e282ee3c4e21fa6759984ddbd2817a33" data-gist-file="Vanilla_CNN-MNIST.py" data-gist-line="37-38"></code>
 
 
 
 and convert the images into data loaders 
 
-<code data-gist-id="1245d8e68d078207fd2bad1a061e6245" data-gist-file="Convolutional-Neural-Network.py" data-gist-line="44-45"></code>
+<code data-gist-id="e282ee3c4e21fa6759984ddbd2817a33" data-gist-file="Vanilla_CNN-MNIST.py" data-gist-line="44-45"></code>
 
 where 
 
@@ -84,9 +84,9 @@ where
 
 Also, we can visualize the image as below:
 
-<code data-gist-id="1245d8e68d078207fd2bad1a061e6245" data-gist-file="Convolutional-Neural-Network.py" data-gist-line="51-56,78"></code>
+<code data-gist-id="e282ee3c4e21fa6759984ddbd2817a33" data-gist-file="Vanilla_CNN-MNIST.py" data-gist-line="51-56,78"></code>
 
-![digit visualization]({{ site.urlimg }}/Convolutional Neural Network/digit visualization.png)
+![digit visualization]({{ site.urlimg }}/Vanilla_CNN-MNIST/digit.png)
 
 <br>
 
@@ -94,7 +94,7 @@ Also, we can visualize the image as below:
 
 Below is the architecture of CNN.
 
-<code data-gist-id="1245d8e68d078207fd2bad1a061e6245" data-gist-file="Convolutional-Neural-Network.py" data-gist-line="165-181"></code>
+<code data-gist-id="e282ee3c4e21fa6759984ddbd2817a33" data-gist-file="Vanilla_CNN-MNIST.py" data-gist-line="178-194"></code>
 
 Let's start from identifying the variables:
 
@@ -142,7 +142,7 @@ Note that *view(-1,320)* is used to convert the shape of tensor from (32 X 20 X 
 
 Next, define the function for fitting the algorithm:
 
-<code data-gist-id="1245d8e68d078207fd2bad1a061e6245" data-gist-file="Convolutional-Neural-Network.py" data-gist-line="187-215"></code>
+<code data-gist-id="e282ee3c4e21fa6759984ddbd2817a33" data-gist-file="Vanilla_CNN-MNIST.py" data-gist-line="200-228"></code>
 
 1. When phase=training, set as *model.train()*. Otherwise, set as *model.eval()* and *volatile=True*.
 
@@ -181,13 +181,13 @@ Next, define the function for fitting the algorithm:
 
 Finally, we can train and evaluate the algorithm iteratively 
 
-<code data-gist-id="1245d8e68d078207fd2bad1a061e6245" data-gist-file="Convolutional-Neural-Network.py" data-gist-line="246-262"></code>
+<code data-gist-id="e282ee3c4e21fa6759984ddbd2817a33" data-gist-file="Vanilla_CNN-MNIST.py" data-gist-line="259-275"></code>
 
 and visualize the result as below.
 
-![loss]({{ site.urlimg }}/Convolutional Neural Network/loss.png)
+![loss]({{ site.urlimg }}/Vanilla_CNN-MNIST/loss.png)
 
-![accuracy]({{ site.urlimg }}/Convolutional Neural Network/accuracy.png)
+![accuracy]({{ site.urlimg }}/Vanilla_CNN-MNIST/accuracy.png)
 
 <br>
 
