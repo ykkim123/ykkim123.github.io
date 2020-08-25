@@ -15,11 +15,12 @@ gistembed: true
 published: true
 noindex: false
 nofollow: false
+
 ---
 
 First, run the code below so that we can use GPU for computation.
 
-<code data-gist-id="88a77808f1a087c179fc140679fa3574" data-gist-file="Vanilla_CNN-MNIST.py" data-gist-line="18-20"></code>
+<code data-gist-id="7a18c53fab247de55f3cd59e838d8daf" data-gist-file="Vanilla_CNN-MNIST.py" data-gist-line="18-20"></code>
 
 <br>
 
@@ -27,7 +28,7 @@ First, run the code below so that we can use GPU for computation.
 
 Before loading MNIST dataset, define *transformation* which converts data into PyTorch tensor and normalizes it by mean and standard deviation. Normalizing data is important, since gradients may not converge otherwise.
 
-<code data-gist-id="88a77808f1a087c179fc140679fa3574" data-gist-file="Vanilla_CNN-MNIST.py" data-gist-line="28-29"></code>
+<code data-gist-id="7a18c53fab247de55f3cd59e838d8daf" data-gist-file="Vanilla_CNN-MNIST.py" data-gist-line="28-29"></code>
 
 You can normalize data in either way:
 
@@ -66,13 +67,13 @@ Note that we normalized data by 0.1307 and 0.3081, because MNIST dataset contain
 
 Now, we can download MNIST dataset
 
-<code data-gist-id="88a77808f1a087c179fc140679fa3574" data-gist-file="Vanilla_CNN-MNIST.py" data-gist-line="37-38"></code>
+<code data-gist-id="7a18c53fab247de55f3cd59e838d8daf" data-gist-file="Vanilla_CNN-MNIST.py" data-gist-line="37-38"></code>
 
 
 
 and convert the images into data loaders 
 
-<code data-gist-id="88a77808f1a087c179fc140679fa3574" data-gist-file="Vanilla_CNN-MNIST.py" data-gist-line="44-45"></code>
+<code data-gist-id="7a18c53fab247de55f3cd59e838d8daf" data-gist-file="Vanilla_CNN-MNIST.py" data-gist-line="44-45"></code>
 
 where 
 
@@ -83,7 +84,7 @@ where
 
 Also, we can visualize the image as below:
 
-<code data-gist-id="88a77808f1a087c179fc140679fa3574" data-gist-file="Vanilla_CNN-MNIST.py" data-gist-line="51-56,78"></code>
+<code data-gist-id="7a18c53fab247de55f3cd59e838d8daf" data-gist-file="Vanilla_CNN-MNIST.py" data-gist-line="51-56,78"></code>
 
 ![digit visualization]({{ site.urlimg }}/Vanilla_CNN-MNIST/digit.png)
 
@@ -93,7 +94,7 @@ Also, we can visualize the image as below:
 
 Below is the architecture of CNN.
 
-<code data-gist-id="88a77808f1a087c179fc140679fa3574" data-gist-file="Vanilla_CNN-MNIST.py" data-gist-line="178-194"></code>
+<code data-gist-id="7a18c53fab247de55f3cd59e838d8daf" data-gist-file="Vanilla_CNN-MNIST.py" data-gist-line="178-194"></code>
 
 Let's start from identifying the variables:
 
@@ -118,7 +119,7 @@ Let's start from identifying the variables:
     $$
 
 - self.fc1 = nn.Linear(320,50)
-  
+
   - takes 320 input features and 50 output features
 
 <br>
@@ -141,7 +142,7 @@ Note that *view(-1,320)* is used to convert the shape of tensor from (32 X 20 X 
 
 Next, define the function for fitting the algorithm:
 
-<code data-gist-id="88a77808f1a087c179fc140679fa3574" data-gist-file="Vanilla_CNN-MNIST.py" data-gist-line="200-228"></code>
+<code data-gist-id="7a18c53fab247de55f3cd59e838d8daf" data-gist-file="Vanilla_CNN-MNIST.py" data-gist-line="200-228"></code>
 
 1. When phase=training, set as *model.train()*. Otherwise, set as *model.eval()* and *volatile=True*.
 
@@ -158,7 +159,7 @@ Next, define the function for fitting the algorithm:
    7. When phase=training, compute the gradient of loss function and update parameters.
 
 4. Loss and accuracy of the whole dataset are computed as:
-   
+
    <br>
    $$
    \begin{equation}
@@ -169,7 +170,7 @@ Next, define the function for fitting the algorithm:
    \end{equation}
    $$
    <br>
-   
+
    where 
    $$
    N
@@ -180,7 +181,7 @@ Next, define the function for fitting the algorithm:
 
 Finally, we can train and evaluate the algorithm iteratively 
 
-<code data-gist-id="88a77808f1a087c179fc140679fa3574" data-gist-file="Vanilla_CNN-MNIST.py" data-gist-line="259-275"></code>
+<code data-gist-id="7a18c53fab247de55f3cd59e838d8daf" data-gist-file="Vanilla_CNN-MNIST.py" data-gist-line="259-275"></code>
 
 and visualize the result as below.
 
@@ -197,3 +198,4 @@ Also, some other applications of CNN can be found [here](https://github.com/ykki
 # References
 
 - [https://github.com/svishnu88/DLwithPyTorch](https://github.com/svishnu88/DLwithPyTorch)
+
