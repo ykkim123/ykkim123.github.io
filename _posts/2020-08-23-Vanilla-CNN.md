@@ -140,7 +140,7 @@ Note that
 
 - *view(-1,320)* is used to convert the shape of tensor from (32 X 20 X 4 X 4) to (32 X 320) so that it can be taken as input of *nn.Linear(320,50)*
 
-- the number of input channels in *nn.Linear(320,50)* corresponds to the result of following procedure:
+- the number of input channels in *nn.Linear(320,50)* corresponds to:
   1. 28 X 28: original data
   2. 24 X 24: after convolutional layer1 with filter size=5
   3. 12 X 12: after max pooling with stride=2
